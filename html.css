@@ -1,0 +1,12 @@
+html {
+background: linear-gradient(#2779a7, teal);
+box-sizing: border-box; 
+}
+*,*::before, *::after {
+box-sizing: inherit;
+}
+
+body{
+background: linear-gradient(teal, #2779a7);
+}
+
