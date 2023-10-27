@@ -1,0 +1,199 @@
+/* Configuración de HTML */
+html {
+background: linear-gradient(#14F195, #9945FF);
+box-sizing: border-box; 
+}
+*,*::before, *::after {
+box-sizing: inherit;
+}
+
+body{
+background: linear-gradient(#9945FF, #14F195);
+box-shadow:-1px 0px 11px snow;
+}
+
+/* Fin de configuración de HTML*/
+
+.prueba{
+background-color:red;
+}
+
+/* Configuración Estructura*/
+.EstTitulo{
+border-width: 0px;
+border-color: teal;
+border-style: solid;
+}
+.EstUno{
+float: left;
+border: 0em; 
+width: 33%;
+height: auto;
+margin:0em;
+}
+.EstCentrar{
+float: left;
+border: 0em; 
+width: 33%;
+height: auto;
+margin:0em;
+justify-content: center;
+align-items: center;
+}
+
+.EstDos{
+float: right;
+border: 0em; 
+width: 33%;
+height: auto;
+margin:0em;
+justify-content: center;
+align-items: center;
+}
+
+.Estfin{
+border-width: 0px;
+border-color: gold;
+border-style: solid;
+background-color: teal;
+}
+/* Fin configuración Estructura */
+
+/* Configuración Titulos */
+
+.TituloPrincipal{
+text-align: center;
+color: #F7E7CE;
+font-size: 2em;
+font-weight: bold;
+font-family: "times new roman";
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.TituloSecundario{
+text-align: center;
+color:#FFFF00;
+}
+/* Fin configuración Titulos  */
+
+/* Configuración Parrafos */
+
+.ParrafoNormal{
+font-family: "times new roman";
+color: white;
+font-size: 1.3em;
+text-align: center;
+}
+.ParrafoSangria{
+padding-left:1em;
+padding-right:1em;
+font-size:.5em;
+font-family:"times new roman";
+color:black;
+text-align: justify;
+text-indent: 3em;
+}
+.ParrafoCentrado{
+font-family:"times new roman";
+color: White;
+font-size: 1.1em;
+text-align:center;
+text-shadow: 2px -3px 10px black;
+}
+
+.ParrafoCentradoNombres{
+background-color: black;
+font-family: "times new roman";
+font-size: 1.1em;
+text-align: center;
+}
+
+
+.ParrafoFinal{
+font-family: "times new roman";
+color: #FFFF00;
+font-size: 1.5em; 
+text-align: center;
+text-transform: uppercase;
+}
+
+.ParrafoFinalPsico{
+font-family: "times new roman";
+color: #FFFF00;
+font-size: 1.5em; 
+text-align: center;
+text-transform: uppercase;
+}
+
+  .ParrafoFinalPsico{
+  font-family: "times new roman";  
+  color: hsla(0, 0%, 0%, .9);
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  animation: move linear 2000ms infinite;  
+}
+
+@keyframes move {
+  0% {
+    text-shadow:
+      4px -4px 0 hsla(0, 100%, 50%, 1), 
+      3px -3px 0 hsla(0, 100%, 50%, 1), 
+      2px -2px 0 hsla(0, 100%, 50%, 1), 
+      1px -1px 0 hsla(0, 100%, 50%, 1),
+      -4px 4px 0 hsla(180, 100%, 50%, 1), 
+      -3px 3px 0 hsla(180, 100%, 50%, 1), 
+      -2px 2px 0 hsla(180, 100%, 50%, 1), 
+      -1px 1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }
+  25% {    
+    text-shadow:      
+      -4px -4px 0 hsla(180, 100%, 50%, 1), 
+      -3px -3px 0 hsla(180, 100%, 50%, 1), 
+      -2px -2px 0 hsla(180, 100%, 50%, 1), 
+      -1px -1px 0 hsla(180, 100%, 50%, 1),
+      4px 4px 0 hsla(0, 100%, 50%, 1), 
+      3px 3px 0 hsla(0, 100%, 50%, 1), 
+      2px 2px 0 hsla(0, 100%, 50%, 1), 
+      1px 1px 0 hsla(0, 100%, 50%, 1)      
+    ;
+  }
+  50% {
+    text-shadow:
+      -4px 4px 0 hsla(0, 100%, 50%, 1), 
+      -3px 3px 0 hsla(0, 100%, 50%, 1), 
+      -2px 2px 0 hsla(0, 100%, 50%, 1), 
+      -1px 1px 0 hsla(0, 100%, 50%, 1),
+      4px -4px 0 hsla(180, 100%, 50%, 1), 
+      3px -3px 0 hsla(180, 100%, 50%, 1), 
+      2px -2px 0 hsla(180, 100%, 50%, 1), 
+      1px -1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }
+  75% {
+    text-shadow:
+      4px 4px 0 hsla(180, 100%, 50%, 1), 
+      3px 3px 0 hsla(180, 100%, 50%, 1), 
+      2px 2px 0 hsla(180, 100%, 50%, 1), 
+      1px 1px 0 hsla(180, 100%, 50%, 1),
+      -4px -4px 0 hsla(0, 100%, 50%, 1), 
+      -3px -3px 0 hsla(0, 100%, 50%, 1), 
+      -2px -2px 0 hsla(0, 100%, 50%, 1), 
+      -1px -1px 0 hsla(0, 100%, 50%, 1)      
+    ;
+  }
+  100% {
+    text-shadow:
+      4px -4px 0 hsla(0, 100%, 50%, 1), 
+      3px -3px 0 hsla(0, 100%, 50%, 1), 
+      2px -2px 0 hsla(0, 100%, 50%, 1), 
+      1px -1px 0 hsla(0, 100%, 50%, 1),
+      -4px 4px 0 hsla(180, 100%, 50%, 1), 
+      -3px 3px 0 hsla(180, 100%, 50%, 1), 
+      -2px 2px 0 hsla(180, 100%, 50%, 1), 
+      -1px 1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }  
+}
+/* Fin configuración Parrafos */
