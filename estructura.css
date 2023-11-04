@@ -14,8 +14,33 @@ box-shadow:-1px 0px 11px snow;
 
 /* Fin de configuración de HTML*/
 
-.prueba{
-background-color:red;
+/* Configuración Frames*/
+
+
+/* Fin de Configuración Frames*/
+
+/* barra de navegación*/
+
+nav {
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }
 
 /* Configuración Estructura*/
@@ -51,6 +76,18 @@ justify-content: center;
 align-items: center;
 }
 
+.Patrones{
+background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+color:lightsteelblue;
+padding-left:1em;
+}
+
 .Estfin{
 border-width: 0px;
 border-color: gold;
@@ -58,6 +95,19 @@ border-style: solid;
 background-color: teal;
 }
 /* Fin configuración Estructura */
+
+/* Configuración Listas*/
+
+ul {
+    list-style:disc;
+    padding: 10px;
+    margin: 10px;
+    }
+li {
+    margin: 10px;
+}
+
+/* Fin Configuración Listas*/
 
 /* Configuración Titulos */
 
@@ -69,10 +119,24 @@ font-weight: bold;
 font-family: "times new roman";
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
-
 .TituloSecundario{
 text-align: center;
 color:#FFFF00;
+}
+.TituloPaginasSecundarias{
+color:yellow;
+font:1.5em "times new roman";
+text-align:center;
+font-weight:bold;
+}
+.SubtitulosPaginasSecundarias{
+font:1.2em "times new roman";
+font-weight:bold;
+}
+.SubSubtitulos{
+font:1 "times new roman";
+font-weight:normal;
+font-style:italic;
 }
 /* Fin configuración Titulos  */
 
@@ -83,6 +147,13 @@ font-family: "times new roman";
 color: white;
 font-size: 1.3em;
 text-align: center;
+}
+.ParrafoNormalEsquemaCurso{
+font-family: "times new roman";
+color: white;
+font-size:1em;
+text-indent:3em;
+text-align:justify;
 }
 .ParrafoSangria{
 padding-left:1em;
@@ -105,9 +176,30 @@ text-shadow: 2px -3px 10px black;
 background-color: black;
 font-family: "times new roman";
 font-size: 1.1em;
-text-align: center;
+text-align:center;
 }
 
+.ParrafoCreditos{
+font-family:"times new roman";
+color:black;
+font-size:.5em;
+}
+
+.ParrafoAviso{
+font-family:"times new roman";
+color:black;
+font-size:1.2em;
+padding-left:1em;
+padding-right:1em;
+}
+
+.anuncio{
+font:1.4 "times new roman";
+font-weight:bold;
+color:red;
+text-align:center;
+text-shadow: 2px -3px 10px yellow;
+}
 
 .ParrafoFinal{
 font-family: "times new roman";
@@ -197,3 +289,15 @@ text-transform: uppercase;
   }  
 }
 /* Fin configuración Parrafos */
+
+/* Estilos del pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+}
