@@ -2,14 +2,34 @@
 html {
 background: linear-gradient(#14F195, #9945FF);
 box-sizing: border-box; 
+animation-name:fondo;
+animation-duration:3s;
+animation-direction:alternate;
+animation-iteration-count:infinite;
 }
 *,*::before, *::after {
 box-sizing: inherit;
 }
 
+@keyframes fondo{
+	from{
+ background:linear-gradient(#14F195, #9945FF);
+}
+to{
+background:linear-gradient(#9945FF, #14F195);
+}
+
+}
+
 body{
 background: linear-gradient(#9945FF, #14F195);
 box-shadow:-1px 0px 11px snow;
+}
+
+@media(max-width:600px){
+nav li{
+margin:3px;
+}
 }
 
 /* Fin de configuración de HTML*/
@@ -42,7 +62,6 @@ nav a {
     color: #fff;
     font-weight: bold;
 }
-
 /* Configuración Estructura*/
 .EstTitulo{
 border-width: 0px;
@@ -85,7 +104,7 @@ radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background-color:#282828;
 background-size:16px 16px;
 color:lightsteelblue;
-padding-left:1.5em;
+padding-left:1em;
 padding-right:1.5em;
 }
 
@@ -103,7 +122,7 @@ padding-right:1.5em;
     max-height: 100%;
     position: absolute;
     opacity: 0;
-    transition: opacity 7s ease-in-out;
+    transition: opacity 3s ease-in-out;
    }
 
 .slideshow img.active {
@@ -257,16 +276,9 @@ text-align: center;
 text-transform: uppercase;
 }
 
-.ParrafoFinalPsico{
-font-family: "times new roman";
-color: #FFFF00;
-font-size: 1.5em; 
-text-align: center;
-text-transform: uppercase;
-}
-
   .ParrafoFinalPsico{
-  font-family: "times new roman";  
+  font-family: "times new roman"; 
+  font-size: 1em;  
   color: hsla(0, 0%, 0%, .9);
   letter-spacing: 5px;
   text-align: center;
@@ -332,8 +344,7 @@ text-transform: uppercase;
       -4px 4px 0 hsla(180, 100%, 50%, 1), 
       -3px 3px 0 hsla(180, 100%, 50%, 1), 
       -2px 2px 0 hsla(180, 100%, 50%, 1), 
-      -1px 1px 0 hsla(180, 100%, 50%, 1)
-    ;
+      -1px 1px 0 hsla(180, 100%, 50%, 1);
   }  
 }
 /* Fin configuración Parrafos */
