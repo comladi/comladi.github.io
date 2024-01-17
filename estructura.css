@@ -29,6 +29,7 @@ box-shadow:-1px 0px 11px snow;
 @media(max-width:450px){
 nav li{
 margin:0;
+font-size:.70em;	
 }
 }
 
