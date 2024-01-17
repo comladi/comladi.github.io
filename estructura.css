@@ -26,7 +26,7 @@ background: linear-gradient(#9945FF, #14F195);
 box-shadow:-1px 0px 11px snow;
 }
 
-@media(max-width:600px){
+@media(max-width:500px){
 nav li{
 margin:3px;
 }
