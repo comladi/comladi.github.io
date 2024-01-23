@@ -12,13 +12,12 @@ box-sizing: inherit;
 }
 
 @keyframes fondo{
-	from{
- background:linear-gradient(#14F195, #9945FF);
+from{
+background:linear-gradient(#14F195, #9945FF);
 }
 to{
 background:linear-gradient(#9945FF, #14F195);
 }
-
 }
 
 body{
@@ -29,7 +28,7 @@ box-shadow:-1px 0px 11px snow;
 @media(max-width:450px){
 nav li{
 margin:0;
-font-size:.70em;	
+font-size:.75em;	
 }
 }
 
@@ -131,18 +130,18 @@ padding-right:1.5em;
     transition: opacity 5s ease-in-out;
 }
 
-.Temas{
+.temas{
 margin-left:3%;
 margin-right:3%;
 }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-/*    background-color:transparent;*/
-      border-radius: 10px;
-/*      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+.container {
+max-width: 800px;
+margin: 0px auto;
+padding: 20px;
+/*background-color:transparent;*/
+/* border-radius: 10px;*/
+/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
     }
 
 .Estfin{
@@ -173,7 +172,7 @@ text-align: center;
 color: #F7E7CE;
 font-size: 2em;
 font-weight: bold;
-font-family: "times new roman";
+font-family:"times new roman";
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 .TituloSecundario{
@@ -221,6 +220,9 @@ color: black;
 font-size:1em;
 text-indent:3em;
 text-align:justify;
+text-justify-inter-word;
+line-height:1.5em;
+margin:0px;
 }
 
 .ParrafoSangria{
@@ -241,7 +243,7 @@ text-shadow: 2px -3px 10px black;
 }
 
 .ParrafoCentradoNombres{
-background-color: black;
+background-color:black;
 font-family: "times new roman";
 font-size: 1.1em;
 text-align:center;
