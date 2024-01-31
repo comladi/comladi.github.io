@@ -150,6 +150,19 @@ border-color: gold;
 border-style: solid;
 background-color: teal;
 }
+
+.MarcoContactoContenedor{
+display:flex;
+justify-content:center;
+}
+
+.MarcoContacto{
+background:linear-gradient(#8f9ad3, beige, #8f9ad3);
+border:.1em solid silver;
+border-radius:1.5em;
+box-shadow:2px 1px 8px 1px rgba(32,32,32,0.7);
+}
+
 /* Fin configuración Estructura */
 
 /* Configuración Listas*/
@@ -214,12 +227,25 @@ text-align: center;
 
 .ParrafoContacto{
 font-family: "times new roman";
-color:white;
-font-size: 1.2em;
+color:lightgreen;
+font-size: 1.3em;
 font-weight:bold;
 text-align: center;
-text-shadow:2px -3px 20px lightyellow;
+text-shadow:-1px 1px 1px teal,
+0px 2px 2px #9945FF,
+1px 0px 7px gray,
+-2px 1px 1px black;
 }
+
+.MarcoContacto .ParrafoContacto a{
+color:snow;
+text-decoration:underline snow;
+}
+
+.MarcoContacto .ParrafoContacto:nth-of-type(2) a{
+text-decoration:none;
+}
+
 
 .ParrafoNormalEsquemaCurso{
 font-family: "times new roman";
@@ -287,6 +313,8 @@ text-transform: uppercase;
 }
 
   .ParrafoFinalPsico{
+  padding-top:1em;
+  margin:0;
   font-family: "times new roman"; 
   font-size: 1em;  
   color: hsla(0, 0%, 0%, .9);
