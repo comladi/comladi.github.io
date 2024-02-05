@@ -131,6 +131,7 @@ padding-right:.5em;
 }
 
 .temas{
+margin-top:3%;
 margin-left:3%;
 margin-right:3%;
 }
@@ -140,9 +141,9 @@ max-width: 800px;
 margin: 0px auto;
 padding: 20px;
 /*background-color:transparent;*/
-/* border-radius: 10px;*/
-/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
-    }
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
 .Estfin{
 border-width: 0px;
@@ -252,10 +253,9 @@ font-family: "times new roman";
 color: black;
 font-size:1em;
 text-indent:3em;
-text-align:justify;
-text-justify-inter-word;
+text-justify: inter-word;
 line-height:1.5em;
-margin:0px;
+margin-bottom:.3em;
 }
 
 .ParrafoSangria{
