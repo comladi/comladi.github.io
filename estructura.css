@@ -262,7 +262,7 @@ color: #333;
 font-size:1em;
 text-indent:3em;
 text-align:justify;
-text-justify:inter-character;
+text-justify:distribute-all-lines;
 line-height:1.5em;
 margin-bottom:.3em;
 }
