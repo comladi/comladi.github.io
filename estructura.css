@@ -1,4 +1,8 @@
 /* Configuración de HTML */
+*,*::before, *::after {
+box-sizing: inherit;
+}
+
 html {
 background: linear-gradient(#14F195, #9945FF);
 box-sizing: border-box; 
@@ -6,9 +10,6 @@ animation-name:fondo;
 animation-duration:3s;
 animation-direction:alternate;
 animation-iteration-count:infinite;
-}
-*,*::before, *::after {
-box-sizing: inherit;
 }
 
 @keyframes fondo{
@@ -112,8 +113,8 @@ padding:1em;
     position: relative;
     width: 100%;
     height: 100vh;
-    display: flex;
-    overflow: cover;
+
+    overflow:hidden;
     justify-content:center;	
 }
 
