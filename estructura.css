@@ -116,7 +116,8 @@ padding:1em;
     display:flex; 
     overflow:hidden;
     justify-content:center;
-    border:.5em solid red;	
+    border:.5em solid red;
+    line-height:1;	
 }
 
 .slideshow img {
