@@ -115,7 +115,8 @@ padding:1em;
     height: 100vh;
     display:inline-block; 
     overflow:hidden;
-    justify-content:center;	
+    justify-content:center;
+    border:.5em solid red;	
 }
 
 .slideshow img {
@@ -125,6 +126,7 @@ padding:1em;
     opacity: 0;
     transition: opacity 3s ease-in-out;
     object-fit:cover;
+    border:.5em dotted yellow;
   }
 
 .slideshow img.active {
