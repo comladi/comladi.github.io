@@ -214,6 +214,7 @@ text-align:center;
 font-weight:bold;
 }
 .SubtitulosPaginasSecundarias{
+color:#D4AF37;
 font:1.2em "times new roman";
 font-weight:bold;
 }
@@ -258,7 +259,7 @@ text-decoration:none;
 .ParrafoNormalEsquemaCurso{
 font-family: "times new roman";
 color: #333;
-font-size:1em;
+font-size:1.01em;
 text-indent:3em;
 text-align:justify;
 text-justify:inter-character;
