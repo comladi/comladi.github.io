@@ -174,7 +174,7 @@ box-shadow:2px 1px 8px 1px rgba(32,32,32,0.7);
 
 /* Configuración Listas*/
 
-ul {
+ul, li {
     margin:0;
     padding:0;
     }
@@ -182,7 +182,10 @@ li {
     margin-left:3em;
     line-height:1.5;
     padding-bottom:1em;	
-}
+    font-size:1em;
+    font-family:"times new roman";
+    color:#333; 		
+}	
 
 /* Fin Configuración Listas*/
 
