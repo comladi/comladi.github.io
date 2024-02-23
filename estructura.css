@@ -138,7 +138,7 @@ height:35vh;
 }
 
 .temas{
-margin-top:3%;
+margin-top:1%;
 margin-left:3%;
 margin-right:3%;
 }
@@ -146,9 +146,8 @@ margin-right:3%;
 .container {
 max-width: 800px;
 margin: 0px auto;
-padding: 20px;
-/*background-color:transparent;*/
-border-radius: 10px;
+padding: 1%;
+border-radius: 11px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -176,10 +175,11 @@ box-shadow:2px 1px 8px 1px rgba(32,32,32,0.7);
 /* Configuración Listas*/
 
 ul {
-    margin: 10px;
+    margin:0px;
     }
 li {
-    margin: 10px;
+    margin-left:1em;
+    line-height:1.5;
 }
 
 /* Fin Configuración Listas*/
@@ -217,7 +217,7 @@ font:1.2em "times new roman";
 font-weight:bold;
 }
 .SubSubtitulos{
-font:1 "times new roman";
+font:1em "times new roman";
 font-weight:normal;
 font-style:italic;
 }
