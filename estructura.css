@@ -399,6 +399,12 @@ text-transform: uppercase;
 }
 /* Fin configuración Parrafos */
 
+/*Estilos span*/
+.PalabrasTemasCurso{
+font-weight:bold;
+}
+/*Fin Estilos span*/
+
 /* Estilos del pie de página */
 footer {
     text-align: center;
