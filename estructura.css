@@ -49,14 +49,14 @@ nav ul {
 
 nav li {
     display: inline;
-    margin: 10px;
+    margin:10px;
 }
 
 nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-}
+    }
 /* Configuración Estructura*/
 
 .patrones{
@@ -154,6 +154,17 @@ li {
 
 /* Fin Configuración Listas*/
 
+/*Configuración Audio*/
+
+audio{
+margin:0 auto;
+padding:0;
+display:block;
+}
+
+/* Fin Configuración Audio*/
+
+
 /* Configuración Titulos */
 
 .TituloPrincipal{
@@ -198,10 +209,11 @@ font-style:italic;
 /* Configuración Parrafos */
 
 .ParrafoNormal{
-font-family: "times new roman";
-color: white;
-font-size: 1.3em;
-text-align: center;
+display:inline;
+color:yellow;
+font-size:.7em;
+margin:0;
+padding:0;
 }
 
 .ParrafoContacto{
