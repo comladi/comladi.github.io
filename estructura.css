@@ -63,39 +63,9 @@ nav a {
     font-weight: bold;
 }
 /* Configuración Estructura*/
-.EstTitulo{
-border-width: 0px;
-border-color: teal;
-border-style: solid;
-}
-.EstUno{
-float: left;
-border: 0em; 
-width: 33%;
-height: auto;
-margin:0em;
-}
-.EstCentrar{
-float: left;
-border: 0em; 
-width: 33%;
-height: auto;
-margin:0em;
-justify-content: center;
-align-items: center;
-}
-
-.EstDos{
-float: right;
-border: 0em; 
-width: 33%;
-height: auto;
-margin:0em;
-justify-content: center;
-align-items: center;
-}
 
 .patrones{
+margin:0 auto;
 background:
 radial-gradient(black 15%, transparent 16%) 0 0,
 radial-gradient(black 15%, transparent 16%) 8px 8px,
@@ -104,8 +74,7 @@ radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background-color:#282828;
 background-size:16px 16px;
 color:white;
-margin:1em;
-padding:1em;
+padding:0;
 }
 
 .slideshow {
@@ -137,6 +106,10 @@ height:35vh;
     transition: opacity 5s ease-in-out;
 }
 
+.audioContenedor{
+text-align:center;
+}
+
 .temas{
 margin-top:3%;
 margin-left:3%;
@@ -149,13 +122,6 @@ margin: 0px auto;
 padding: 1em;
 border-radius: 11px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.Estfin{
-border-width: 0px;
-border-color: gold;
-border-style: solid;
-background-color: teal;
 }
 
 .MarcoContactoContenedor{
@@ -185,7 +151,7 @@ li {
     font-size:1em;
     font-family:"times new roman";
     color:#333; 		
-}	
+}
 
 /* Fin Configuración Listas*/
 
