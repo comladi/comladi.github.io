@@ -34,11 +34,6 @@ font-size:.75em;
 }
 /* Fin de configuración de HTML*/
 
-/* Configuración Frames*/
-
-
-/* Fin de Configuración Frames*/
-
 /* barra de navegación*/
 
 nav {
@@ -108,12 +103,15 @@ height:35vh;
 
 .audioContenedor{
 text-align:center;
+margin:0em;
+padding-bottom:1em;
 }
 
 .temas{
-margin-top:3%;
+margin-top:1%;
 margin-left:3%;
 margin-right:3%;
+margin-bottom:0;
 }
 
 .container {
@@ -127,6 +125,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 .MarcoContactoContenedor{
 display:flex;
 justify-content:center;
+margin:1em 0 1em 0 ;
 }
 
 .MarcoContacto{
@@ -149,7 +148,6 @@ li {
     line-height:1.5;
     padding-bottom:1em;	
     font-size:1em;
-    font-family:"times new roman";
     color:#333; 		
 }
 
@@ -175,6 +173,8 @@ text-shadow:7px 3px 7px black,
 3px -1px 7px gold,
 0px 2px 7px teal,
 -7px 3px 7px gray;
+margin:0;
+padding-top:1em;
 }
 .TituloPaginasSecundarias{
 color:yellow;
@@ -251,6 +251,8 @@ color: White;
 font-size: 1.1em;
 text-align:center;
 text-shadow: 2px -3px 10px black;
+margin:0;
+padding-bottom:1em;
 }
 
 .ParrafoCentradoNombres{
@@ -258,6 +260,8 @@ background-color:black;
 font-family: "times new roman";
 font-size: 1.1em;
 text-align:center;
+font-weight:bold;
+margin:0;
 }
 
 .ParrafoCreditos{
