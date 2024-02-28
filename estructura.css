@@ -219,7 +219,6 @@ padding:0;
 .ParrafoContacto{
 margin:.5em 0 .5em 0;
 padding:0;
-font-family:"times new roman";
 color:lightgreen;
 font-size: 1.3em;
 font-weight:bold;
@@ -243,9 +242,7 @@ text-decoration:none;
 margin-top:0;
 }
 
-
 .ParrafoNormalEsquemaCurso{
-font-family: "times new roman";
 color: #333;
 font-size:1em;
 text-indent:3em;
@@ -255,15 +252,6 @@ line-height:1.5em;
 margin-bottom:.3em;
 }
 
-.ParrafoSangria{
-padding-left:1em;
-padding-right:1em;
-font-size:.5em;
-font-family:"times new roman";
-color:black;
-text-align: justify;
-text-indent: 3em;
-}
 .ParrafoCentrado{
 font-family:"times new roman";
 color: White;
@@ -290,7 +278,6 @@ font-size:.5em;
 }
 
 .ParrafoAviso{
-font-family:"times new roman";
 color:black;
 font-size:1.2em;
 padding-left:1em;
@@ -298,11 +285,21 @@ padding-right:1em;
 }
 
 .anuncio{
-font:1.4 "times new roman";
-font-weight:bold;
+font-size:1.1em;
 color:red;
-text-align:center;
-text-shadow: 2px -3px 10px yellow;
+text-align:left;
+text-shadow: 
+1px 1px 1px darkred,
+1px 1px 1px gold,
+1px 1px 1px black,
+1px 1px 2px gray,
+1px 1px 3px teal;
+1px 1px 4px black,
+1px 1px 1px teal,
+1px 1px 2px gray,
+1px 1px 3px black,
+padding:0;
+margin:0;
 }
 
 .ParrafoFinal{
@@ -397,11 +394,11 @@ font-weight:bold;
 /* Estilos del pie de página */
 footer {
     text-align: center;
-    padding: .7em;
-    background-color:trasparent; 
+    padding:1em;
 }
 
 footer a {
     text-decoration: none;
     font-weight:bold;
+    color:#126BF0;
 }
