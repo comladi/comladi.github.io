@@ -125,12 +125,14 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 .MarcoContactoContenedor{
 display:flex;
 justify-content:center;
-margin:1em 0 1em 0 ;
+margin:1em 0 0 0 ;
+padding:0;
 }
 
 .MarcoContacto{
 background:linear-gradient(#8f9ad3, beige, #8f9ad3);
-
+margin:0em;
+padding:0;
 border:.1em solid silver;
 border-radius:1.5em;
 box-shadow:2px 1px 8px 1px rgba(32,32,32,0.7);
@@ -217,10 +219,10 @@ padding:0;
 }
 
 .ParrafoContacto{
-margin:.5em 0 .5em 0;
-padding:0;
+margin:0;
+padding:.2em;
 color:lightgreen;
-font-size: 1.3em;
+font-size: 1.2em;
 font-weight:bold;
 text-align:center;
 text-shadow:
@@ -239,7 +241,6 @@ text-decoration:underline snow;
 
 .MarcoContacto .ParrafoContacto:nth-of-type(2) a{
 text-decoration:none;
-margin-top:0;
 }
 
 .ParrafoNormalEsquemaCurso{
