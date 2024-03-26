@@ -289,20 +289,25 @@ padding-right:1em;
 }
 
 .anuncio{
-font-family:'times new roman';
-font-size:1em;
+font-family:tahoma;
+font-size:100%;
 color:red;
-text-align:left;
+text-align:center;
+font-weight:bold;
 text-shadow: 
 1px 1px 1px darkred,
-1px 1px 1px gold,
-1px 1px 1px black,
-1px 1px 2px gray,
-1px 1px 3px teal;
-1px 1px 4px black,
 1px 1px 1px teal,
-1px 1px 2px gray,
-1px 1px 3px black,
+1px 1px 1px blue,
+1px 1px 2px black,
+1px 1px 3px gray,
+1px 1px 4px black,
+1px 1px 1px gray,
+1px 1px 2px silver,
+1px 1px 2px black,
+1px 1px 3px silver,
+-1px 0px 3px gold,
+1px 1px 7px teal,
+0px 0px 11px gray;
 padding:0;
 margin:0;
 }
