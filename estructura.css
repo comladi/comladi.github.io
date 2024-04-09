@@ -150,9 +150,9 @@ ul, li {
 li {
     margin-left:3em;
     line-height:1.5;
-    padding-bottom:1em;	
     font-size:1em;
-    color:#333; 		
+    color:#333;
+    padding-bottom:1em;	 		
 }
 
 /* Fin Configuración Listas*/
@@ -208,7 +208,14 @@ font-weight:bold;
 font:1.1em "times new roman";
 font-weight:normal;
 font-style:italic;
+margin:0;
+padding:0 0 1em 0;
 }
+
+.SubSubtitulos:nth-last{
+padding-bottom:0;
+}
+
 /* Fin configuración Titulos  */
 
 /* Configuración Parrafos */
