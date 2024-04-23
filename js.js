@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function nextSlide() {
         showSlide(currentSlide);
         currentSlide = (currentSlide + 1) % slides.length;
-        setTimeout(nextSlide, 9000); // 12 seconds (7s + 5s)
+        setTimeout(nextSlide, 12000); // 12 seconds (7s + 5s)
     }
 
     nextSlide();
