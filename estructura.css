@@ -75,18 +75,6 @@ height:35vh;
 }
 }
 
-@media(max-width:810px){
-.slideshow {
-height:70vh;
-}
-}
-
-@media(max-width:800px){
-.slideshow {
-height:61vh;
-}
-}
-
 .slideshow img {
     max-width: 100%;
     max-height:100%;   
@@ -97,7 +85,7 @@ height:61vh;
 
 .slideshow img.active {
     opacity: 1;
-    transition: opacity 4s ease-in-out;
+    transition: opacity 5s ease-in-out;
 }
 
 .audioContenedor{
@@ -124,13 +112,13 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 .MarcoContactoContenedor{
 display:flex;
 justify-content:center;
-margin:1em 0 1em 0 ;
+margin:1em 0 0 0 ;
 padding:0;
 }
 
 .MarcoContacto{
 background:linear-gradient(#8f9ad3, beige, #8f9ad3);
-margin:0;
+margin:0em;
 padding:0;
 border:.1em solid silver;
 border-radius:1.5em;
@@ -163,7 +151,7 @@ li {
     margin-left:3em;
     line-height:1.5;
     font-size:1em;
-    color:black;
+    color:#333;
     padding-bottom:1em;	 		
 }
 
@@ -203,7 +191,7 @@ text-shadow:7px 3px 7px black,
 0px 2px 7px teal,
 -7px 3px 7px gray;
 margin:0;
-padding:0;
+padding-top:1em;
 }
 .TituloPaginasSecundarias{
 color:yellow;
@@ -212,13 +200,13 @@ text-align:center;
 font-weight:bold;
 }
 .SubtitulosPaginasSecundarias{
-color:#Aff990;
+color:#D4AF37;
 font:1.2em "times new roman";
 font-weight:bold;
 }
 .SubSubtitulos{
 font:1.1em "times new roman";
-font-weight:bold;
+font-weight:normal;
 font-style:italic;
 margin:0;
 padding:0 0 1em 0;
@@ -343,88 +331,12 @@ text-transform: uppercase;
   padding-top:1em;
   margin:0;
   font-family: "times new roman"; 
-  font-weight:bold;
   font-size: 1em;  
-  color: hsla(0, 0%, 0%, 1);
+  color: hsla(0, 0%, 0%, .9);
   letter-spacing: 5px;
   text-align: center;
   text-transform: uppercase;
-  animation: psico linear 1000ms infinite;  
-}
-
-@keyframes psico {
-  0% {
-    text-shadow:
-      4px -4px 0 hsla(61, 100%, 50%, 1), 
-      3px -3px 0 hsla(61, 100%, 50%, 1), 
-      2px -2px 0 hsla(61, 100%, 50%, 1), 
-      1px -1px 0 hsla(61, 100%, 50%, 1),
-      -4px 4px 0 hsla(180, 100%, 50%, 1), 
-      -3px 3px 0 hsla(180, 100%, 50%, 1), 
-      -2px 2px 0 hsla(180, 100%, 50%, 1), 
-      -1px 1px 0 hsla(180, 100%, 50%, 1)
-    ;
-  }
-  25% {    
-    text-shadow:      
-      -4px -4px 0 hsla(180, 100%, 50%, 1), 
-      -3px -3px 0 hsla(180, 100%, 50%, 1), 
-      -2px -2px 0 hsla(180, 100%, 50%, 1), 
-      -1px -1px 0 hsla(180, 100%, 50%, 1),
-      4px 4px 0 hsla(61, 100%, 50%, 1), 
-      3px 3px 0 hsla(61, 100%, 50%, 1), 
-      2px 2px 0 hsla(61, 100%, 50%, 1), 
-      1px 1px 0 hsla(61, 100%, 50%, 1)      
-    ;
-  }
-  50% {
-    text-shadow:
-      -4px 4px 0 hsla(61, 100%, 50%, 1), 
-      -3px 3px 0 hsla(61, 100%, 50%, 1), 
-      -2px 2px 0 hsla(61, 100%, 50%, 1), 
-      -1px 1px 0 hsla(61, 100%, 50%, 1),
-      4px -4px 0 hsla(180, 100%, 50%, 1), 
-      3px -3px 0 hsla(180, 100%, 50%, 1), 
-      2px -2px 0 hsla(180, 100%, 50%, 1), 
-      1px -1px 0 hsla(180, 100%, 50%, 1)
-    ;
-  }
-  75% {
-    text-shadow:
-      4px 4px 0 hsla(180, 100%, 50%, 1), 
-      3px 3px 0 hsla(180, 100%, 50%, 1), 
-      2px 2px 0 hsla(180, 100%, 50%, 1), 
-      1px 1px 0 hsla(180, 100%, 50%, 1),
-      -4px -4px 0 hsla(61, 100%, 50%, 1), 
-      -3px -3px 0 hsla(61, 100%, 50%, 1), 
-      -2px -2px 0 hsla(61, 100%, 50%, 1), 
-      -1px -1px 0 hsla(61, 100%, 50%, 1)      
-    ;
-  }
-  100% {
-    text-shadow:
-      4px -4px 0 hsla(61, 100%, 50%, 1), 
-      3px -3px 0 hsla(61, 100%, 50%, 1), 
-      2px -2px 0 hsla(61, 100%, 50%, 1), 
-      1px -1px 0 hsla(61, 100%, 50%, 1),
-      -4px 4px 0 hsla(180, 100%, 50%, 1), 
-      -3px 3px 0 hsla(180, 100%, 50%, 1), 
-      -2px 2px 0 hsla(180, 100%, 50%, 1), 
-      -1px 1px 0 hsla(180, 100%, 50%, 1);
-  }  
-}
-
-  .ParrafoPsicoContacto{
-  padding-top:1em;
-  margin:0;
-  font-family: "times new roman"; 
-  font-weight:bold;
-  font-size: 1em;  
-  color: hsla(0, 0%, 0%, 1);
-  letter-spacing: 5px;
-  text-align: center;
-  text-transform: uppercase;
-  animation: move linear 1000ms infinite;  
+  animation: move linear 2000ms infinite;  
 }
 
 @keyframes move {
@@ -488,10 +400,6 @@ text-transform: uppercase;
       -1px 1px 0 hsla(180, 100%, 50%, 1);
   }  
 }
-
-
-
-
 /* Fin configuración Parrafos */
 
 /*Estilos span*/
