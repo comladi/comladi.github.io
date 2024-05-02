@@ -1,12 +1,13 @@
 /* Configuración de HTML */
-*,*::before, *::after {
-box-sizing: inherit;
-}
 
 html,body,header,main,footer,nav,div{
 box-sizing: border-box; 
 margin:0;
 padding:0;
+}
+
+*,*::before, *::after {
+box-sizing: inherit;
 }
 
 body{
