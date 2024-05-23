@@ -103,8 +103,8 @@ height:35vh;
 
 .audioContenedor{
 text-align:center;
-margin:0em;
-padding-bottom:1em;
+margin:0;
+padding:0;
 }
 
 .temas{
@@ -211,6 +211,7 @@ color:yellow;
 font:1.5em "times new roman";
 text-align:center;
 font-weight:bold;
+text-transform:uppercase;
 }
 .SubtitulosPaginasSecundarias{
 color:#Aff990;
