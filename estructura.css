@@ -417,7 +417,7 @@ text-transform: uppercase;
 }
 
   .ParrafoPsicoContacto{
-  padding-top:1em;
+  padding:0;
   margin:0;
   font-family: "times new roman"; 
   font-weight:bold;
