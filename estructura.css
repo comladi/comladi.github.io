@@ -1,5 +1,5 @@
 /* Configuración de HTML */
-
+14F195
 html,body,header,main,footer,nav,div{
 box-sizing: border-box; 
 margin:0;
@@ -94,6 +94,7 @@ height:35vh;
     position: absolute;
     opacity: 0;
     transition: opacity 3s ease-in-out;
+border-radius:5em;	
   }
 
 .slideshow img.active {
