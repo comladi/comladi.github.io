@@ -14,6 +14,11 @@ body{
 background:linear-gradient(#9945FF, #14F195);
 }
 
+@font-face{
+font-family:"CinzelDecorative-Regular";
+src:url("CinzelDecorative-Regular.ttf");
+}
+
 @media(max-width:450px){
 nav li{
 margin:0;
@@ -26,6 +31,7 @@ font-size:.75em;
 
 nav {
     background-color: transparent;
+    margin:1em 0 2em 0;	
 }
 
 nav ul {
@@ -104,7 +110,12 @@ border-radius:5em;
 
 .audioContenedor{
 text-align:center;
-margin:0;
+margin: 0;
+padding:0;
+}
+
+.audio-contenido{
+margin: 2em 0 0 0;
 padding:0;
 }
 
@@ -119,14 +130,36 @@ margin-bottom:0;
 max-width: 800px;
 margin: 0px auto;
 padding: 1em;
-border-radius: 11px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+border-radius: 16px;
+box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+}
+
+.temas-dos{
+display:flex;
+flex-direction:column;
+margin-top:1%;
+margin-left:3%;
+margin-right:3%;
+margin-bottom:0;
+justify-content:center;
+align-items:center;
+}
+
+.container-dos {
+padding: 1em;
+border-radius: 16px;
+box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+margin-bottom:3em;
+}
+
+.contenedor-creditos{
+background-color:silver;
 }
 
 .MarcoContactoContenedor{
 display:flex;
 justify-content:center;
-margin:1em 0 1em 0 ;
+margin:1em 0 1em 0;
 padding:0;
 }
 
@@ -145,10 +178,10 @@ animation-iteration-count:infinite;
 
 @keyframes fondo{
 from{
-background:linear-gradient(#14F195, #9945FF);
+background:linear-gradient(#14F195, transparent);
 }
 to{
-background:linear-gradient(#9945FF, #14F195);
+background:linear-gradient(transparent, #14F195);
 }
 }
 
@@ -189,7 +222,7 @@ text-align: center;
 color: #F7E7CE;
 font-size: 1.8em;
 font-weight: bold;
-font-family:"Times New Roman";
+font-family:"CinzelDecorative-Regular";
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 margin-bottom:.5em;
 padding:0;
@@ -209,15 +242,20 @@ padding:0;
 }
 .TituloPaginasSecundarias{
 color:yellow;
-font:1.5em "times new roman";
+font:1.5em "CinzelDecorative-Regular";
 text-align:center;
 font-weight:bold;
 text-transform:uppercase;
 }
-.SubtitulosPaginasSecundarias{
-color:#Aff990;
-font:1.2em "times new roman";
+
+.Titulo-creditos{
+color:black;
+font:2em "times new roman";
 font-weight:bold;
+text-shadow: snow 1px 0px 2px;
+margin:0;
+padding:0;
+text-transform:uppercase;
 }
 .SubSubtitulos{
 font:1.1em "times new roman";
@@ -236,10 +274,9 @@ padding-bottom:0;
 /* Configuración Parrafos */
 
 .ParrafoNormal{
-display:inline;
 color:yellow;
 font-size:.7em;
-margin:0;
+margin: 0;
 padding:0;
 }
 
@@ -269,7 +306,7 @@ text-decoration:none;
 }
 
 .ParrafoNormalEsquemaCurso{
-color: #333;
+color: snow;
 font-size:1em;
 text-indent:3em;
 text-align:justify;
@@ -299,8 +336,7 @@ margin:0;
 
 .ParrafoCreditos{
 font-family:"times new roman";
-color:black;
-font-size:.5em;
+font-size:1em;
 }
 
 .ParrafoAviso{
@@ -343,8 +379,8 @@ text-transform: uppercase;
 }
 
   .ParrafoFinalPsico{
-  padding-top:1em;
-  margin:0;
+  padding:0;
+  margin:1em 0 0 0;
   font-family: "times new roman"; 
   font-weight:bold;
   font-size: 1em;  
@@ -529,3 +565,13 @@ footer a {
     font-weight:bold;
     color:#126BF0;
 }
+
+
+
+.contenedor-plastico {
+background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;}
