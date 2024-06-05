@@ -1,6 +1,5 @@
 /* Configuración de HTML */
-14F195
-html,body,header,main,footer,nav,div{
+html,body,header,main,footer,nav,div,p{
 box-sizing: border-box; 
 margin:0;
 padding:0;
@@ -15,8 +14,28 @@ background:linear-gradient(#9945FF, #14F195);
 }
 
 @font-face{
+font-family:"Ubuntu";
+src:url("UbuntuMono-Regular.ttf");
+}
+
+@font-face{
+font-family:"Almendra";
+src:url("Almendra-Regular.ttf");
+}
+
+@font-face{
 font-family:"CinzelDecorative-Regular";
 src:url("CinzelDecorative-Regular.ttf");
+}
+
+@font-face{
+font-family:"Nosifer";
+src:url("Nosifer-Regular.ttf");
+}
+
+@font-face{
+font-family:"MetalMania";
+src:url("MetalMania.ttf");
 }
 
 @media(max-width:450px){
@@ -64,6 +83,27 @@ background-color:#282828;
 background-size:16px 16px;
 color:white;
 padding:0;
+}
+
+.contenedor-contacto-carbon{
+background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+}
+
+.contenedor-plastico{
+background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;
 }
 
 .slideshow {
@@ -251,7 +291,7 @@ text-transform:uppercase;
 
 .Titulo-creditos{
 color:black;
-font:2em "times new roman";
+font:2em;
 font-weight:bold;
 text-shadow: snow 1px 0px 2px;
 margin:0;
@@ -259,7 +299,7 @@ padding:0;
 text-transform:uppercase;
 }
 .SubSubtitulos{
-font:1.1em "times new roman";
+font:1.1em;
 font-weight:bold;
 font-style:italic;
 margin:0;
@@ -272,7 +312,7 @@ padding-bottom:0;
 
 .SubtitulosPaginasSecundarias{
 color:#Aff990;
-font:1.2em "times new roman";
+font:1.2em "Almendra";
 font-weight:bold;
 }
 
@@ -318,31 +358,30 @@ font-size:1em;
 text-indent:3em;
 text-align:justify;
 text-justify:distribute-all-lines;
-line-height:1.5em;
-margin-bottom:.3em;
+margin:0;
+padding:0;
 }
 
 .ParrafoCentrado{
-font-family:"times new roman";
 color: White;
-font-size: 1.1em;
+font-size: 1em;
+font-family:"ubuntu";
+font-weight:bold;
 text-align:center;
 text-shadow: 2px -3px 10px black;
 margin:0;
-padding-bottom:1em;
+padding:0;
 }
 
 .ParrafoCentradoNombres{
-background-color:black;
-font-family: "times new roman";
-font-size: 1.1em;
+font-size: 1em;
 text-align:center;
 font-weight:bold;
-margin:0;
+margin:1em 0 1em 0;
+padding:0;
 }
 
 .ParrafoCreditos{
-font-family:"times new roman";
 font-size:1em;
 }
 
@@ -377,15 +416,7 @@ padding:0;
 margin:0;
 }
 
-.ParrafoFinal{
-font-family: "times new roman";
-color: #FFFF00;
-font-size: 1.5em; 
-text-align: center;
-text-transform: uppercase;
-}
-
-  .ParrafoFinalPsico{
+.ParrafoFinalPsico{
   padding:0;
   margin:1em 0 0 0;
   font-family: "times new roman"; 
@@ -463,11 +494,11 @@ text-transform: uppercase;
   .ParrafoPsicoContacto{
   padding:0;
   margin:0;
-  font-family: "times new roman"; 
+  font-family:"MetalMania"; 
   font-weight:bold;
   font-size: 1em;  
   color: hsla(0, 0%, 0%, 1);
-  letter-spacing: 5px;
+  letter-spacing: 7px;
   text-align: center;
   text-transform: uppercase;
   animation: move linear 1000ms infinite;  
@@ -559,6 +590,11 @@ color:#ffffff;
 .estables{
 color:skyblue;
 }
+.motivos{
+font-family:Nosifer;
+}
+
+
 /*Fin Estilos span*/
 
 /* Estilos del pie de página */
@@ -572,13 +608,3 @@ footer a {
     font-weight:bold;
     color:#126BF0;
 }
-
-
-
-.contenedor-plastico {
-background-color: #026873;
-background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
-linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
-background-size: 13px, 29px, 37px, 53px;}
