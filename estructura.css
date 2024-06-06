@@ -204,7 +204,7 @@ padding:0;
 }
 
 .MarcoContacto{
-background:linear-gradient(#8f9ad3, beige, #8f9ad3);
+background:linear-gradient(#14F195, transparent);
 margin:0;
 padding:0;
 border:.1em solid silver;
@@ -249,7 +249,7 @@ li {
 audio{
 margin:0 auto;
 padding:0;
-display:block;
+display:inline-block;
 }
 
 /* Fin Configuración Audio*/
@@ -321,6 +321,7 @@ font-weight:bold;
 /* Configuración Parrafos */
 
 .ParrafoNormal{
+font-family:helvetica;
 color:yellow;
 font-size:.7em;
 margin: 0;
@@ -565,9 +566,6 @@ margin:0;
       -1px 1px 0 hsla(180, 100%, 50%, 1);
   }  
 }
-
-
-
 
 /* Fin configuración Parrafos */
 
