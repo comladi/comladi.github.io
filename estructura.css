@@ -3,6 +3,7 @@ html,body,header,main,footer,nav,div,p{
 box-sizing: border-box; 
 margin:0;
 padding:0;
+font-family:ubuntu;
 }
 
 *,*::before, *::after {
@@ -237,9 +238,9 @@ ul, li {
 li {
     margin-left:3em;
     line-height:1.5;
-    font-size:1em;
-    color:black;
-    padding-bottom:1em;	 		
+    font:1em;
+    color:white;
+    padding-bottom:1em; 		
 }
 
 /* Fin Configuración Listas*/
@@ -298,6 +299,11 @@ margin:0;
 padding:0;
 text-transform:uppercase;
 }
+
+.titulo-creditos-principal{
+text-align:center;
+}
+
 .SubSubtitulos{
 font:1.1em;
 font-weight:bold;
@@ -364,8 +370,8 @@ padding:0;
 }
 
 .ParrafoCentrado{
-color: White;
-font-size: 1em;
+color:white;
+font-size:1.2em;
 font-family:"ubuntu";
 font-weight:bold;
 text-align:center;
