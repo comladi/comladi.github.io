@@ -160,21 +160,6 @@ margin: 2em 0 0 0;
 padding:0;
 }
 
-.temas{
-margin-top:1%;
-margin-left:3%;
-margin-right:3%;
-margin-bottom:0;
-}
-
-.container {
-max-width: 800px;
-margin: 0px auto;
-padding: 1em;
-border-radius: 16px;
-box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
-}
-
 .temas-dos{
 display:flex;
 flex-direction:column;
@@ -226,7 +211,6 @@ background:linear-gradient(transparent, #14F195);
 }
 }
 
-
 /* Fin configuración Estructura */
 
 /* Configuración Listas*/
@@ -268,10 +252,24 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 margin-bottom:.5em;
 padding:0;
 }
+
 .TituloSecundario{
 text-align: center;
 color:#FFFF00;
 text-shadow:7px 3px 7px black,
+3px 2px 2px gold,
+0px 1px 9px yellow,
+-3px 0px 10px green,
+3px -1px 7px gold,
+0px 2px 7px teal,
+-7px 3px 7px gray;
+margin:0;
+padding:0;
+}
+
+.nombreCurso{
+color:#FFFF00;
+text-shadow:7px 3px 7px teal,
 3px 2px 2px gold,
 0px 1px 9px yellow,
 -3px 0px 10px green,
@@ -360,11 +358,12 @@ text-decoration:none;
 }
 
 .ParrafoNormalEsquemaCurso{
-color: snow;
+color:snow;
 font-size:1em;
 text-indent:3em;
 text-align:justify;
 text-justify:distribute-all-lines;
+line-height:1.5;
 margin:0;
 padding:0;
 }
@@ -375,6 +374,8 @@ font-size:1.2em;
 font-family:"ubuntu";
 font-weight:bold;
 text-align:center;
+text-justify:distribute-all-lines;
+line-height:1.5;
 text-shadow: 2px -3px 10px black;
 margin:0;
 padding:0;
@@ -611,4 +612,11 @@ footer a {
     text-decoration: none;
     font-weight:bold;
     color:#126BF0;
+}
+
+.imagen{
+background-image:url("your-image-url.jpg");
+background-repeat:no-repeat;
+background-position:center center;
+background-size:cover;
 }
