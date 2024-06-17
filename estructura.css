@@ -1,18 +1,15 @@
 /* Configuración de HTML */
 html,body,header,main,footer,nav,div,p{
-box-sizing: border-box; 
+box-sizing: border-box;
+font-family:"Montserrat-Regular"; 
 margin:0;
 padding:0;
-font-family:ubuntu;
 }
 
 *,*::before, *::after {
 box-sizing: inherit;
 }
 
-body{
-background:linear-gradient(#9945FF, #14F195);
-}
 
 @font-face{
 font-family:"Ubuntu";
@@ -39,10 +36,22 @@ font-family:"MetalMania";
 src:url("MetalMania.ttf");
 }
 
+@font-face{
+font-family:"Montserrat-Regular";
+src:url("Montserrat-Regular.ttf");
+}
+
 @media(max-width:450px){
 nav li{
 margin:0;
-font-size:.75em;
+font-size:.70em;
+}
+}
+
+@media(min-width:360px){
+nav li{
+margin:0;
+font-size:.70em;
 }
 }
 /* Fin de configuración de HTML*/
@@ -50,8 +59,7 @@ font-size:.75em;
 /* barra de navegación*/
 
 nav {
-    background-color: transparent;
-    margin:1em 0 2em 0;	
+    margin:1em 0 0 0;	
 }
 
 nav ul {
@@ -63,49 +71,15 @@ nav ul {
 
 nav li {
     display: inline;
-    margin:11px;
+    margin:.3em;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    color:#000; 
+    font:1em ubuntu bold;	
     }
 /* Configuración Estructura*/
-
-.patrones{
-margin:0 auto;
-background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
-color:white;
-padding:0;
-}
-
-.contenedor-contacto-carbon{
-background:
-linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-background-color: #131313;
-background-size: 20px 20px;
-}
-
-.contenedor-plastico{
-background-color: #026873;
-background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
-linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
-background-size: 13px, 29px, 37px, 53px;
-}
 
 .slideshow {
     position: relative;
@@ -141,7 +115,7 @@ height:35vh;
     position: absolute;
     opacity: 0;
     transition: opacity 3s ease-in-out;
-border-radius:5em;	
+    border-radius:5em;	
   }
 
 .slideshow img.active {
@@ -160,10 +134,10 @@ margin: 2em 0 0 0;
 padding:0;
 }
 
-.temas-dos{
+.contenedor{
 display:flex;
 flex-direction:column;
-margin-top:1%;
+margin-top:3em;
 margin-left:3%;
 margin-right:3%;
 margin-bottom:0;
@@ -171,26 +145,26 @@ justify-content:center;
 align-items:center;
 }
 
-.container-dos {
+.contenido{
 padding: 1em;
 border-radius: 16px;
 box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
-margin-bottom:3em;
+margin:0;
 }
 
 .contenedor-creditos{
 background-color:silver;
 }
 
-.MarcoContactoContenedor{
+.contenedor-contacto{
 display:flex;
 justify-content:center;
 margin:1em 0 1em 0;
 padding:0;
 }
 
-.MarcoContacto{
-background:linear-gradient(#14F195, transparent);
+.contacto{
+background-image:linear-gradient(#126BF0, #000);
 margin:0;
 padding:0;
 border:.1em solid silver;
@@ -204,10 +178,10 @@ animation-iteration-count:infinite;
 
 @keyframes fondo{
 from{
-background:linear-gradient(#14F195, transparent);
+background-image:linear-gradient(#000, #126BF0);
 }
 to{
-background:linear-gradient(transparent, #14F195);
+background-image:linear-gradient(#126BF0, #000);
 }
 }
 
@@ -223,7 +197,7 @@ li {
     margin-left:3em;
     line-height:1.5;
     font:1em;
-    color:white;
+    color:black;
     padding-bottom:1em; 		
 }
 
@@ -242,57 +216,63 @@ display:inline-block;
 
 /* Configuración Titulos */
 
-.TituloPrincipal{
+.titulo-principal{
+background:#000;
+background-image:url("your-image-url.jpg");
+background-repeat:no-repeat;
+background-position:center;
+background-size:7em;
 text-align: center;
-color: #F7E7CE;
-font-size: 1.8em;
-font-weight: bold;
+color:#F7E7CE;
+font-size: 2em;
 font-family:"CinzelDecorative-Regular";
-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-margin-bottom:.5em;
-padding:0;
+text-shadow:
+0 1px 0 #ccc,
+0 2px 0 #c9c9c9,
+0 3px 0 #bbb,
+0 4px 0 #b9b9b9,
+0 5px 0 #aaa,
+0 6px 1px rgba(0,0,0,.1),
+0 0 5px rgba(0,0,0,.1),
+0 1px 3px rgba(0,0,0,.3),
+0 3px 5px rgba(0,0,0,.2),
+0 5px 10px rgba(0,0,0,.25),
+0 10px 10px rgba(0,0,0,.2),
+0 20px 20px rgba(0,0,0,.15);
+margin:0;
+padding:1em;
 }
 
-.TituloSecundario{
-text-align: center;
+.titulo-contacto{
+text-align:center;
 color:#FFFF00;
-text-shadow:7px 3px 7px black,
-3px 2px 2px gold,
-0px 1px 9px yellow,
--3px 0px 10px green,
-3px -1px 7px gold,
-0px 2px 7px teal,
--7px 3px 7px gray;
+text-shadow:0px -3px 7px yellow,
+0px -2px 2px #111,
+1px 0px 3px gold,
+-2px 0px 0px #FFFF00,
+1px -1px 7px pink,
+0px 1px 3px lightyellow,
+1px -3px 0px #FFFF00;
 margin:0;
 padding:0;
 }
 
-.nombreCurso{
-color:#FFFF00;
-text-shadow:7px 3px 7px teal,
-3px 2px 2px gold,
-0px 1px 9px yellow,
--3px 0px 10px green,
-3px -1px 7px gold,
-0px 2px 7px teal,
--7px 3px 7px gray;
-margin:0;
-padding:0;
-}
-
-.TituloPaginasSecundarias{
-color:yellow;
+.nombre-curso{
+//color:#B8860B;
+color:#D3B25B;
 font:1.5em "CinzelDecorative-Regular";
 text-align:center;
 font-weight:bold;
 text-transform:uppercase;
+margin:0;
+padding:0;
 }
 
-.Titulo-creditos{
+.titulo-creditos{
 color:black;
 font:2em;
 font-weight:bold;
-text-shadow: snow 1px 0px 2px;
+text-shadow: black 1px 0px 2px;
 margin:0;
 padding:0;
 text-transform:uppercase;
@@ -302,7 +282,13 @@ text-transform:uppercase;
 text-align:center;
 }
 
-.SubSubtitulos{
+.subtitulos{
+color:#126BF0;
+font:1.2em "Almendra";
+font-weight:bold;
+}
+
+.sub-subtitulos{
 font:1.1em;
 font-weight:bold;
 font-style:italic;
@@ -310,29 +296,17 @@ margin:0;
 padding:0 0 1em 0;
 }
 
-.SubSubtitulos:nth-last{
-padding-bottom:0;
-}
-
-.SubtitulosPaginasSecundarias{
-color:#Aff990;
-font:1.2em "Almendra";
-font-weight:bold;
-}
-
 /* Fin configuración Titulos  */
 
 /* Configuración Parrafos */
 
-.ParrafoNormal{
-font-family:helvetica;
-color:yellow;
-font-size:.7em;
+.parrafo-audios{
+font-size:.9em;
 margin: 0;
 padding:0;
 }
 
-.ParrafoContacto{
+.parrafo-contacto{
 margin:0;
 padding:.2em;
 color:lightgreen;
@@ -340,25 +314,24 @@ font-size: 1.2em;
 font-weight:bold;
 text-align:center;
 text-shadow:
--1px 1px 1px teal,
-0px 2px 2px #9945FF,
-1px 0px 7px gray,
--2px 1px 1px black;
+1px 1px 1px lightgreen,
+-1px 1px 1px snow,
+1px 0px 1px #9945FF,
+0px 1px 0px #32de38;
 text-justify:inter-character;
 letter-spacing:1px;
 }
 
-.MarcoContacto .ParrafoContacto a{
+.contenedor-contacto .parrafo-contacto a{
 color:snow;
 text-decoration:underline snow;
 }
 
-.MarcoContacto .ParrafoContacto:nth-of-type(2) a{
+.contacto .parrafo-contacto:nth-of-type(2) a{
 text-decoration:none;
 }
 
-.ParrafoNormalEsquemaCurso{
-color:snow;
+.parrafo-sangrado{
 font-size:1em;
 text-indent:3em;
 text-align:justify;
@@ -368,20 +341,22 @@ margin:0;
 padding:0;
 }
 
-.ParrafoCentrado{
-color:white;
+.parrafo-centrado{
 font-size:1.2em;
-font-family:"ubuntu";
 font-weight:bold;
 text-align:center;
 text-justify:distribute-all-lines;
 line-height:1.5;
-text-shadow: 2px -3px 10px black;
 margin:0;
 padding:0;
 }
 
-.ParrafoCentradoNombres{
+.leyendas{
+color:#32de38;
+margin-bottom:1em;
+}
+
+.nombres-cripto{
 font-size: 1em;
 text-align:center;
 font-weight:bold;
@@ -389,51 +364,55 @@ margin:1em 0 1em 0;
 padding:0;
 }
 
-.ParrafoCreditos{
+.parrafo-normal{
+font-size: 1em;
+text-align:center;
+margin:0;
+padding:0;
+}
+
+.parrafo-creditos{
 font-size:1em;
 }
 
-.ParrafoAviso{
-color:black;
-font-size:1.2em;
+.parrafo-avisos{
+font-size:1em;
 padding-left:1em;
 padding-right:1em;
 }
 
 .anuncio{
-font-family:tahoma;
-font-size:100%;
 color:red;
 text-align:center;
+letter-spacing:.1em;
 font-weight:bold;
 text-shadow: 
-1px 1px 1px darkred,
-1px 1px 1px teal,
-1px 1px 1px blue,
-1px 1px 2px black,
-1px 1px 3px gray,
-1px 1px 4px black,
-1px 1px 1px gray,
-1px 1px 2px silver,
-1px 1px 2px black,
-1px 1px 3px silver,
--1px 0px 3px gold,
-1px 1px 7px teal,
-0px 0px 11px gray;
+1px 1px 0px darkred,
+-1px 0px 1px crimson,
+0px -1px 0px crimson,
+1px 0px 1px darkred,
+1px 1px 0px red,
+0px 1px 0px crimson,
+1px 0px 0px red,
+1px 1px 0px darkred,
+0px -1px 0px darkred,
+1px 0px 1px red,
+-1px 0px 1px darkred,
+0px -1px 0px red,
+0px 0px 1px red;
 padding:0;
 margin:0;
 }
 
-.ParrafoFinalPsico{
+.parrafo-psico{
   padding:0;
   margin:1em 0 0 0;
-  font-family: "times new roman"; 
   font-weight:bold;
-  font-size: 1em;  
+  font-size:1em;  
   color: hsla(0, 0%, 0%, 1);
   letter-spacing: 5px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform:uppercase;
   animation: psico linear 1000ms infinite;  
 }
 
@@ -590,7 +569,7 @@ color:#8f9ad3;
 }
 
 .xrp{
-color:#ffffff;
+color:#000;
 }
 .estables{
 color:skyblue;
@@ -611,12 +590,5 @@ footer {
 footer a {
     text-decoration: none;
     font-weight:bold;
-    color:#126BF0;
-}
-
-.imagen{
-background-image:url("your-image-url.jpg");
-background-repeat:no-repeat;
-background-position:center center;
-background-size:cover;
+    color:#999;
 }
