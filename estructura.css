@@ -1,13 +1,14 @@
 /* Configuración de HTML */
-html,body,header,main,footer,nav,div,p{
-box-sizing: border-box;
+html,body,header,main,footer,nav,div,ul,li,p,a,*{
 font-family:"Montserrat-Regular"; 
 margin:0;
 padding:0;
+border:0;
+box-sizing: border-box;
 }
 
-*,*::before, *::after {
-box-sizing: inherit;
+*,*::before, *::after{
+box-sizing:inherit;
 }
 
 @font-face{
@@ -37,42 +38,53 @@ src:url("Montserrat-Regular.ttf");
 
 @media(max-width:450px){
 nav li{
-margin:0;
-font-size:.70em;
+font-size:.7em;
 }
 }
 
-@media(min-width:360px){
+@media(max-width:375px){
 nav li{
-margin:0;
-font-size:.70em;
+font-size:.65em;
+margin:0 .1em 0 0;
 }
 }
+
+@media(max-width:360px){
+nav li{
+font-size:.46em;
+margin:0 .1em 0 0;
+}
+}
+
+@media(max-width:300px){
+nav li{
+font-size:.46em;
+margin:0 .1em 0 0;
+}
+}
+
 /* Fin de configuración de HTML*/
 
 /* barra de navegación*/
 
-nav {
+nav ul{
     margin:1em 0 0 0;	
-}
-
-nav ul {
+    display:flex;	
     list-style: none;
-    padding:0;
-    margin:0;
-    text-align:center;
+    justify-content:center;
 }
 
 nav li {
-    display:inline;
-    margin:0;
+    margin:0 5% 0 0;
+    padding:0;
 }
 
-nav a {
-    text-decoration: none;
-    color:#000; 
-    font:1em ubuntu bold;	
-    }
+nav li:last-child {
+    margin:0;
+    padding:0;
+}
+
+
 /* Configuración Estructura*/
 
 .slideshow {
@@ -158,7 +170,8 @@ padding:0;
 }
 
 .contacto{
-background-image:linear-gradient(#126BF0, #000);
+//background-image:linear-gradient(#126BF0, #000);
+background-image:linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
 margin:0;
 padding:0;
 border:.1em solid silver;
@@ -252,7 +265,6 @@ padding:0;
 }
 
 .nombre-curso{
-//color:#B8860B;
 color:#D3B25B;
 font:1.5em "CinzelDecorative-Regular";
 text-align:center;
@@ -260,6 +272,11 @@ font-weight:bold;
 text-transform:uppercase;
 margin:0;
 padding:0;
+}
+
+.nombre-curso-dos{
+color:#D3B25B;
+font-weight:bold;
 }
 
 .titulo-creditos{
@@ -586,7 +603,9 @@ color:snow;
 background:hsla(300, 80%, 40%, 90%);
 letter-spacing:2px;
 padding:5px;
+margin:0 0 0 0;
 cursor:pointer;
+font:1em tahoma;
 }
 
 .boton:hover{
