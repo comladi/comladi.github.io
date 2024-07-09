@@ -1,15 +1,19 @@
-/* Configuración de HTML */
-html,body,header,main,footer,nav,div,ul,li,p,a,*{
-font-family:"Montserrat-Regular"; 
-margin:0;
+	/*Configuración html */
+
+html,body,ol,ul,li,a,*{
+margin:0 auto;
 padding:0;
+font:1em "Montserrat-Regular";
+color:#000;
 border:0;
-box-sizing: border-box;
+box-sizing:content-box;
 }
 
-*,*::before, *::after{
-box-sizing:inherit;
+*, *::after, *::before {
+    box-sizing: inherit;
 }
+
+	/*Fin Configuración html */
 
 @font-face{
 font-family:"Almendra";
@@ -36,56 +40,84 @@ font-family:"Montserrat-Regular";
 src:url("Montserrat-Regular.ttf");
 }
 
-@media(max-width:450px){
-nav li{
-font-size:.7em;
-}
-}
-
-@media(max-width:375px){
-nav li{
-font-size:.65em;
-margin:0 .1em 0 0;
-}
-}
-
-@media(max-width:360px){
-nav li{
-font-size:.46em;
-margin:0 .1em 0 0;
-}
-}
-
-@media(max-width:300px){
-nav li{
-font-size:.46em;
-margin:0 .1em 0 0;
-}
-}
 
 /* Fin de configuración de HTML*/
 
 /* barra de navegación*/
 
-nav ul{
-    margin:1em 0 0 0;	
-    display:flex;	
-    list-style: none;
-    justify-content:center;
+.lista-menu{
+list-style:none;
+display:flex;
+justify-content:center;
+margin:2em 0 2em 0;
 }
 
-nav li {
-    margin:0 5% 0 0;
-    padding:0;
+
+/* Botones*/
+
+.boton{
+border-radius:11px;
+text-decoration:none;
+box-shadow:1px 1px 0px silver;
+color:snow;
+background:hsla(300, 80%, 40%, 90%);
+letter-spacing:2px;
+padding:5px;
+margin:0 0 0 0;
+cursor:pointer;
+font:1em tahoma;
 }
 
-nav li:last-child {
-    margin:0;
-    padding:0;
+@media(max-width:300px){
+.boton{
+padding:4px;
 }
+}
+
+@media(max-width:350px){
+.boton{
+font:.8em tahoma;
+}
+}
+
+.boton:hover{
+background:hsla(300, 80%, 40%, 70%);
+color:yellow;
+box-shadow:0px 0px 0px snow;
+}
+
+/*Fin Botones*/
+
+/* barra de navegación*/
 
 
 /* Configuración Estructura*/
+
+.contenedor{
+display:flex;
+flex-direction:column;
+margin-top:3em;
+margin-left:3%;
+margin-right:3%;
+margin-bottom:0;
+justify-content:center;
+align-items:center;
+}
+
+.contenido{
+padding:1em;
+border-radius: 16px;
+box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+margin:0;
+}
+
+.contenido ul{
+padding-left:3em;
+}
+
+.contenido ul > li{
+padding-bottom:1em;
+}
 
 .slideshow {
     position: relative;
@@ -140,24 +172,6 @@ margin: 2em 0 0 0;
 padding:0;
 }
 
-.contenedor{
-display:flex;
-flex-direction:column;
-margin-top:3em;
-margin-left:3%;
-margin-right:3%;
-margin-bottom:0;
-justify-content:center;
-align-items:center;
-}
-
-.contenido{
-padding:1em;
-border-radius: 16px;
-box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
-margin:0;
-}
-
 .contenedor-creditos{
 background-color:silver;
 }
@@ -196,17 +210,6 @@ background-image:linear-gradient(#126BF0, #000);
 
 /* Configuración Listas*/
 
-ul, li {
-    position:relative;
-    margin:0;
-    padding:0;
-    }
-li {
-    margin-left:3em;
-    line-height:1.5;
-    font:1em;
-    padding-bottom:1em; 		
-}
 
 /* Fin Configuración Listas*/
 
@@ -348,7 +351,7 @@ text-decoration:none;
 font-size:1em;
 text-indent:3em;
 text-align:justify;
-text-justify:distribute-all-lines;
+text-justify:inter-character;
 line-height:1.5;
 margin:0;
 padding:0;
@@ -358,7 +361,7 @@ padding:0;
 font-size:1.2em;
 font-weight:bold;
 text-align:center;
-text-justify:distribute-all-lines;
+text-justify:inter-character;
 line-height:1.5;
 margin:0;
 padding:0;
@@ -593,28 +596,7 @@ font-family:Nosifer;
 
 /*Fin Estilos span*/
 
-/* Botones*/
 
-.boton{
-border-radius:11px;
-text-decoration:none;
-box-shadow:1px 1px 0px silver;
-color:snow;
-background:hsla(300, 80%, 40%, 90%);
-letter-spacing:2px;
-padding:5px;
-margin:0 0 0 0;
-cursor:pointer;
-font:1em tahoma;
-}
-
-.boton:hover{
-background:hsla(300, 80%, 40%, 70%);
-color:yellow;
-box-shadow:0px 0px 0px snow;
-}
-
-/*Fin Botones*/
 
 /* Estilos del pie de página */
 footer {
