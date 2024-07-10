@@ -34,7 +34,7 @@ src:url("MetalMania.ttf");
 }
 
 @font-face{
-font-family:"Montserrat-Regular";
+font-family:"Montserrat";
 src:url("Montserrat-Regular.ttf");
 }
 
@@ -114,6 +114,7 @@ padding-left:3em;
 
 .contenido ul > li{
 padding-bottom:1em;
+font:1em Montserrat;
 }
 
 .slideshow {
@@ -123,6 +124,7 @@ padding-bottom:1em;
     display:flex; 
     overflow:hidden;
     justify-content:center;
+    align-items:center;	
     object-fit:cover;
 }
 
@@ -345,7 +347,7 @@ text-decoration:none;
 }
 
 .parrafo-sangrado{
-font-size:1em;
+font:1em Montserrat;
 text-indent:3em;
 text-align:justify;
 text-justify:inter-character;
@@ -355,7 +357,7 @@ padding:0;
 }
 
 .parrafo-centrado{
-font-size:1.2em;
+font-size:1em Montserrat;
 font-weight:bold;
 text-align:center;
 text-justify:inter-character;
@@ -369,7 +371,7 @@ color:#32de38;
 }
 
 .nombres-cripto{
-font-size: 1em;
+font-size:1em Montserrat;
 text-align:center;
 font-weight:bold;
 margin:1em 0 1em 0;
@@ -377,7 +379,7 @@ padding:0;
 }
 
 .parrafo-normal{
-font-size: 1em;
+font:1em Montserrat;
 text-align:center;
 margin:0;
 padding:0;
@@ -418,10 +420,10 @@ margin:1em 0 0 0;
 
 .parrafo-psico{
   padding:0;
-  margin:1em 0 0 0;
+  margin:0;
   font-weight:bold;
   font-size:1em;  
-  color: hsla(0, 0%, 0%, 1);
+  color:hsla(0, 0%, 0%, 1);
   letter-spacing: 5px;
   text-align: center;
   text-transform:uppercase;
@@ -586,8 +588,51 @@ color:#444;
 .estables{
 color:steelblue;
 }
+
 .motivos{
 font-family:Nosifer;
+}
+.tool-tips{
+cursor:pointer;
+}
+
+.tool-tips-muestra{
+display:none;
+color:snow;
+position:relative;
+padding:1em;
+margin:1%;
+background-image:linear-gradient(hsla(50, 10%, 10%, 50%),hsla(20, 50%, 10%, 100%));
+font:.8em "times new roman";
+border:2px solid gray;
+box-shadow:1px -1px 2px silver;
+opacy:.5;
+}
+
+.tool-tips:hover .tool-tips-muestra{
+display:grid;
+}
+
+.tool-tips-cripto{
+cursor:pointer;
+}
+
+.tool-tips-cripto-muestra{
+display:none;
+color:snow;
+position:relative;
+padding:1em;
+margin:1%;
+background-image:linear-gradient(hsla(120, 50%, 30%, 50%),hsla(160, 50%, 20%, 100%));
+font:1em "times new roman";
+font-style:italic;
+border:2px groove lightgreen;
+box-shadow:3px 2px 0 black;
+opacy:.5;
+}
+
+.tool-tips-cripto:hover .tool-tips-cripto-muestra{
+display:grid;
 }
 
 
