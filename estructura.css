@@ -404,17 +404,17 @@ font-weight:bold;
 text-shadow: 
 1px 1px 0px darkred,
 -1px 0px 1px crimson,
-0px -1px 0px crimson,
+0px -1px 0px red,
 1px 0px 1px darkred,
 1px 1px 0px red,
 0px 1px 0px crimson,
 1px 0px 0px red,
 1px 1px 0px darkred,
 0px -1px 0px darkred,
-1px 0px 1px red,
--1px 0px 1px darkred,
-0px -1px 0px red,
-0px 0px 1px red;
+1px 0px 1px darkred,
+-1px 0px 1px silver,
+0px -1px 0px gray,
+0px 0px 1px black;
 padding:0;
 margin:1em 0 0 0;
 }
