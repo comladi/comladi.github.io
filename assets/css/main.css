@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative");
 @import url("https://fonts.googleapis.com/css?family=Nosifer");
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2188,7 +2189,7 @@ margin:1em 0 0 0;
   .parrafo-psico-contacto{
   padding:0;
   margin:1em 0 0 0;
-  font-family:"MetalMania"; 
+  font-family:"Metal Mania"; 
   font-weight:bold;
   font-size: 1em;  
   color: hsla(0, 0%, 0%, 1);
@@ -2271,4 +2272,69 @@ padding:0;
 text-align:center;
 margin:0;
 padding:0;
+}
+
+.titulo-contacto{
+text-align:center;
+color:#FFFF00;
+text-shadow:0px -3px 7px yellow,
+0px -2px 2px #111,
+1px 0px 3px gold,
+-2px 0px 0px #FFFF00,
+1px -1px 7px pink,
+0px 1px 3px lightyellow,
+1px -3px 0px #FFFF00;
+margin:0;
+padding:0;
+}
+
+.contenedor-contacto{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+margin:1em 0 1em 0;
+padding:0;
+}
+
+.contacto{
+flex:1 1 auto;
+background-image:linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
+margin:0;
+padding:0;
+border:.1em solid silver;
+border-radius:1.5em;
+box-shadow:2px 1px 8px 1px rgba(32,32,32,0.7);
+animation-name:fondo;
+animation-duration:1s;
+animation-direction:alternate;
+animation-iteration-count:infinite;
+}
+
+@keyframes fondo{
+from{
+background-image:linear-gradient(#000, #126BF0);
+}
+to{
+background-image:linear-gradient(#126BF0, #000);
+}
+}
+
+.parrafo-contacto{
+margin:0;
+padding:.2em;
+color:lightgreen;
+font-size: 1em;
+font-weight:bold;
+text-align:center;
+text-justify:inter-character;
+letter-spacing:.5px;
+}
+
+.contenedor-contacto .parrafo-contacto a{
+color:snow;
+text-decoration:underline snow;
+}
+
+.contacto .parrafo-contacto:nth-of-type(2) a{
+text-decoration:none;
 }
