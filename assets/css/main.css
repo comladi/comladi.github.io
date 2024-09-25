@@ -143,7 +143,14 @@ input, select, textarea {
 
 	ul {
 		padding: 0.25em 0 0 0;
+	        display: none;
 	}
+
+	 li {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+        }
 
 	a {
 		color: #5d93a2;
@@ -2338,3 +2345,15 @@ text-decoration:underline snow;
 .contacto .parrafo-contacto:nth-of-type(2) a{
 text-decoration:none;
 }
+
+.active + ul {
+            display: block;
+        }
+
+.toggle{
+cursor: pointer;
+}
+
+ .icon {
+            float: right;
+        }
