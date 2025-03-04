@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario: La Tecnología está cambiando el Dinero y la Economía</title>
+    <link rel="stylesheet" href="styles-copywriting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <h1>La tecnología está cambiando el dinero y la economía</h1>
+    
+    <form id="questionnaire">
+        <div id="q1">
+            <p>¿Alguna vez te has preguntado cómo la tecnología, el dinero y la economía han evolucionado para llegar al punto en el que estamos hoy?</p>
+            <label><input type="radio" name="q1" value="si" onchange="showNext('q2')"> Sí</label><br>
+            <label><input type="radio" name="q1" value="no" onchange="showNext('q2')"> No</label>
+        </div>
+
+        <div id="q2" class="hidden">
+            <p>¿Te gustaría descubrir cómo las tecnologías emergentes están redefiniendo nuestra relación con el dinero?</p>
+            <label><input type="radio" name="q2" value="si" onchange="showPage()"> Sí</label><br>
+            <label><input type="radio" name="q2" value="tal vez" onchange="showNext('q3')"> Tal vez</label>
+        </div>
+
+        <div id="q3" class="hidden">
+            <p>¿Sabías que existen tecnologías que permiten realizar transacciones sin intermediarios?</p>
+            <label><input type="radio" name="q3" value="si" onchange="showNext('q4')"> Sí</label><br>
+            <label><input type="radio" name="q3" value="no" onchange="showDescription('description1')"> No</label>
+        </div>
+
+        <div id="description1" class="hidden">
+            <p>El conjunto clave de la nueva tecnología es DARQ: tecnología de registro distribuido (DLT), inteligencia artificial (AI), realidad extendida (XR) y computación cuántica.</p>
+            <label><input type="radio" name="description1" value="interesante" onchange="showNext('q4')"> Suena interesante</label>
+        </div>
+
+        <div id="q4" class="hidden">
+            <p>¿Conoces el término DLT (Tecnología de Registro Distribuido)?</p>
+            <label><input type="radio" name="q4" value="si" onchange="showNext('q5')"> Sí, tengo conocimiento</label><br>
+            <label><input type="radio" name="q4" value="no" onchange="showDescription('description2')"> No estoy familiarizado</label>
+        </div>
+
+        <div id="description2" class="hidden">
+            <p>La DLT y blockchain son tecnologías que impactan industrias como finanzas, salud, y logística.</p>
+            <label><input type="radio" name="description2" value="quieroAprender" onchange="showNext('q5')"> Quiero aprender</label>
+        </div>
+
+        <div id="q5" class="hidden">
+            <p>¿Te gustaría aprender más sobre estos temas a través de un curso especializado?</p>
+            <label><input type="radio" name="q5" value="si" onchange="showContactOptions()"> Sí, quiero participar</label><br>
+            <label><input type="radio" name="q5" value="tal vez" onchange="showNext('q6')"> Tal vez</label>
+        </div>
+
+        <div id="q6" class="hidden">
+            <p>¿Has oído hablar de Bitcoin, Altcoins, monedas estables o monedas digitales de bancos centrales (CBDC)?</p>
+            <label><input type="radio" name="q6" value="si" onchange="showNext('q7')"> Sí</label><br>
+            <label><input type="radio" name="q6" value="no" onchange="showPage()"> No, pero quiero aprender</label>
+        </div>
+
+        <div id="q7" class="hidden">
+            <p>¿Qué piensas sobre el impacto de las criptomonedas en la economía actual?</p>
+            <label><input type="radio" name="q7" value="futuro" onchange="showNext('q8')"> Creo que son el futuro</label><br>
+            <label><input type="radio" name="q7" value="tal vez" onchange="showPage()"> Tal vez sea bueno comenzar a aprender</label>
+        </div>
+
+        <div id="q8" class="hidden">
+            <p>Si ya conoces estos temas. ¿Te gustaría aprender más?</p>
+            <label><input type="radio" name="q8" value="si" onchange="showContactOptions()"> Sí, quiero aprender más</label><br>
+            <label><input type="radio" name="q8" value="tal vez" onchange="showPage()"> Tal vez, muéstrame un curso</label>
+        </div>
+
+       <div id="contactOptions" class="hidden">
+            <h2>Opciones de contacto</h2>
+            <p>¿Cómo prefieres comunicarte con nosotros?</p>
+            <a href="https://x.com" target="_blank" class="contact-button">
+                <img src="x.png" alt="X Icono" class="icono">
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" class="contact-button">
+                <img src="whatsapp.png" alt="Icono" class="icono">
+            </a>
+            <a href="tel:+1234567890" class="contact-button">
+                <i class="fas fa-phone"> </i>
+            </a>
+        </div>
+    </form>
+    <div id="finalMessage" class="hidden">
+        <p>¡Puedes conocer más sobre el curso especializado y darte la oportunidad de ganar una clase gratuita!</p>
+        <p>¡Visítanos en <a href="https://cursocripto.com.mx">este enlace</a> o escríbenos a <a href="mailto:ventas@cursocripto.com.mx">ventas@cursocripto.com.mx</a> para más detalles!</p>
+
+<div class="copywriting">
+    <h1>¿Quieres aprender algo nuevo?</h1>
+    <h2>Actualiza tus conocimientos sobre criptomonedas y el futuro del dinero.</h2>
+</div>
+
+<section>
+    <h3>¿Cómo funciona?</h3>
+    <p>Nuestro enfoque es claro y visual, diseñado para ayudarte a descubrir y unificar lo que realmente necesitas para avanzar en este apasionante mundo.</p>
+</section>
+
+<section>
+    <h3>Regístrate ahora</h3>
+    <p>Obtén información rápida y práctica que te permitirá dejar de adivinar y comenzar a entender.</p>
+    <a href="https://wa.me/1234567890" target="_blank" class="cta">¡Regístrate ahora!</a>
+</section>
+
+<section>
+    <p>No esperes más. ¡La oportunidad de aprender y crecer está a solo un clic de distancia!</p>
+    <p>Consigue un descuento exclusivo y una consulta gratuita.</p>
+</section>
+
+<section>
+    <h3>"Criptomonedas al Descubierto: Comprende, Evalúa y Aplica."</h3>
+    <p>Tu confianza es nuestra prioridad.</p>
+</section>
+
+<footer>
+    <p>Tu próximo gran proyecto comienza aquí. ¡Inscríbete ahora!</p>
+    <a href="https://wa.me/1234567890" target="_blank" class="cta">¡Inscríbete ya!</a>
+</footer>
+
+
+
+    </div>
+
+    <script src="scriptcopy.js"></script>
+</body>
+</html>
