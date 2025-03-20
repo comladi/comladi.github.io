@@ -304,3 +304,24 @@ copywriting-dos {
         .btn:hover {
             background-color: #c0392b; /* Rojo oscuro */
         }
+
+.contact-button {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.icono {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.qr-telefono {
+    margin-top: 10px;
+    text-align:center;
+}
+
+.qr-telefono, img{
+    text-align:center;
+}

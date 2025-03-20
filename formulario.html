@@ -69,40 +69,44 @@
             <label><input type="radio" name="q8" value="tal vez" onchange="showPage()"> Tal vez, muéstrame un curso</label>
         </div>
 
-       <div id="contactOptions" class="hidden">
+        <div id="contactOptions" class="hidden">
             <h2>Opciones de contacto</h2>
             <p>¿Cómo prefieres comunicarte con nosotros?</p>
-            <a href="https://x.com" target="_blank" class="contact-button">
+            <a href="https://x.com/CriptoyMas" target="_blank" class="contact-button">
                 <img src="images/x.png" alt="X Icono" class="icono">
             </a>
             <a href="https://wa.me/1234567890" target="_blank" class="contact-button">
                 <img src="images/whatsapp.png" alt="Whatsapp Icono" class="icono">
             </a>
-            <a href="tel:+5649282704" class="contact-button">
-		<img src="images/llamada.png" alt="Teléfono Icono" class="icono">                
+            <a href="tel:+5649282704" class="contact-button telefono-link" id="telefono-link">
+                <img src="images/llamada.png" alt="Teléfono Icono" class="icono">
             </a>
+            <div class="qr-telefono" id="qr-telefono" style="display: none;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=tel:+5649282704" alt="QR Teléfono">
+            </div>
         </div>
     </form>
+
     <div id="finalMessage" class="hidden">
         <p>¡Visítanos en <a href="beneficios.html">este enlace</a> o escríbenos a <a href="mailto:ventas@cursocripto.com.mx">ventas@cursocripto.com.mx</a> para más detalles!</p>
 
-<div class="copywriting">
-    <h1>¿Quieres aprender algo nuevo?</h1>
-    <h2>Actualiza tus conocimientos sobre criptomonedas y el futuro del dinero.</h2>
-</div>
+        <div class="copywriting">
+            <h1>¿Quieres aprender algo nuevo?</h1>
+            <h2>Actualiza tus conocimientos sobre criptomonedas y el futuro del dinero.</h2>
+        </div>
 
-<section>
-    <h3>¿Cómo funciona?</h3>
-    <p>Nuestro enfoque es claro y visual, diseñado para ayudarte a descubrir y unificar lo que realmente necesitas para avanzar en este apasionante mundo.</p>
-    <p>Obtén información rápida y práctica que te permitirá dejar de adivinar y comenzar a entender.</p>
-    <p>No esperes más. ¡La oportunidad de aprender y crecer está a solo un clic de distancia!</p>
-</section>
+        <section>
+            <h3>¿Cómo funciona?</h3>
+            <p>Nuestro enfoque es claro y visual, diseñado para ayudarte a descubrir y unificar lo que realmente necesitas para avanzar en este apasionante mundo.</p>
+            <p>Obtén información rápida y práctica que te permitirá dejar de adivinar y comenzar a entender.</p>
+            <p>No esperes más. ¡La oportunidad de aprender y crecer está a solo un clic de distancia!</p>
+        </section>
 
-<footer>
-    <h3>"Tu próximo gran proyecto comienza aquí: Comprende, Evalúa y Aplica."</h3>
-    <p>Consigue un descuento exclusivo y una consulta gratuita.</p>
-    <a href="contacto.html" class="cta">¡Inscríbete ya!</a>
-</footer>
+        <footer>
+            <h3>"Tu próximo gran proyecto comienza aquí: Comprende, Evalúa y Aplica."</h3>
+            <p>Consigue un descuento exclusivo y una consulta gratuita.</p>
+            <a href="contacto.html" class="cta">¡Inscríbete ya!</a>
+        </footer>
     </div>
 
     <script src="assets/js/scriptcopy.js"></script>

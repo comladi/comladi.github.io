@@ -8,13 +8,7 @@ function showPage() {
     const elements = document.querySelectorAll('#questionnaire > div');
     elements.forEach(el => el.classList.add('hidden'));
     document.getElementById('finalMessage').classList.remove('hidden');
-    document.getElementById('questionnaire').classList.add('hidden'); // Ocultar el formulario
-}
-
-function showContactOptions() {
-    const elements = document.querySelectorAll('#questionnaire > div');
-    elements.forEach(el => el.classList.add('hidden'));
-    document.getElementById('contactOptions').classList.remove('hidden');
+    document.getElementById('questionnaire').classList.add('hidden');
 }
 
 function showDescription(descriptionId) {
@@ -23,42 +17,37 @@ function showDescription(descriptionId) {
     document.getElementById(descriptionId).classList.remove('hidden');
 }
 
+function showContactOptions() {
+    const elements = document.querySelectorAll('#questionnaire > div');
+    elements.forEach(el => el.classList.add('hidden'));
+    document.getElementById('contactOptions').classList.remove('hidden');
+    setupTelefonoLink(); // Configurar el evento del teléfono cuando se muestra
+}
 
+// Configurar el comportamiento del ícono del teléfono
+function setupTelefonoLink() {
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
 
+    const telefonoLink = document.getElementById('telefono-link');
+    const qrContainer = document.getElementById('qr-telefono');
 
-        const blocks = document.querySelectorAll('.block');
-        let currentBlock = 0;
+    if (!telefonoLink || !qrContainer) {
+        console.error('No se encontraron los elementos telefono-link o qr-telefono');
+        return;
+    }
 
-        // Función para mostrar el bloque actual
-        function showBlock(index) {
-            blocks.forEach((block, i) => {
-                block.classList.remove('visible');
-                block.style.display = 'none'; // Oculta todos los bloques
-                if (i === index) {
-                    block.classList.add('visible');
-                    block.style.display = 'block'; // Muestra el bloque actual
-                }
-            });
+    telefonoLink.addEventListener('click', function(event) {
+        if (!isMobileDevice()) {
+            event.preventDefault();
+            qrContainer.style.display = 'block';
+            console.log('Mostrando QR en dispositivo no móvil');
+        } else {
+            console.log('Abriendo marcación en móvil');
         }
+    });
+}
 
-        // Función para calcular el tiempo de lectura
-        function calculateReadingTime(text) {
-            const words = text.split(' ').length;
-            const readingTimeInMinutes = Math.ceil(words / 300); // 300 palabras por minuto
-            return readingTimeInMinutes * 2500; // Tiempo en milisegundos
-        }
-
-        // Función para manejar la presentación
-        function startPresentation() {
-            const blockText = blocks[currentBlock].innerText; // Texto del bloque actual
-            const readingTime = calculateReadingTime(blockText);
-            showBlock(currentBlock); // Muestra el bloque actual
-
-            setTimeout(() => {
-                currentBlock = (currentBlock + 1) % blocks.length; // Mueve al siguiente bloque
-                startPresentation();
-            }, readingTime + 1000); // Añadir un pequeño margen para la transición
-        }
-
-        // Iniciar la presentación
-        startPresentation();
+// Nota: Eliminé el código de los bloques porque no parece estar en uso en el HTML actual.
+// Si lo necesitas, podemos reincorporarlo después.
