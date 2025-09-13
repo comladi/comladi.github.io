@@ -567,50 +567,23 @@
             display: inline-block;
             margin: 0.5rem;
             transition: transform 0.3s ease;
-            border-radius: 11px;
-            text-decoration: none;
-            box-shadow: 1px 1px 0px silver;
-            color: snow;
-            background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
-            letter-spacing: 2px;
-            padding: 5px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shine 2s infinite;
-            z-index: 1;
         }
 
         .contact-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .contact-button img {
             width: 40px;
-            z-index: 2;
-            position: relative;
         }
 
         .contact-button svg.icono {
             transition: transform 0.3s ease, fill 0.3s ease;
-            z-index: 2;
-            position: relative;
         }
 
         .contact-button:hover svg.icono {
             transform: scale(1.1);
-            fill: #ffffff;
+            fill: #e68a00;
         }
 
         .qr-telefono img {
@@ -773,16 +746,17 @@
         }
 
         .contact-options-container {
-            background: linear-gradient(135deg, #ffffff 0%, #f0faff 100%);
             color: #1a1a1a;
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 11px;
             margin: 1.5rem auto;
             max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 204, 255, 0.3);
-            border: 1px solid #00ccff;
+            box-shadow: 1px 1px 0px silver;
+            letter-spacing: 2px;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
+            background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
         }
 
         .contact-options-container::before {
@@ -792,14 +766,19 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 204, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shine 2s infinite;
         }
 
         .contact-options-container h2 {
             font-size: 1.5rem;
-            color: #0066cc;
+            color: snow;
             margin-bottom: 1rem;
+        }
+
+        .contact-options-container p {
+            color: snow;
+            font-size: 1rem;
         }
 
         @keyframes fadeIn {
@@ -963,20 +942,6 @@
             .cta-button .tooltip-text {
                 width: 160px;
                 font-size: 0.9rem;
-            }
-
-            .contact-button {
-                padding: 4px;
-                margin: 0.3rem;
-            }
-
-            .contact-button img {
-                width: 30px;
-            }
-
-            .contact-button svg {
-                width: 30px;
-                height: 30px;
             }
         }
     </style>
