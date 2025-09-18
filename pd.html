@@ -88,8 +88,8 @@
             <h1>🎓 Descubre Nuestros Cursos</h1>
             <p>Por solo 3,500 MXN, este curso te guiará paso a paso para comprender, de manera clara y práctica, las tecnologías que están redefiniendo la economía global.</p>
             <p>No necesitas ser experto en finanzas o tecnología. Está diseñado especialmente para quien quiere estar un paso adelante.</p>
-            <a href="#curso-101" class="course-link" onclick="showContent('curso-101')">Curso 101: ¿Qué son las criptomonedas?</a>
-            <p><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')">🔍 ¡Conoce Quiénes Somos!</a></p>
+            <a href="#curso-101" onclick="showContent('curso-101')" class="curso">Curso 101: ¿Qué son las criptomonedas?</a>
+	   <p><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a></p>
         </div>
         <div id="curso-101-content" class="content">
             <h1>Curso 101: ¿Qué son las criptomonedas?</h1>
@@ -134,7 +134,7 @@
                     <div class="module">
                         <h3>🌍 ¿Por qué elegir este curso?</h3>
                         <p>Porque las criptomonedas están revolucionando todo, y mereces entenderlas sin rodeos. No te decimos qué hacer con tu dinero, sino que te damos las herramientas para explorar con confianza. Nos apasiona enseñar, y queremos que termines con la emoción de saber más y la seguridad de evitar malas jugadas.</p>
-                        <p><a href="#sobre-nosotros" class="cta-button" onclick="showContent('sobre-nosotros')">¡Únete y vive la experiencia cripto con nosotros!</a></p>
+                        <p><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a></p>
                     </div>
                 </div>
                 <button class="carousel-button prev" id="prev-button-curso" onclick="moveSlideCurso(-1)">&lt;</button>
@@ -201,7 +201,6 @@
                         <p>
                             <ul>
                                 <li>💸 Conocer y comprender las nuevas formas de dinero y el sistema monetario</li>
-                                <li>🚀 Estar a la altura de los avances actuales</li>
                             </ul>
                         </p>
                     </div>
@@ -209,15 +208,10 @@
                         <p>
                             ⏰ Horario flexible
                         </p>
-                        <p>📈 Obtén información rápida y práctica que te permitirá dejar de adivinar y comenzar a entender.</p>
                     </div>
                     <div class="module">
-                        <p>
-                            🚀 ¿Estás listo para dar el siguiente paso e iniciar tu viaje criptográfico?<br>
-                            🎓 Únete a nuestro curso y aprende todo sobre este fascinante mundo.<br>
-                            🔔 ¡No te quedes fuera!
-                        </p>
-                        <p>🔍 Nuestro enfoque es claro y visual, diseñado para ayudarte a descubrir y unificar lo que realmente necesitas para avanzar en este apasionante mundo.</p>
+                     	 <p>🚀 Estar a la altura de los avances actuales<br>
+                            🔔 ¡No te quedes fuera!</p>
                     </div>
                 </div>
                 <button class="carousel-button prev" id="prev-button-razones" onclick="moveSlideRazones(-1)">&lt;</button>
@@ -402,9 +396,13 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 CursoCripto. Todos los derechos reservados.</p>
-    </footer>
+<footer class="footer">
+    <div class="footer-links">
+        <a href="/credito">Créditos</a>
+        <a href="/aviso">Aviso De Privacidad</a>
+    </div>
+    <p>&copy; 2025 CursoCripto. Todos los derechos reservados.</p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>

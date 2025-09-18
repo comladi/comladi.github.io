@@ -328,6 +328,56 @@ body {
     transform: scale(1.05);
 }
 
+/* Estilo para el título del curso en Razones para registrarse */
+.curso {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(90deg, #00ccff, #0066cc);
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 204, 255, 0.4);
+}
+
+.curso:hover {
+    background: linear-gradient(90deg, #1eaafc, #0033cc);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.6);
+}
+
+/* Estilo para el enlace "Conoce Sobre Nosotros" en Razones para registrarse */
+.sobre-nosotros-link {
+    display: inline-block;
+    color: #00ccff;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.sobre-nosotros-link:hover {
+    color: #1eaafc;
+    border-bottom: 2px solid #00ccff;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .curso {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .sobre-nosotros-link {
+        font-size: 0.9rem;
+    }
+}
+
 .carousel {
     position: relative;
     max-width: 600px;
@@ -424,6 +474,16 @@ body {
     font-size: 1.2rem;
 }
 
+.carousel .crypto-icon {
+    height: 100px;
+    width: auto;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -478,14 +538,6 @@ body {
 .carousel-dot.active {
     background-color: #00ccff;
     transform: scale(1.2);
-}
-
-.carousel .crypto-icon {
-    width: 50%;
-    margin-top: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .crypto-toggle {
@@ -880,12 +932,12 @@ body {
         margin-top: 0.3rem;
     }
 
-    .crypto-toggle {
-        font-size: 1rem;
+    .carousel .crypto-icon {
+        height: 80px;
     }
 
-    #questionnaire {
-        padding: 1rem;
+    .crypto-toggle {
+        font-size: 1rem;
     }
 
     .contact-button img {
@@ -929,6 +981,58 @@ body {
 
     .cta-button .tooltip-text {
         width: 160px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel .crypto-icon {
+        height: 60px;
+    }
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00ccff;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-links a:hover {
+    color: #00ccff;
+    transform: scale(1.1);
+    text-shadow: 0 0 5px rgba(0, 204, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-links a {
         font-size: 0.9rem;
     }
 }
