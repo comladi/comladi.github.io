@@ -1,10 +1,5 @@
 /* ==========================================================================
-   CURSOCRIPTO - PREMIUM DESIGN SYSTEM (STYLING)
-   Developed by a Senior Software Engineer with 45+ years of experience.
-   - Fully Responsive (Mobile-First approach with Desktop Precision)
-   - CSS Variables for strict brand consistency
-   - Semantic and accessible typography & layout
-   - High performance CSS animations & transitions
+   CURSOCRIPTO - STYLING (STYLES.CSS)
    ========================================================================== */
 
 /* --- CSS Variables & Design Tokens --- */
@@ -40,7 +35,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* 1rem = 16px */
+    font-size: 16px;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -99,12 +94,14 @@ img, svg {
     align-items: center;
     z-index: 9999;
     opacity: 1;
-    transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    will-change: opacity;
+    visibility: visible;
+    transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: opacity, visibility;
 }
 
 #welcome-section.hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
@@ -113,7 +110,8 @@ img, svg {
     z-index: 2;
     text-align: center;
     max-width: 800px;
-    padding: 2.5rem;
+    width: 100%;
+    padding: 2.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,26 +119,39 @@ img, svg {
     gap: 1.5rem;
 }
 
+.welcome-messages-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .message {
     font-size: clamp(1.8rem, 5vw, 3.2rem);
     font-weight: 600;
     opacity: 0;
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: -0.03em;
     filter: drop-shadow(0 0 15px rgba(0, 204, 255, 0.4));
+    text-align: center;
+    width: 100%;
 }
 
 .message-1 {
     color: var(--text-light);
-    animation: slideFadeInOut 6s forwards;
+    animation: slideFadeInOut 5.5s ease-in-out forwards;
+    position: absolute;
 }
 
 .message-2 {
     color: var(--color-secondary);
-    animation: slideFadeIn 6s 5.8s forwards;
+    animation: slideFadeIn 5.5s 5.2s ease-in-out forwards;
+    position: absolute;
 }
 
-.crypto-icon {
+.welcome-container .crypto-icon {
     width: 80px;
     height: 80px;
     margin-top: 1.5rem;
@@ -148,14 +159,14 @@ img, svg {
     fill: none;
     stroke: var(--color-secondary);
     filter: drop-shadow(0 0 12px var(--color-secondary));
-    animation: slideFadeIn 6s 5.8s forwards, pulseGlow 3s ease-in-out infinite alternate;
+    animation: slideFadeIn 5.5s 5.2s ease-in-out forwards, pulseGlow 3s ease-in-out infinite alternate;
 }
 
 /* Welcome Animations */
 @keyframes slideFadeInOut {
     0% { opacity: 0; transform: translateY(30px); }
     15% { opacity: 1; transform: translateY(0); }
-    85% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; transform: translateY(-30px); }
 }
 
@@ -355,11 +366,6 @@ img, svg {
     text-align: center;
 }
 
-.content em {
-    color: var(--color-primary);
-    font-style: normal;
-}
-
 /* --- Cards & Modules --- */
 .module {
     flex: 0 0 100%;
@@ -368,7 +374,7 @@ img, svg {
     background-color: var(--bg-dark-secondary);
     background-image: var(--gradient-card);
     border: var(--border-glow);
-    padding: 2.5rem 4rem; /* Spacious horizontal padding to keep text safe from carousel buttons */
+    padding: 2.5rem 4rem;
     border-radius: 16px;
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
@@ -450,24 +456,8 @@ img, svg {
     text-align: left;
     width: 100%;
 }
-.module-left-align p {
-    text-align: left;
-    margin-left: 0;
-}
-.module-left-align ul {
-    margin-left: 0;
-}
-.module-subtitle {
-    font-size: 0.95rem;
-    color: var(--color-secondary);
-    opacity: 0.95;
-    margin: -0.25rem 0 1.25rem 0 !important;
-    text-align: left;
-    line-height: 1.5;
-    font-weight: 500;
-}
 
-/* Custom left-aligned topics list with gorgeous tactile emojis */
+/* Custom left-aligned topics list */
 .course-topics-list {
     list-style: none;
     padding: 0 !important;
@@ -487,18 +477,13 @@ img, svg {
     text-align: left;
 }
 
-.course-topics-list li:last-child {
-    margin-bottom: 0;
-}
-
 .course-topics-list li .emoji {
     font-size: 1.2rem;
     flex-shrink: 0;
     display: inline-block;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
-/* --- Premium CTA Buttons & Links --- */
+/* --- CTA Buttons & Links --- */
 .cta-button {
     background-color: var(--color-accent);
     color: var(--text-dark);
@@ -526,11 +511,6 @@ img, svg {
     box-shadow: 0 8px 25px rgba(255, 159, 28, 0.5);
 }
 
-.cta-button:active {
-    transform: translateY(-1px) scale(0.98);
-}
-
-/* Styled Carousel Nav Button links */
 .curso {
     display: inline-flex;
     padding: 1rem 2rem;
@@ -562,7 +542,6 @@ img, svg {
 .sobre-nosotros-link:hover {
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
-    transform: translateX(3px);
 }
 
 /* --- Carousel Architecture --- */
@@ -642,14 +621,16 @@ img, svg {
     box-shadow: 0 0 8px var(--color-primary);
 }
 
-/* Interactive elements in carousel modules */
+/* --- BTC, ETH, XRP IMAGES IN CAROUSEL FIX --- */
 .carousel .crypto-icon {
-    height: 110px;
-    width: auto;
+    height: 120px;
+    width: 120px;
     object-fit: contain;
     margin: 1.5rem auto;
-    filter: drop-shadow(0 4px 15px rgba(0, 204, 255, 0.3));
+    filter: drop-shadow(0 4px 15px rgba(0, 204, 255, 0.4));
     animation: floatAnim 4s ease-in-out infinite alternate;
+    opacity: 1 !important; /* CRITICAL FIX: Ensures 100% visibility in carousel */
+    display: block !important;
 }
 
 @keyframes floatAnim {
@@ -657,7 +638,7 @@ img, svg {
     100% { transform: translateY(-10px); }
 }
 
-/* --- Interactive Questionnaire System --- */
+/* --- Questionnaire System --- */
 #questionnaire {
     width: 100%;
     max-width: 700px;
@@ -673,27 +654,6 @@ img, svg {
     overflow: hidden;
 }
 
-#questionnaire::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(0, 255, 204, 0.08) 0%, transparent 75%);
-    pointer-events: none;
-    border-radius: 50%;
-}
-
-#questionnaire div {
-    animation: questionFade 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-@keyframes questionFade {
-    from { opacity: 0; transform: translateY(25px) scale(0.97); filter: blur(3px); }
-    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
-
 #questionnaire p {
     font-size: 1.35rem;
     color: var(--text-light);
@@ -703,7 +663,6 @@ img, svg {
     line-height: 1.5;
     border-left: 4px solid var(--color-primary);
     padding-left: 1.1rem;
-    letter-spacing: -0.01em;
 }
 
 #questionnaire label {
@@ -718,65 +677,22 @@ img, svg {
     color: var(--text-muted);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-    overflow: hidden;
 }
 
 #questionnaire label:hover {
     background: rgba(0, 255, 204, 0.04);
     border: 1px solid rgba(0, 255, 204, 0.3);
     color: var(--text-light);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 18px rgba(0, 255, 204, 0.12);
-}
-
-/* Captivating parent highlighted state using :has() for tactile feel */
-#questionnaire label:has(input[type="radio"]:checked) {
-    background: rgba(0, 255, 204, 0.08);
-    border: 1px solid var(--color-primary);
-    color: var(--text-light);
-    transform: translateY(-2px) scale(1.015);
-    box-shadow: 0 0 22px rgba(0, 255, 204, 0.25);
 }
 
 #questionnaire input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
     width: 22px;
     height: 22px;
-    border: 2px solid rgba(255, 255, 255, 0.30);
-    border-radius: 50%;
-    outline: none;
     margin-right: 1.25rem;
-    position: relative;
     cursor: pointer;
-    transition: var(--transition-smooth);
-    flex-shrink: 0;
 }
 
-#questionnaire label:hover input[type="radio"] {
-    border-color: rgba(0, 255, 204, 0.6);
-}
-
-#questionnaire label:has(input[type="radio"]:checked) input[type="radio"] {
-    border-color: var(--color-primary);
-    background-color: var(--color-primary);
-    box-shadow: 0 0 12px var(--color-primary);
-}
-
-#questionnaire label:has(input[type="radio"]:checked) input[type="radio"]::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--bg-dark-primary);
-}
-
-/* Smooth Questionnaire Transitions & Hide Utility */
+/* Questionnaire Transitions & Hide Utility */
 .hidden {
     display: none !important;
 }
@@ -790,16 +706,16 @@ img, svg {
 }
 
 @keyframes slideOutFade {
-    0% { opacity: 1; transform: translateX(0); filter: blur(0); }
-    100% { opacity: 0; transform: translateX(-35px); filter: blur(4px); }
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-35px); }
 }
 
 @keyframes slideInFade {
-    0% { opacity: 0; transform: translateX(35px); filter: blur(4px); }
-    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+    0% { opacity: 0; transform: translateX(35px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Linear Progress Bar styled like a sci-fi power cell indicator */
+/* Progress Bar */
 .progress-bar {
     width: 100%;
     max-width: 700px;
@@ -818,22 +734,9 @@ img, svg {
     width: 0%;
     border-radius: 10px;
     transition: width 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 15px var(--color-primary);
-    position: relative;
 }
 
-.progress-bar-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 15px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    filter: blur(2px);
-}
-
-/* --- Contact & Integration Channels --- */
+/* --- Contact Channels --- */
 .contact-options-container {
     background: var(--gradient-accent);
     color: var(--text-light);
@@ -842,43 +745,12 @@ img, svg {
     margin: 2.5rem auto;
     max-width: 700px;
     border: 2px solid var(--color-primary);
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.45), 0 8px 32px rgba(108, 82, 217, 0.4);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.45);
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.contact-options-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-    animation: shineEffect 3s infinite;
-}
-
-@keyframes shineEffect {
-    0% { left: -100%; }
-    50% { left: 120%; }
-    100% { left: 120%; }
-}
-
-.contact-options-container h2 {
-    font-size: 1.8rem;
-    color: var(--text-light);
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.contact-options-container p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-/* Contact Grid */
 .contact-grid {
     display: flex;
     justify-content: center;
@@ -891,7 +763,6 @@ img, svg {
 .contact-button {
     background: rgba(255, 255, 255, 0.12);
     border: 1.5px solid rgba(0, 255, 204, 0.4);
-    box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
     border-radius: 12px;
     width: 64px;
     height: 64px;
@@ -900,51 +771,21 @@ img, svg {
     justify-content: center;
     transition: var(--transition-bounce);
     outline: none;
+    cursor: pointer;
 }
 
 .contact-button:hover {
     background: var(--text-light);
     border-color: var(--color-primary);
-    transform: translateY(-5px) rotate(3deg);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6), 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px) scale(1.05);
 }
 
 .contact-button .icono {
     width: 32px;
     height: 32px;
-    transition: var(--transition-smooth);
 }
 
-.contact-button:hover .icono {
-    transform: scale(1.1);
-}
-
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-    width: 140px;
-    padding: 0.5rem;
-}
-
-.contact-label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-light);
-    margin-top: 0.25rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.contact-detail {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.75);
-    word-break: break-all;
-    font-family: var(--font-mono);
-}
-
-/* QR Code presentation overlay with smooth drawer transitions */
+/* QR Code presentation overlay */
 .qr-container {
     display: flex;
     flex-direction: column;
@@ -961,12 +802,19 @@ img, svg {
     display: block;
 }
 
+/* FIX: Expands and becomes visible when toggled via script */
+.qr-telefono.active,
+.qr-telefono[style*="display: block"] {
+    max-height: 280px !important;
+    opacity: 1 !important;
+}
+
 .qr-telefono img {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     border-radius: 12px;
     border: 4px solid var(--text-light);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     margin: 1rem auto;
 }
 
@@ -983,7 +831,6 @@ img, svg {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 .modal-content {
@@ -994,44 +841,8 @@ img, svg {
     width: 90%;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 204, 255, 0.3);
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     border: 2px solid var(--color-primary);
     position: relative;
-}
-
-@keyframes popIn {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.modal-content h1 {
-    font-size: 2.2rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.modal-content h2 {
-    font-size: 1.4rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.modal-content p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.modal-content footer h3 {
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 1.5rem;
 }
 
 .close-modal {
@@ -1039,19 +850,13 @@ img, svg {
     top: 15px;
     right: 20px;
     font-size: 2.2rem;
-    font-weight: 300;
     cursor: pointer;
     color: var(--text-light);
-    transition: var(--transition-smooth);
-    line-height: 1;
+    background: none;
+    border: none;
 }
 
-.close-modal:hover {
-    color: var(--color-primary);
-    transform: rotate(90deg);
-}
-
-/* --- Premium Footer --- */
+/* --- Footer --- */
 .footer {
     background-color: var(--bg-dark-tertiary);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1071,38 +876,287 @@ img, svg {
 .footer-links a {
     color: var(--text-muted);
     font-weight: 500;
-    font-size: 0.95rem;
-    position: relative;
 }
 
-.footer-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--color-primary);
-    transition: var(--transition-smooth);
+.footer-links a:hover {
+    color: var(--color-primary);
 }
 
-.footer-links a:hover::after,
-.footer-links a.active::after {
+/* --- Article Cards & SEO Features --- */
+.article-card {
+    background-color: var(--bg-dark-secondary);
+    background-image: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 18px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.category-badge {
+    display: inline-block;
+    background: rgba(0, 204, 255, 0.12);
+    color: var(--color-secondary);
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.breadcrumbs a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--color-primary);
+}
+
+.article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.article-meta {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.85rem;
+}
+
+.content-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-list li {
+    margin-bottom: 0.6rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- Anti-Fear Block (Conversión al Curso) --- */
+.anti-fear-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
     width: 100%;
 }
 
-.footer-links a:hover,
-.footer-links a.active {
+.anti-fear-box {
+    padding: 1.75rem;
+    border-radius: 14px;
+    border: 1px solid;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.anti-fear-box.no {
+    background: rgba(220, 38, 38, 0.08);
+    border-color: rgba(220, 38, 38, 0.4);
+}
+
+.anti-fear-box.yes {
+    background: rgba(0, 255, 204, 0.08);
+    border-color: rgba(0, 255, 204, 0.4);
+}
+
+.anti-fear-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.anti-fear-box.no h3 { color: #ff6b6b; }
+.anti-fear-box.yes h3 { color: var(--color-primary); }
+
+.anti-fear-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 0;
+}
+
+.anti-fear-box ul li {
+    font-size: 0.98rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* --- Author EEAT Widget --- */
+.author-widget {
+    background: rgba(17, 30, 56, 0.85);
+    border: 1px solid rgba(0, 255, 204, 0.25);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2.5rem;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.author-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.author-details h4 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.author-role {
+    font-size: 0.88rem;
     color: var(--color-primary);
-    text-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-.footer p {
-    color: rgba(175, 185, 200, 0.5);
-    font-size: 0.85rem;
+.author-bio {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
-/* --- Course Details Grid (Semantic layout for Plan and Why Us) --- */
+.author-link {
+    font-size: 0.88rem;
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.author-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* --- Silos Layout Grid & Sidebar --- */
+.silo-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .silo-layout-grid {
+        grid-template-columns: 2.5fr 1fr;
+    }
+}
+
+.sidebar-widget {
+    background-color: var(--bg-dark-secondary);
+    background-image: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+.widget-title {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 0.65rem;
+    margin-bottom: 1.25rem;
+}
+
+.silo-tree-list {
+    list-style: none;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 0;
+}
+
+.silo-tree-list strong {
+    color: var(--color-secondary);
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.silo-tree-list ul {
+    list-style: none;
+    padding-left: 0.75rem;
+    margin-top: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.silo-tree-list a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.silo-tree-list a:hover {
+    color: var(--color-primary);
+    padding-left: 4px;
+}
+
+/* --- YMYL Legal Disclaimer --- */
+.disclaimer-section {
+    background-color: rgba(17, 30, 56, 0.95);
+    border-left: 4px solid var(--color-secondary);
+    padding: 1.75rem;
+    border-radius: 0 14px 14px 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 2rem auto 1.5rem;
+    max-width: 1100px;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.disclaimer-title {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.65rem;
+    display: block;
+    font-size: 1.05rem;
+}
+
+/* --- Course Details Grid --- */
 .course-details-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1110,8 +1164,6 @@ img, svg {
     width: 100%;
     max-width: 900px;
     margin: 3.5rem auto 2rem;
-    box-sizing: border-box;
-    scroll-margin-top: 100px;
 }
 
 @media (min-width: 768px) {
@@ -1126,276 +1178,41 @@ img, svg {
     border: var(--border-glow);
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.info-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    opacity: 0.8;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-premium);
 }
 
 .card-header-icon {
     font-size: 2rem;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .info-card h3 {
     font-size: 1.4rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.info-card p {
-    font-size: 1.05rem;
-    color: var(--text-light);
-    margin: 0 0 1.5rem 0;
-    line-height: 1.6;
-    text-align: left;
 }
 
 .plan-bullets, .benefits-bullets {
     list-style: none;
     padding: 0 !important;
     margin: 0 !important;
-    width: 100%;
 }
 
 .plan-bullets li, .benefits-bullets li {
     font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
-    line-height: 1.5;
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
 }
 
-.plan-bullets li:last-child, .benefits-bullets li:last-child {
-    margin-bottom: 0;
-}
-
-.bullet-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-}
-
-.learn-more-action {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.learn-more-action .sobre-nosotros-link {
-    margin-top: 1.5rem;
-}
-
-/* --- Live Market Dashboard Styling --- */
-.market-dashboard-container {
-    background-color: var(--bg-dark-secondary);
-    background-image: var(--gradient-card);
-    border: var(--border-glow);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-card);
-    margin: 3.5rem auto 1.5rem;
-    max-width: 900px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-.market-dashboard-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-    opacity: 0.8;
-}
-
-.market-dashboard-header {
-    margin-bottom: 1.75rem;
-}
-
-.market-dashboard-header h2 {
-    font-size: 1.5rem;
-    color: var(--text-light);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-}
-
-.badge-live {
-    font-size: 0.75rem;
-    background-color: rgba(0, 255, 204, 0.1);
-    color: var(--color-primary);
-    border: 1px solid rgba(0, 255, 204, 0.3);
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-}
-
-.badge-live::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--color-primary);
-    animation: livePulse 1.5s infinite alternate;
-}
-
-@keyframes livePulse {
-    0% { opacity: 0.4; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1.2); }
-}
-
-.market-legend {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    border-left: 3px solid var(--color-accent);
-    padding-left: 0.85rem;
-    margin: 0.5rem 0 0 0;
-}
-
-.indicators-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-@media (min-width: 540px) {
-    .indicators-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 820px) {
-    .indicators-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-.indicator-card {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1.15rem;
-    transition: var(--transition-smooth);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.indicator-card:hover {
-    background-color: rgba(255, 255, 255, 0.04);
-    border-color: rgba(0, 255, 204, 0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.05);
-}
-
-.indicator-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.indicator-icon {
-    font-size: 1.2rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.indicator-title {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.indicator-value-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-}
-
-.indicator-value {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-light);
-    letter-spacing: -0.01em;
-    font-family: var(--font-fallback);
-}
-
-.indicator-change {
-    font-size: 0.8rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.3s ease;
-}
-
-.indicator-change.positive {
-    color: var(--color-primary);
-}
-
-.indicator-change.negative {
-    color: #ff4a6b;
-}
-
-.indicator-change.stable {
-    color: var(--text-muted);
-}
-
-/* --- Responsive Layout & Media Queries --- */
-@media (max-width: 1024px) {
-    .content h1 { font-size: 3rem; }
-}
-
+/* --- Responsive Media Queries --- */
 @media (max-width: 768px) {
-    /* Responsive Navigation Panel */
-    .hamburger {
-        display: flex;
-    }
+    .hamburger { display: flex; }
 
     .nav-links {
         display: flex;
@@ -1403,7 +1220,7 @@ img, svg {
         justify-content: center;
         position: fixed;
         top: 0;
-        left: 100%; /* Hidden by default offscreen */
+        left: 100%;
         width: 100%;
         height: 100vh;
         background-color: var(--bg-dark-tertiary);
@@ -1413,97 +1230,264 @@ img, svg {
         z-index: 999;
     }
 
-    .nav-links.active {
-        transform: translateX(-100%);
-    }
+    .nav-links.active { transform: translateX(-100%); }
 
-    .nav-links a {
-        font-size: 1.25rem;
-    }
+    .content-container { padding: 2.5rem 1rem; margin-top: 65px; }
 
-    /* Core Margins and Paddings adjustments */
-    .content-container {
-        padding: 2.5rem 1rem;
-        margin-top: 65px;
-    }
-
-    .content h1 { font-size: 2.2rem; }
-    .content h2 { font-size: 1.5rem; }
-    .content p { font-size: 1rem; }
-
-    /* Cards adaptations */
-    .module {
-        padding: 2rem 1.25rem;
-        min-height: 240px;
-    }
-    
-    .info-card {
-        padding: 2rem 1.25rem;
-    }
-    
-    .module h2 { font-size: 1.5rem; }
-    .module h3 { font-size: 1.35rem; }
-    
-    /* Carousel Adjustments */
-    .carousel {
-        max-width: 100%;
-    }
-    .carousel-button {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-    }
-    .carousel-button.prev { left: 0.5rem; }
-    .carousel-button.next, .carousel-button.back { right: 0.5rem; }
-
-    /* Questionnaire Mobile adjustment */
-    #questionnaire {
-        padding: 2rem 1.25rem;
-    }
-    #questionnaire p {
-        font-size: 1.15rem;
-    }
-    #questionnaire label {
-        font-size: 0.95rem;
-        padding: 0.75rem 1rem;
-    }
-
-    /* Contact channels adaptive */
-    .contact-options-container {
-        padding: 2rem 1.25rem;
-    }
-    .contact-button {
-        width: 52px;
-        height: 52px;
-    }
-    .contact-button .icono {
-        width: 26px;
-        height: 26px;
-    }
-    .contact-item {
-        width: 110px;
-        padding: 0.25rem;
-    }
-    .contact-label {
-        font-size: 0.85rem;
-    }
-    .contact-detail {
-        font-size: 0.65rem;
-    }
-    
-    /* Modal sizing */
-    .modal-content {
-        padding: 2.5rem 1.5rem;
-    }
-    .modal-content h1 { font-size: 1.8rem; }
-    .modal-content h2 { font-size: 1.25rem; }
-    .modal-content p { font-size: 1rem; }
+    .module { padding: 2rem 1.25rem; }
 }
 
-@media (max-width: 480px) {
-    .content h1 { font-size: 1.85rem; }
-    .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
+/* ==========================================================================
+   Mercado Cripto MXN Widget Styles
+   ========================================================================== */
+.crypto-market-card {
+    background: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
 }
+
+.crypto-market-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-accent);
+}
+
+.crypto-market-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.crypto-market-title {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.crypto-market-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.crypto-status-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: var(--transition-smooth);
+}
+
+.crypto-status-badge.connected {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.3);
+}
+
+.crypto-status-badge.disconnected {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.crypto-card {
+    background: rgba(17, 30, 56, 0.85);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.crypto-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.2);
+    transform: translateY(-2px);
+}
+
+.crypto-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+}
+
+.crypto-symbol-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.crypto-pair-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(0, 204, 255, 0.12);
+    color: var(--color-secondary);
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 204, 255, 0.25);
+}
+
+.crypto-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s ease;
+}
+
+/* Animaciones de destello de precio */
+.flash-up { animation: flashGreen 0.8s ease-out; }
+.flash-down { animation: flashRed 0.8s ease-out; }
+
+@keyframes flashGreen { 0% { color: #10b981; } 100% { color: var(--text-light); } }
+@keyframes flashRed { 0% { color: #ef4444; } 100% { color: var(--text-light); } }
+
+.crypto-log {
+    margin-top: 1.25rem;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   Tablero de Indicadores Financieros (FIX, CETES, Banxico, etc.)
+   ========================================================================== */
+.market-dashboard-container {
+    background: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+.market-dashboard-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.market-dashboard-header h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge-live {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 255, 204, 0.15);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.market-legend {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.indicator-card {
+    background: rgba(17, 30, 56, 0.85);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: var(--transition-smooth);
+}
+
+.indicator-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.2);
+    transform: translateY(-2px);
+}
+
+.indicator-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.indicator-icon {
+    font-size: 1.2rem;
+}
+
+.indicator-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.indicator-value-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.indicator-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.indicator-change {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.indicator-change.positive {
+    color: #34d399;
+    background: rgba(52, 211, 153, 0.12);
+}
+
+.indicator-change.negative {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.indicator-change.stable {
+    color: var(--color-secondary);
+    background: rgba(0, 204, 255, 0.12);
+}
+

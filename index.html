@@ -47,8 +47,10 @@
     <section id="welcome-section" aria-live="polite">
         <div id="particles-js"></div>
         <div class="welcome-container">
-            <div class="message message-1">¿Conoces las nuevas formas de dinero?</div>
-            <div class="message message-2">¿Sabes qué son las criptomonedas?</div>
+            <div class="welcome-messages-wrapper">
+                <div class="message message-1">¿Conoces las nuevas formas de dinero?</div>
+                <div class="message message-2">¿Sabes qué son las criptomonedas?</div>
+            </div>
             <svg class="crypto-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#00ccff" stroke-width="8"/>
                 <text x="50" y="60" font-size="40" fill="#00ccff" text-anchor="middle" font-family="Arial">₿</text>
@@ -85,11 +87,24 @@
 
         <!-- Inicio Section -->
         <section id="inicio-content" class="content active">
-            <article>
-                <h1>El Futuro del Dinero</h1>
+            <!-- Hero Banner de Conversión -->
+            <article class="article-card" style="text-align: center; background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(11, 19, 43, 0.95) 100%); border: 1px solid var(--color-secondary);">
+                <span class="category-badge">Educación en Ciberseguridad &amp; Blockchain sin Miedos</span>
+                <h1 style="font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Entiende la tecnología Blockchain sin miedo a cometer errores ni perder tu dinero</h1>
+                <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 300;">
+                    Aprende los fundamentos tecnológicos, aprende a identificar estafas y toma el control de tu seguridad digital con nuestra guía paso a paso para principiantes.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#curso-101" class="cta-button" onclick="showContent('cursos')">Acceder al Curso de Alfabetización Digital</a>
+                    <a href="#razones" class="cta-button" onclick="showContent('razones')" style="background: rgba(0, 204, 255, 0.15); border: 1px solid var(--color-secondary); color: #ffffff;">Guía de Seguridad &amp; Anti-Estafas</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h2 style="font-size: 1.8rem; color: var(--color-primary); margin-bottom: 1rem;">El Futuro del Dinero</h2>
                 <p>¿Te has preguntado cómo será el dinero en los próximos años? El efectivo desaparece, las apps reemplazan a los bancos, y tecnologías como las monedas digitales de bancos centrales (CBDC), stablecoins y blockchain están transformando cómo pagamos, ahorramos e invertimos. En este nuevo panorama, la educación financiera ya no es opcional, es esencial.</p>
-                <p>Según la UNESCO, 773 millones de personas carecen de alfabetización básica, y dos de cada tres adultos no comprenden conceptos clave como inflación, blockchain o tasas de interés (S&P Global, 2014). ¿Cómo participar en esta nueva economía sin conocimientos fundamentales? La respuesta está en prepararte hoy.</p>
-                <div style="margin-top: 2.5rem;">
+                <p>Según la UNESCO, 773 millones de personas carecen de alfabetización básica, y dos de cada tres adultos no comprenden conceptos clave como inflación, blockchain o tasas de interés (S&amp;P Global, 2014). ¿Cómo participar en esta nueva economía sin conocimientos fundamentales? La respuesta está en prepararte hoy.</p>
+                <div style="margin-top: 2rem;">
                     <a href="#curso-101" class="cta-button" onclick="showContent('cursos')">🔍 Descubre el Curso Cripto</a>
                 </div>
             </article>
@@ -104,7 +119,27 @@
                 <div style="margin: 2.5rem auto;">
                     <a href="#curso-101" onclick="showContent('curso-101')" class="curso">Curso 101: ¿Qué son las criptomonedas?</a>
                 </div>
-                <p><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a></p>
+
+                <!-- Bloque Anti-Miedo (Propuesta de Valor) -->
+                <div class="anti-fear-container" id="curso-landing" style="margin-top: 2rem;">
+                    <div class="anti-fear-box no">
+                        <h3>Lo que NO encontrarás en este curso:</h3>
+                        <ul>
+                            <li>🚫 No te diremos en qué invertir ni venderemos señales de trading.</li>
+                            <li>🚫 No prometemos retornos de inversión ni fórmulas para hacerte rico.</li>
+                        </ul>
+                    </div>
+                    <div class="anti-fear-box yes">
+                        <h3>Lo que SÍ te llevas:</h3>
+                        <ul>
+                            <li>✅ Entendimiento claro de cómo funciona la tecnología blockchain.</li>
+                            <li>✅ Criterio propio para detectar estafas antes de hacer un clic.</li>
+                            <li>✅ Configuración de seguridad desde cero para proteger tus cuentas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a></p>
             </article>
         </section>
 
@@ -167,7 +202,7 @@
                     </div>
                 </div>
 
-                <!-- Nueva Sección Semántica: Detalles, Plan y Propuesta de Valor -->
+                <!-- Detalles, Plan y Propuesta de Valor -->
                 <div class="course-details-grid" id="plan-seccion">
                     <!-- Tarjeta: Plan y Metodología -->
                     <div class="info-card plan-card">
@@ -231,6 +266,17 @@
                         <button class="carousel-dot" onclick="goToSlideSobre(2)" aria-label="Diapositiva 3"></button>
                     </div>
                 </div>
+
+                <!-- Ficha de Autor EEAT Integrada -->
+                <section class="author-widget" style="margin-top: 2.5rem;">
+                    <div class="author-avatar">E</div>
+                    <div class="author-details">
+                        <h4>Escrito y verificado por Fundador &amp; Educador Cripto</h4>
+                        <div class="author-role">Educador en Tecnología Blockchain y Ciberseguridad Digital</div>
+                        <p class="author-bio">"Especialista en divulgación tecnológica y ciberseguridad con más de 5 años traduciendo conceptos complejos a un lenguaje simple. Apasionado por la educación digital sin humo, ayuda a principiantes a navegar la Web3 con seguridad, confianza y cero miedos."</p>
+                        <a href="#contacto" onclick="showContent('contacto')" class="author-link">🔗 Consulta directa o informes sobre el curso</a>
+                    </div>
+                </section>
             </article>
         </section>
 
@@ -293,7 +339,7 @@
                     </div>
                     
                     <div class="indicators-grid">
-                        <!-- USD/MXN -->
+                        <!-- USD/MXN (FIX) -->
                         <div class="indicator-card" id="card-usd">
                             <div class="indicator-meta">
                                 <span class="indicator-icon">💵</span>
@@ -317,7 +363,7 @@
                             </div>
                         </div>
 
-                        <!-- Tasa de Interés Banxico -->
+                        <!-- Tasa de Política / Banxico -->
                         <div class="indicator-card" id="card-banxico">
                             <div class="indicator-meta">
                                 <span class="indicator-icon">🏦</span>
@@ -402,6 +448,13 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Garantía Anti-Humo (Tarjeta Original) -->
+                <div class="sidebar-widget" style="background: rgba(17, 30, 56, 0.95); border-color: rgba(0, 255, 204, 0.3); max-width: 550px; margin: 2.5rem auto 0 auto; text-align: center;">
+                    <h3 class="widget-title" style="color: var(--color-primary); border-color: var(--color-primary); display: inline-block;">Garantía Anti-Humo</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5;">Nuestra única meta es la educación en ciberseguridad y la soberanía de tus datos.</p>
+                    <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1rem; font-size: 0.9rem; width: 100%; display: block; text-align: center;">Ir al Curso</a>
+                </div>
             </article>
         </section>
 
@@ -475,54 +528,54 @@
                 </div>
                 
                 <form id="questionnaire" onsubmit="event.preventDefault();">
-                    <!-- Q1: Conciencia -->
+                    <!-- Q1 -->
                     <div id="q1">
                         <p>¿Alguna vez te has detenido a pensar cómo la tecnología ha transformado por completo la forma en que nos comunicamos, trabajamos y, ahora, cómo entendemos el dinero?</p>
                         <label for="q1-si"><input type="radio" id="q1-si" name="q1" value="si" onchange="showNext('q2')"> 🚀 Sí, es un cambio constante</label>
                         <label for="q1-no"><input type="radio" id="q1-no" name="q1" value="no" onchange="showNext('q2')"> 🤔 No lo había pensado mucho</label>
                     </div>
                     
-                    <!-- Q2: Dinero Digital / Pérdida del Efectivo -->
+                    <!-- Q2 -->
                     <div id="q2" class="hidden">
                         <p>¿Sabías que el dinero físico (billetes y monedas) está perdiendo terreno rápidamente frente a los pagos digitales y las nuevas regulaciones globales?</p>
                         <label for="q2-si"><input type="radio" id="q2-si" name="q2" value="si" onchange="showNext('q3')"> 📈 Sí, ya casi no uso efectivo</label>
                         <label for="q2-no"><input type="radio" id="q2-no" name="q2" value="no" onchange="showNext('q3')"> 😮 No sabía que era tan rápido</label>
                     </div>
                     
-                    <!-- Q3: Blockchain y Transacciones Directas -->
+                    <!-- Q3 -->
                     <div id="q3" class="hidden">
                         <p>¿Te causa curiosidad saber cómo tecnologías como Blockchain (cadena de bloques) permiten transferir valor de persona a persona de manera segura y sin depender de un banco?</p>
                         <label for="q3-si"><input type="radio" id="q3-si" name="q3" value="si" onchange="showNext('q5')"> ⚡ Sí, me parece fascinante</label>
                         <label for="q3-no"><input type="radio" id="q3-no" name="q3" value="no" onchange="showDescription('description1')"> 🔍 Me genera dudas o desconfianza</label>
                     </div>
                     
-                    <!-- Description 1: Explicación de Seguridad de Blockchain -->
+                    <!-- Description 1 -->
                     <div id="description1" class="hidden">
                         <p><strong>Blockchain: Seguridad Matemática</strong><br>La cadena de bloques es un registro digital incorruptible donde cada transacción es auditada por miles de computadoras en red de forma neutral, lo que elimina la necesidad de intermediarios y previene falsificaciones.</p>
                         <label for="desc1-interesante"><input type="radio" id="desc1-interesante" name="description1" value="interesante" onchange="showNext('q5')"> 💡 ¡Entendido, continuemos!</label>
                     </div>
                     
-                    <!-- Q4 (con ID q5): Conceptos Clave -->
+                    <!-- Q5 -->
                     <div id="q5" class="hidden">
                         <p>¿Has escuchado hablar de términos como Bitcoin, Monedas Estables (Stablecoins) o Monedas Digitales de Bancos Centrales (CBDCs)?</p>
                         <label for="q5-si"><input type="radio" id="q5-si" name="q5" value="si" onchange="showNext('q7')"> 💡 Sí, conozco algunos términos</label>
                         <label for="q5-no"><input type="radio" id="q5-no" name="q5" value="no" onchange="showDescription('description2')"> 🤷‍♂️ Me suenan, pero no los entiendo</label>
                     </div>
                     
-                    <!-- Description 2: Explicación de Diferencias de Activos -->
+                    <!-- Description 2 -->
                     <div id="description2" class="hidden">
                         <p><strong>Entendiendo las diferencias básicas:</strong><br>• <strong>Bitcoin:</strong> Es descentralizado y de emisión limitada.<br>• <strong>Stablecoins:</strong> Están ancladas al valor de una moneda fiat (como el dólar).<br>• <strong>CBDCs:</strong> Son versiones digitales oficiales emitidas por bancos centrales.</p>
                         <label for="desc2-aprender"><input type="radio" id="desc2-aprender" name="description2" value="quieroAprender" onchange="showNext('q7')"> 📚 ¡Tiene todo el sentido, continuemos!</label>
                     </div>
                     
-                    <!-- Q5 (con ID q7): El Mayor Peligro (Estafas) -->
+                    <!-- Q7 -->
                     <div id="q7" class="hidden">
                         <p>En este nuevo ecosistema, ¿sabías que el mayor riesgo para un principiante no es la tecnología, sino caer en fraudes y estafas por falta de un conocimiento neutral y objetivo?</p>
                         <label for="q7-si"><input type="radio" id="q7-si" name="q7" value="si" onchange="showNext('q8')"> 🛡️ Sí, por eso busco educación segura</label>
                         <label for="q7-no"><input type="radio" id="q7-no" name="q7" value="no" onchange="showNext('q8')"> 🤯 No sabía que el riesgo era ese</label>
                     </div>
                     
-                    <!-- Q6 (con ID q8): Invitación al éxito -->
+                    <!-- Q8 -->
                     <div id="q8" class="hidden">
                         <p>¿Te gustaría dominar estos conceptos clave, entender el futuro de la economía y aprender a proteger tu patrimonio de forma 100% segura y con criterio propio?</p>
                         <label for="q8-si"><input type="radio" id="q8-si" name="q8" value="si" onchange="showContactOptions()"> 🔥 ¡Totalmente, quiero unirme!</label>
@@ -548,7 +601,7 @@
                                     <path d="M22 6L12 13L2 6" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <a href="https://wa.me/+525649282704" target="_blank" class="contact-button whatsapp-link" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
+                            <a href="https://wa.me/+525649282704" target="_blank" class="contact-button whatsapp-link" id="whatsapp-link" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
                                 <img src="images/whatsapp.png" alt="Whatsapp Icono" class="icono">
                             </a>
                             <a href="tel:+525649282704" class="contact-button telefono-link" id="telefono-link" aria-label="Llamar por teléfono o ver código QR (56 4928 2704)">
@@ -556,6 +609,9 @@
                             </a>
                         </div>
                         <div class="qr-container">
+                            <div class="qr-telefono" id="qr-whatsapp" style="display: none;">
+                                <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
+                            </div>
                             <div class="qr-telefono" id="qr-telefono" style="display: none;">
                                 <img src="images/contacto.png" alt="Código QR de contacto telefónico">
                             </div>
@@ -581,6 +637,68 @@
                     </div>
                 </div>
             </article>
+
+            <!-- Estructura de Silos Educativos & Guía Anti-Estafas Web3 -->
+            <div class="silo-layout-grid" style="margin-top: 3rem;">
+                <!-- Main Article Content -->
+                <main>
+                    <article class="article-card">
+                        <span class="category-badge">Seguridad Cripto y Prevención de Estafas</span>
+                        
+                        <h2 class="article-title" style="font-size: 1.6rem;">¿Cómo saber si una plataforma cripto es confiable? 5 señales para detectar estafas antes de hacer clic</h2>
+                        
+                        <div class="article-meta">
+                            Publicado por <strong>Educador en Ciberseguridad Digital</strong> | Última revisión técnica: 10 de Agosto, 2026 | Tiempo de lectura: 5 min
+                        </div>
+
+                        <p>Navegar por el ecosistema Web3 y las tecnologías descentralizadas ofrece grandes oportunidades de soberanía digital, pero también expone a los usuarios novatos a ataques cibernéticos y esquemas fraudulentos. A diferencia de la banca tradicional, en blockchain <strong>no existe un botón de "revertir transacción"</strong>.</p>
+
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 1.5rem 0 0.75rem 0; border-left: 4px solid var(--color-secondary); padding-left: 0.75rem;">Análisis de Caso Real: La anatomía de un ataque de Phishing en Web3</h3>
+                        <p>En nuestro laboratorio de ciberseguridad analizamos recientemente una campaña de <em>Phishing</em> masivo basada en dominios clonados. Los atacantes no rompieron la criptografía de la blockchain; en su lugar, manipularon al usuario mediante ingeniería social ofreciendo un supuesto "AIRDROP gratuito" a través de un sitio web falso.</p>
+                        
+                        <p>El patrón común en más del 90% de las plataformas fraudulentas sigue estas características:</p>
+                        <ul class="content-list">
+                            <li><strong>Promesa de rentabilidad fija sin riesgo:</strong> Ningún protocolo legítimo de blockchain garantiza rendimientos fijos acumulativos.</li>
+                            <li><strong>Presión psicológica e inmediatez:</strong> Temporizadores en cuenta regresiva para obligarte a conectar tu billetera sin verificar la URL.</li>
+                            <li><strong>Inexistencia de documentación técnica:</strong> Carecen de enlaces a repositorios de código abierto (como GitHub) o auditorías de contratos inteligentes realizables por terceros.</li>
+                        </ul>
+
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 1.5rem 0 0.75rem 0; border-left: 4px solid var(--color-secondary); padding-left: 0.75rem;">Regla de Oro: Transferencia de Seguridad y Buenas Prácticas</h3>
+                        <p>Para evitar caer en trampas digitales, antes de interactuar con cualquier aplicación descentralizada (dApp), verifica la reputación de los dominios en bases de datos públicas de ciberseguridad como CISA (Cybersecurity and Infrastructure Security Agency) o el Centro de Ciberseguridad de tu región.</p>
+
+                        <p>Si deseas aprender a configurar una billetera digital desde cero utilizando una clave privada segura y fuera de línea, puedes explorar nuestros contenidos en el <a href="#cursos" onclick="showContent('cursos')">Curso Cripto</a> o conocer más sobre nuestra metodología en <a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')">Sobre Nosotros</a>.</p>
+                    </article>
+                </main>
+
+                <!-- Sidebar (Estructura Silo Real) -->
+                <aside>
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Estructura de Silos Educativos</h3>
+                        <div class="silo-tree-list">
+                            <strong>📁 Conceptos Blockchain</strong>
+                            <ul>
+                                <li><a href="#inicio" onclick="showContent('inicio')">• ¿Qué es la Blockchain? (Sencillo)</a></li>
+                                <li><a href="#cursos" onclick="showContent('cursos')">• Clave pública y privada explicadas</a></li>
+                                <li><a href="#presentacion" onclick="showContent('presentacion')">• ¿Por qué no es solo dinero digital?</a></li>
+                            </ul>
+
+                            <strong>📁 Seguridad y Prevención</strong>
+                            <ul>
+                                <li><a href="#aprende" onclick="showContent('aprende')">• 5 señales para detectar estafas</a></li>
+                                <li><a href="#aprende" onclick="showContent('aprende')">• Phishing en Web3 y protección</a></li>
+                                <li><a href="#razones" onclick="showContent('razones')">• Billeteras Frías vs. Calientes</a></li>
+                            </ul>
+
+                            <strong>📁 Guías para Principiantes</strong>
+                            <ul>
+                                <li><a href="#aprende" onclick="showContent('aprende')">• Crea tu primera billetera segura</a></li>
+                                <li><a href="#razones" onclick="showContent('razones')">• Errores comunes al transferir activos</a></li>
+                                <li><a href="#presentacion" onclick="showContent('presentacion')">• Glosario Cripto 2026</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </section>
 
         <!-- Contacto Section -->
@@ -600,7 +718,7 @@
                                 <path d="M22 6L12 13L2 6" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a href="https://wa.me/+525649282704" target="_blank" class="contact-button whatsapp-link" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
+                        <a href="https://wa.me/+525649282704" target="_blank" class="contact-button whatsapp-link" id="whatsapp-link-contacto" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
                             <img src="images/whatsapp.png" alt="Whatsapp Icono" class="icono">
                         </a>
                         <a href="tel:+525649282704" class="contact-button telefono-link" id="telefono-link-contacto" aria-label="Llamar por teléfono o ver código QR (56 4928 2704)">
@@ -608,6 +726,9 @@
                         </a>
                     </div>
                     <div class="qr-container">
+                        <div class="qr-telefono" id="qr-whatsapp-contacto" style="display: none;">
+                            <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
+                        </div>
                         <div class="qr-telefono" id="qr-telefono-contacto" style="display: none;">
                             <img src="images/contacto.png" alt="Código QR de contacto telefónico">
                         </div>
@@ -622,23 +743,29 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Area (Descargo YMYL & Aviso Legal) -->
     <footer class="footer">
+        <div class="disclaimer-section">
+            <span class="disclaimer-title">⚖️ Aviso Legal y Descargo de Responsabilidad Financiera</span>
+            <p>El contenido publicado en <strong>CRIPTOYMAS.COM / CursoCripto</strong> (incluidos artículos, guías, cursos y recursos) tiene un propósito estrictamente educativo, tecnológico e informativo.</p>
+            <p style="margin-top: 0.6rem;"><strong>CRIPTOYMAS.COM / CursoCripto</strong> no es un asesor financiero, ni ofrece recomendaciones de inversión, señales de trading, ni servicios de gestión de patrimonio. La tecnología blockchain y los activos digitales conllevan riesgos inherentes. Recomendamos a todos los usuarios realizar su propia investigación (<strong>DYOR</strong>) y consultar con profesionales financieros matriculados antes de tomar decisiones económicas. No vendemos promesas de rentabilidad ni esquemas de enriquecimiento; vendemos educación en ciberseguridad y alfabetización digital.</p>
+        </div>
+
         <nav class="footer-links" aria-label="Enlaces secundarios">
             <a href="creditos.html">Créditos</a>
             <a href="aviso.html">Aviso De Privacidad</a>
+            <a href="#seguridad" onclick="showContent('seguridad')">Seguridad Web3</a>
+            <a href="#aprende" onclick="showContent('aprende')">Glosario Cripto</a>
         </nav>
-        <p>&copy; 2025 CursoCripto. Todos los derechos reservados.</p>
+        <p>&copy; 2026 CRIPTOYMAS.COM / CursoCripto. Todos los derechos reservados. | Educación en Ciberseguridad y Alfabetización Digital.</p>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // CONFIGURACIÓN DE TU WORKER EN CLOUDFLARE:
-        // Coloca aquí la URL pública de tu Cloudflare Worker desplegado.
-        // Ejemplo: window.CLOUDFLARE_WORKER_URL = "https://cloudflare-worker.TU-SUBDOMINIO.workers.dev";
         window.CLOUDFLARE_WORKER_URL = "https://cloudflare-worker.curso-cripto.workers.dev";
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script src="crypto-prices.js"></script>
 </body>
 </html>
