@@ -1779,3 +1779,145 @@ img, svg {
     top: -2px;
 }
 
+/* ==========================================================================
+   Aviso de Privacidad, Créditos y Descargo de Responsabilidad Styles
+   ========================================================================== */
+.legal-article, .creditos-article, .descargo-article {
+    background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98));
+    border: 1px solid rgba(0, 255, 204, 0.25);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    max-width: 920px;
+    margin: 1.5rem auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.legal-title, .creditos-title, .descargo-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    color: var(--color-primary, #00ffcc);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.legal-subtitle, .creditos-subtitle, .descargo-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--color-secondary, #00ccff);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.legal-intro, .creditos-intro, .descargo-intro {
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.legal-section, .creditos-section, .descargo-section {
+    margin-bottom: 1.75rem;
+}
+
+.legal-section-title, .creditos-section-title, .descargo-section-title {
+    font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+    color: #ff9f1c;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.legal-section p, .creditos-section p, .descargo-section p {
+    font-size: 1rem;
+    color: #e2e8f0;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+
+.legal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.legal-section ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.legal-section ul li::before {
+    content: "🔒";
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+    top: 2px;
+}
+
+.creditos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.credito-card {
+    background: rgba(11, 19, 43, 0.75);
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.credito-card h4 {
+    color: var(--color-secondary, #00ccff);
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.credito-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.descargo-highlight-box {
+    background: rgba(255, 159, 28, 0.1);
+    border-left: 4px solid #ff9f1c;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.descargo-highlight-box p {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.02rem;
+    line-height: 1.65;
+}
+
+.legal-section a, .creditos-section a, .descargo-section a {
+    color: #00ffcc;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.legal-section a:hover, .creditos-section a:hover, .descargo-section a:hover {
+    color: #ff9f1c;
+}
+
+

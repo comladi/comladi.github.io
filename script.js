@@ -609,55 +609,55 @@ function initMarketDashboardSimulation() {
     setInterval(fetchRealMarketData, 30000);
 }
 
-/* --- Dynamic Guía de Seguridad Fetch Loader --- */
-async function loadGuiaSeguridad() {
-    const guiaSection = document.getElementById('guia-seguridad-content');
-    if (!guiaSection) return;
+/* --- Dynamic Section Loader for HTML Partials --- */
+async function loadSectionPartial(url, sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    // Si se ejecuta mediante el protocolo file:// (abrir el HTML directamente en la laptop con doble clic),
+    // los navegadores bloquean fetch() por políticas CORS de origen 'null'.
+    // En ese caso, se mantiene el contenido base precargado en el HTML.
+    if (window.location.protocol === 'file:') {
+        return;
+    }
 
     try {
-        const response = await fetch('guia-seguridad.html');
+        const response = await fetch(url);
         if (response.ok) {
-            const htmlText = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-            const article = doc.querySelector('#guia-seguridad-articulo');
-            if (article) {
-                const backBtn = article.querySelector('.back-nav-container');
-                if (backBtn) backBtn.remove();
-                guiaSection.innerHTML = '';
-                guiaSection.appendChild(article);
+            const html = await response.text();
+            if (html && html.trim().length > 0) {
+                section.innerHTML = html;
             }
         }
     } catch (err) {
-        console.warn('Error al cargar guia-seguridad.html:', err);
+        console.warn(`[Carga parcial] No se pudo obtener ${url} vía fetch (se conserva el contenido por defecto):`, err);
     }
 }
 
-/* --- Dynamic Seguridad Web3 Fetch Loader --- */
-async function loadSeguridadWeb3() {
-    const web3Section = document.getElementById('seguridad-web3-content');
-    if (!web3Section) return;
+async function loadGuiaSeguridad() {
+    return loadSectionPartial('guia-seguridad.html', 'guia-seguridad-content');
+}
 
-    try {
-        const response = await fetch('seguridad-web3.html');
-        if (response.ok) {
-            const htmlText = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-            const article = doc.querySelector('#seguridad-web3-articulo');
-            if (article) {
-                const backBtn = article.querySelector('.back-nav-container');
-                if (backBtn) backBtn.remove();
-                web3Section.innerHTML = '';
-                web3Section.appendChild(article);
-            }
-        }
-    } catch (err) {
-        console.warn('Error al cargar seguridad-web3.html:', err);
-    }
+async function loadSeguridadWeb3() {
+    return loadSectionPartial('seguridad-web3.html', 'seguridad-web3-content');
+}
+
+async function loadDescargoResponsabilidad() {
+    return loadSectionPartial('descargo-responsabilidad.html', 'descargo-responsabilidad-content');
+}
+
+async function loadAvisoPrivacidad() {
+    return loadSectionPartial('aviso-privacidad.html', 'aviso-privacidad-content');
+}
+
+async function loadCreditos() {
+    return loadSectionPartial('creditos.html', 'creditos-content');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGuiaSeguridad();
     loadSeguridadWeb3();
+    loadDescargoResponsabilidad();
+    loadAvisoPrivacidad();
+    loadCreditos();
 });
