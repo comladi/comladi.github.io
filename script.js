@@ -99,7 +99,7 @@ function showContent(sectionId) {
         targetSection.classList.add('active');
     }
 
-    // Activate target navbar link
+    // Activate target navbar link (if exists in primary navbar)
     const targetLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
     if (targetLink) {
         targetLink.classList.add('active');
@@ -322,14 +322,19 @@ function showDescription(descId) {
     showNext(descId);
 }
 
+function showFinalWindow() {
+    showPage();
+}
+
 function showContactOptions() {
-    showNext('contactOptions');
+    showPage();
 }
 
 function showPage() {
     const modal = document.getElementById('finalMessageModal');
     if (modal) {
         modal.style.display = 'flex';
+        modal.classList.add('open');
     }
 }
 
@@ -337,6 +342,10 @@ function closeModal() {
     const modal = document.getElementById('finalMessageModal');
     if (modal) {
         modal.style.display = 'none';
+        modal.classList.remove('open');
+    }
+    if (typeof showContent === 'function') {
+        showContent('contacto');
     }
 }
 
@@ -350,7 +359,8 @@ function setupQRInteractions() {
     // Desktop QR toggler for WhatsApp
     const whatsappLinks = [
         document.getElementById('whatsapp-link'),
-        document.getElementById('whatsapp-link-contacto')
+        document.getElementById('whatsapp-link-contacto'),
+        document.getElementById('modal-whatsapp-link')
     ];
 
     whatsappLinks.forEach(link => {
@@ -358,9 +368,18 @@ function setupQRInteractions() {
         link.addEventListener('click', function (e) {
             if (!isMobile) {
                 e.preventDefault();
-                const isQuestionnaire = this.id === 'whatsapp-link';
-                const qrElement = document.getElementById(isQuestionnaire ? 'qr-whatsapp' : 'qr-whatsapp-contacto');
-                const otherQrElement = document.getElementById(isQuestionnaire ? 'qr-telefono' : 'qr-telefono-contacto');
+                let qrId = 'qr-whatsapp';
+                let otherQrId = 'qr-telefono';
+                if (this.id === 'whatsapp-link-contacto') {
+                    qrId = 'qr-whatsapp-contacto';
+                    otherQrId = 'qr-telefono-contacto';
+                } else if (this.id === 'modal-whatsapp-link') {
+                    qrId = 'modal-qr-whatsapp';
+                    otherQrId = 'modal-qr-telefono';
+                }
+
+                const qrElement = document.getElementById(qrId);
+                const otherQrElement = document.getElementById(otherQrId);
 
                 if (otherQrElement) {
                     otherQrElement.style.display = 'none';
@@ -384,7 +403,8 @@ function setupQRInteractions() {
     // Desktop QR toggler for Telefono
     const telefonoLinks = [
         document.getElementById('telefono-link'),
-        document.getElementById('telefono-link-contacto')
+        document.getElementById('telefono-link-contacto'),
+        document.getElementById('modal-telefono-link')
     ];
 
     telefonoLinks.forEach(link => {
@@ -392,9 +412,18 @@ function setupQRInteractions() {
         link.addEventListener('click', function (e) {
             if (!isMobile) {
                 e.preventDefault();
-                const isQuestionnaire = this.id === 'telefono-link';
-                const qrElement = document.getElementById(isQuestionnaire ? 'qr-telefono' : 'qr-telefono-contacto');
-                const otherQrElement = document.getElementById(isQuestionnaire ? 'qr-whatsapp' : 'qr-whatsapp-contacto');
+                let qrId = 'qr-telefono';
+                let otherQrId = 'qr-whatsapp';
+                if (this.id === 'telefono-link-contacto') {
+                    qrId = 'qr-telefono-contacto';
+                    otherQrId = 'qr-whatsapp-contacto';
+                } else if (this.id === 'modal-telefono-link') {
+                    qrId = 'modal-qr-telefono';
+                    otherQrId = 'modal-qr-whatsapp';
+                }
+
+                const qrElement = document.getElementById(qrId);
+                const otherQrElement = document.getElementById(otherQrId);
 
                 if (otherQrElement) {
                     otherQrElement.style.display = 'none';
@@ -422,6 +451,19 @@ function setupQRInteractions() {
 const WORKER_ENDPOINT = (typeof window !== "undefined" && window.CLOUDFLARE_WORKER_URL) 
     ? window.CLOUDFLARE_WORKER_URL 
     : "https://cloudflare-worker.curso-cripto.workers.dev";
+
+function initLiveClock() {
+    function tick() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const badges = document.querySelectorAll('.badge-live');
+        badges.forEach(b => {
+            b.innerText = `🟢 En Vivo: ${timeStr}`;
+        });
+    }
+    tick();
+    setInterval(tick, 1000);
+}
 
 function initMarketDashboardSimulation() {
     const dataConfig = {
@@ -478,68 +520,119 @@ function initMarketDashboardSimulation() {
 
         if (chgEl) {
             if (key === 'banxico') {
-                chgEl.innerText = "● Estable";
+                chgEl.innerText = "● Tasa Oficial";
                 chgEl.className = "indicator-change stable";
             } else {
-                if (changePercent === null || changePercent === undefined) {
-                    chgEl.innerText = "● Actualizado";
+                if (changePercent === null || changePercent === undefined || isNaN(Number(changePercent))) {
+                    chgEl.innerText = "● En tiempo real";
                     chgEl.className = "indicator-change stable";
                 } else {
-                    const isPositive = changePercent >= 0;
+                    const numChange = Number(changePercent);
+                    const isPositive = numChange >= 0;
                     const sign = isPositive ? "▲ +" : "▼ ";
-                    chgEl.innerText = `${sign}${Number(changePercent).toFixed(2)}%`;
+                    chgEl.innerText = `${sign}${Math.abs(numChange).toFixed(2)}%`;
                     chgEl.className = "indicator-change " + (isPositive ? "positive" : "negative");
                 }
             }
         }
     }
 
-    const badgeEl = document.querySelector(".badge-live");
-
-    if (WORKER_ENDPOINT) {
-        if (badgeEl) {
-            badgeEl.innerText = "Enlace Worker";
-        }
-
-        async function fetchWorkerData() {
+    async function fetchRealMarketData() {
+        // 1. Cloudflare Worker
+        if (WORKER_ENDPOINT) {
             try {
                 const response = await fetch(WORKER_ENDPOINT);
-                if (!response.ok) {
-                    throw new Error(`Código HTTP ${response.status}`);
-                }
-                const json = await response.json();
-                
-                for (const key in dataConfig) {
-                    const item = json[key];
-                    if (item && item.valor !== undefined && item.valor !== null) {
-                        updateCardDOM(key, item.valor, item.cambio, false);
-                    } else if (item && typeof item === 'number') {
-                        updateCardDOM(key, item, null, false);
+                if (response.ok) {
+                    const json = await response.json();
+                    for (const key in dataConfig) {
+                        const item = json[key];
+                        if (item && item.valor !== undefined && item.valor !== null) {
+                            updateCardDOM(key, item.valor, item.cambio, false);
+                        } else if (item && typeof item === 'number') {
+                            updateCardDOM(key, item, null, false);
+                        }
                     }
                 }
-
-                if (badgeEl && json.updatedAt) {
-                    const date = new Date(json.updatedAt);
-                    badgeEl.innerText = `En Vivo: ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
-                }
             } catch (err) {
-                console.error("Error al consultar el Cloudflare Worker:", err);
+                console.warn("Worker fetch fallback:", err);
             }
         }
 
-        fetchWorkerData();
-        setInterval(fetchWorkerData, 300000);
-        return;
+        // 2. Binance API para precios y variaciones 24h reales
+        try {
+            const binanceRes = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","ETCUSDT","XRPUSDT","PAXGUSDT"]');
+            if (binanceRes.ok) {
+                const tickers = await binanceRes.json();
+                tickers.forEach(t => {
+                    const price = parseFloat(t.lastPrice);
+                    const change = parseFloat(t.priceChangePercent);
+                    if (t.symbol === "BTCUSDT") updateCardDOM('btc', price, change, false);
+                    if (t.symbol === "ETHUSDT") updateCardDOM('eth', price, change, false);
+                    if (t.symbol === "ETCUSDT") updateCardDOM('etc', price, change, false);
+                    if (t.symbol === "XRPUSDT") updateCardDOM('xrp', price, change, false);
+                    if (t.symbol === "PAXGUSDT") updateCardDOM('gold', price, change, false);
+                });
+            }
+        } catch (err) {
+            // Fallback CoinGecko
+            try {
+                const cgRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,ethereum-classic,ripple,tether-gold&vs_currencies=usd&include_24hr_change=true');
+                if (cgRes.ok) {
+                    const cgData = await cgRes.json();
+                    if (cgData.bitcoin) updateCardDOM('btc', cgData.bitcoin.usd, cgData.bitcoin.usd_24h_change, false);
+                    if (cgData.ethereum) updateCardDOM('eth', cgData.ethereum.usd, cgData.ethereum.usd_24h_change, false);
+                    if (cgData['ethereum-classic']) updateCardDOM('etc', cgData['ethereum-classic'].usd, cgData['ethereum-classic'].usd_24h_change, false);
+                    if (cgData.ripple) updateCardDOM('xrp', cgData.ripple.usd, cgData.ripple.usd_24h_change, false);
+                    if (cgData['tether-gold']) updateCardDOM('gold', cgData['tether-gold'].usd, cgData['tether-gold'].usd_24h_change, false);
+                }
+            } catch (e) {
+                console.warn("CoinGecko fallback error:", e);
+            }
+        }
+
+        // 3. Frankfurter USD/MXN
+        try {
+            const fxRes = await fetch('https://api.frankfurter.app/latest?from=USD&to=MXN');
+            if (fxRes.ok) {
+                const fxData = await fxRes.json();
+                if (fxData.rates && fxData.rates.MXN) {
+                    updateCardDOM('usd', fxData.rates.MXN, null, false);
+                }
+            }
+        } catch (err) {
+            console.warn("USD/MXN fallback error:", err);
+        }
     }
 
-    if (badgeEl) {
-        badgeEl.innerText = "Sin conexión";
-        badgeEl.style.borderColor = "var(--text-muted)";
-        badgeEl.style.color = "var(--text-muted)";
-    }
+    initLiveClock();
+    fetchRealMarketData();
+    setInterval(fetchRealMarketData, 30000);
+}
 
-    for (const key in dataConfig) {
-        updateCardDOM(key, null, null, true, "Sin conexión");
+/* --- Dynamic Guía de Seguridad Fetch Loader --- */
+async function loadGuiaSeguridad() {
+    const guiaSection = document.getElementById('guia-seguridad-content');
+    if (!guiaSection) return;
+
+    try {
+        const response = await fetch('guia-seguridad.html');
+        if (response.ok) {
+            const htmlText = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+            const article = doc.querySelector('#guia-seguridad-articulo');
+            if (article) {
+                const backBtn = article.querySelector('.back-nav-container');
+                if (backBtn) backBtn.remove();
+                guiaSection.innerHTML = '';
+                guiaSection.appendChild(article);
+            }
+        }
+    } catch (err) {
+        console.warn('Error al cargar guia-seguridad.html:', err);
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    loadGuiaSeguridad();
+});

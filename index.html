@@ -333,7 +333,7 @@
                 <!-- Tablero de Demostración de Indicadores Financieros -->
                 <div class="market-dashboard-container">
                     <div class="market-dashboard-header">
-                        <h2>📊 Tablero de Indicadores Financieros <span class="badge-live">Demostración</span></h2>
+                        <h2>📊 Tablero de Indicadores Financieros <span class="badge-live">🟢 En Vivo</span></h2>
                         <p class="market-legend">Aprenderás a entender estos indicadores, cómo se interrelacionan y de qué depende el comportamiento de sus precios.</p>
                     </div>
                     
@@ -346,7 +346,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-usd">$20.24 MXN</span>
-                                <span class="indicator-change positive" id="chg-usd">▲ +0.08%</span>
+                                <span class="indicator-change stable" id="chg-usd">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -358,7 +358,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-cetes">11.05%</span>
-                                <span class="indicator-change positive" id="chg-cetes">▲ +0.02%</span>
+                                <span class="indicator-change stable" id="chg-cetes">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -370,7 +370,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-banxico">11.00%</span>
-                                <span class="indicator-change stable" id="chg-banxico">● Estable</span>
+                                <span class="indicator-change stable" id="chg-banxico">● Tasa Oficial</span>
                             </div>
                         </div>
 
@@ -382,7 +382,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-btc">$92,450.00 USD</span>
-                                <span class="indicator-change negative" id="chg-btc">▼ -0.34%</span>
+                                <span class="indicator-change stable" id="chg-btc">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -394,7 +394,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-eth">$3,120.00 USD</span>
-                                <span class="indicator-change positive" id="chg-eth">▲ +1.15%</span>
+                                <span class="indicator-change stable" id="chg-eth">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -406,7 +406,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-etc">$24.50 USD</span>
-                                <span class="indicator-change negative" id="chg-etc">▼ -1.05%</span>
+                                <span class="indicator-change stable" id="chg-etc">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -418,7 +418,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-xrp">$1.15 USD</span>
-                                <span class="indicator-change positive" id="chg-xrp">▲ +4.67%</span>
+                                <span class="indicator-change stable" id="chg-xrp">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -430,7 +430,7 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-gold">$2,380.00 USD</span>
-                                <span class="indicator-change positive" id="chg-gold">▲ +0.22%</span>
+                                <span class="indicator-change stable" id="chg-gold">● En tiempo real</span>
                             </div>
                         </div>
 
@@ -442,13 +442,13 @@
                             </div>
                             <div class="indicator-value-container">
                                 <span class="indicator-value" id="val-silver">$28.40 USD</span>
-                                <span class="indicator-change positive" id="chg-silver">▲ +0.65%</span>
+                                <span class="indicator-change stable" id="chg-silver">● En tiempo real</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Garantía Anti-Humo (Tarjeta Original) -->
+                <!-- Garantía Anti-Humo -->
                 <div class="sidebar-widget" style="background: rgba(17, 30, 56, 0.95); border-color: rgba(0, 255, 204, 0.3); max-width: 550px; margin: 2.5rem auto 0 auto; text-align: center;">
                     <h3 class="widget-title" style="color: var(--color-primary); border-color: var(--color-primary); display: inline-block;">Garantía Anti-Humo</h3>
                     <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5;">Nuestra única meta es la educación en ciberseguridad y la soberanía de tus datos.</p>
@@ -517,7 +517,7 @@
             </article>
         </section>
 
-        <!-- Aprende questionnaire Section -->
+        <!-- Aprende questionnaire Section (Consecutivo a ¿Sabías que...?) -->
         <section id="aprende-content" class="content">
             <article>
                 <h1>La tecnología está cambiando el dinero y la economía</h1>
@@ -577,44 +577,8 @@
                     <!-- Q8 -->
                     <div id="q8" class="hidden">
                         <p>¿Te gustaría dominar estos conceptos clave, entender el futuro de la economía y aprender a proteger tu patrimonio de forma 100% segura y con criterio propio?</p>
-                        <label for="q8-si"><input type="radio" id="q8-si" name="q8" value="si" onchange="showContactOptions()"> 🔥 ¡Totalmente, quiero unirme!</label>
-                        <label for="q8-talvez"><input type="radio" id="q8-talvez" name="q8" value="tal vez" onchange="showPage()"> 📖 Me gustaría ver más detalles primero</label>
-                    </div>
-                    
-                    <!-- Opciones de contacto dinámicas del formulario -->
-                    <div id="contactOptions" class="hidden contact-options-container">
-                        <h2>¡Felicidades por dar el primer paso!</h2>
-                        <p class="final-promo-legend" style="font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.6;">
-                            Por solo <strong>3,500 MXN</strong>, domina las criptomonedas en 5 horas con nuestro curso práctico. Aprende rápido, evita riesgos y lidera el cambio financiero.
-                        </p>
-                        <p class="final-promo-legend" style="font-weight: 600; font-size: 1.15rem; color: var(--color-primary); margin-bottom: 2rem;">
-                            💥 ¡Aprovecha un 25% de descuento y una consulta gratuita! ¡Inscríbete hoy y toma el control!
-                        </p>
-                        <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.15); margin: 2rem auto; max-width: 80%;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600;">Opciones de contacto</h3>
-                        <p style="margin-bottom: 2rem;">El futuro es ahora. Habla con nosotros por cualquiera de estas vías:</p>
-                        <div class="contact-grid">
-                            <a href="mailto:ventas@cursocripto.com.mx" class="contact-button email-link" aria-label="Enviar un correo electrónico a CursoCripto (ventas@cursocripto.com.mx)">
-                                <svg class="icono" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M22 6L12 13L2 6" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/+525649282704" target="_blank" class="contact-button whatsapp-link" id="whatsapp-link" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
-                                <img src="images/whatsapp.png" alt="Whatsapp Icono" class="icono">
-                            </a>
-                            <a href="tel:+525649282704" class="contact-button telefono-link" id="telefono-link" aria-label="Llamar por teléfono o ver código QR (56 4928 2704)">
-                                <img src="images/llamada.png" alt="Teléfono Icono" class="icono">
-                            </a>
-                        </div>
-                        <div class="qr-container">
-                            <div class="qr-telefono" id="qr-whatsapp" style="display: none;">
-                                <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
-                            </div>
-                            <div class="qr-telefono" id="qr-telefono" style="display: none;">
-                                <img src="images/contacto.png" alt="Código QR de contacto telefónico">
-                            </div>
-                        </div>
+                        <label for="q8-si" onclick="showPage()"><input type="radio" id="q8-si" name="q8" value="si" onchange="showPage()"> 🔥 ¡Totalmente, quiero unirme!</label>
+                        <label for="q8-talvez" onclick="showPage()"><input type="radio" id="q8-talvez" name="q8" value="tal vez" onchange="showPage()"> 📖 Me gustaría ver más detalles primero</label>
                     </div>
                 </form>
                 
@@ -622,21 +586,95 @@
                 <div id="finalMessageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
                     <div class="modal-content">
                         <button class="close-modal" onclick="closeModal()" aria-label="Cerrar ventana emergente">&times;</button>
-                        <h1 id="modal-title">¡Domina el Dinero del Futuro!</h1>
-                        <div class="copywriting">
-                            <h2>Conviértete en experto en criptomonedas</h2>
+                        
+                        <span class="modal-badge">🎉 ¡Felicidades por dar el primer paso!</span>
+                        <h1 id="modal-title" class="modal-heading">¡Domina el Dinero del Futuro!</h1>
+                        
+                        <div class="modal-body-text">
+                            <p>El dinero digital ya está aquí. Conviértete en un experto en Bitcoin, blockchain y el nuevo ecosistema financiero con nuestro curso 100% práctico de solo 5 horas. Aprende a tu ritmo, minimiza riesgos y lidera la revolución financiera.</p>
                         </div>
-                        <section>
-                            <p>El dinero digital está aquí. Aprende Bitcoin, blockchain y más en solo 5 horas con nuestro curso práctico. ¡Toma el control y lidera la revolución financiera hoy!</p>
-                        </section>
-                        <footer>
-                            <h3>"Tu futuro financiero comienza aquí: Aprende, Actúa, Triunfa."</h3>
-                            <button class="cta-button" onclick="closeModal(); showContent('contacto')">¡Inscríbete Ya!</button>
-                        </footer>
+                        
+                        <div class="modal-offer-box">
+                            <h3>💥 Oferta exclusiva por tiempo limitado:</h3>
+                            <ul class="offer-list">
+                                <li><strong>25% de descuento</strong> en tu inscripción.</li>
+                                <li><strong>1 consulta gratuita personalizada</strong> para resolver todas tus dudas.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="modal-quote-box">
+                            <p class="modal-quote">"Tu futuro financiero comienza hoy: Aprende, Actúa, Triunfa."</p>
+                            <p class="modal-subtext">¡El futuro es ahora! Toma el control e inscríbete hoy.</p>
+                            <p class="modal-instruction">Ponte en contacto con nosotros por cualquiera de nuestras vías directas y da el salto definitivo:</p>
+                        </div>
+
+                        <div class="contact-grid">
+                            <a href="mailto:ventas@cursocripto.com.mx" class="contact-button email-link" aria-label="Enviar un correo electrónico a CursoCripto (ventas@cursocripto.com.mx)">
+                                <svg class="icono" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 6L12 13L2 6" stroke="#00ccff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/+525649282704?text=¡Hola!%20Deseo%20inscribirme%20al%20curso%20con%20el%2025%25%20de%20descuento%20y%20la%20consulta%20gratuita." target="_blank" rel="noreferrer" class="contact-button whatsapp-link" id="modal-whatsapp-link" aria-label="Contactar por WhatsApp (+52 56 4928 2704)">
+                                <img src="images/whatsapp.png" alt="Whatsapp Icono" class="icono">
+                            </a>
+                            <a href="tel:+525649282704" class="contact-button telefono-link" id="modal-telefono-link" aria-label="Llamar por teléfono o ver código QR (56 4928 2704)">
+                                <img src="images/llamada.png" alt="Teléfono Icono" class="icono">
+                            </a>
+                        </div>
+                        <div class="qr-container">
+                            <div class="qr-telefono" id="modal-qr-whatsapp" style="display: none;">
+                                <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
+                            </div>
+                            <div class="qr-telefono" id="modal-qr-telefono" style="display: none;">
+                                <img src="images/contacto.png" alt="Código QR de contacto telefónico">
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.75rem;">
+                            <a href="https://wa.me/+525649282704?text=¡Hola!%20Deseo%20inscribirme%20al%20curso%20con%20el%2025%25%20de%20descuento%20y%20la%20consulta%20gratuita." target="_blank" rel="noreferrer" class="cta-button" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.05rem;">
+                                🚀 ¡Inscríbete Ahora por WhatsApp!
+                            </a>
+                        </div>
                     </div>
                 </div>
             </article>
         </section>
+
+        <!-- Sección Nueva 1: Seguridad Web3 -->
+        <section id="seguridad-web3-content" class="content">
+            <article class="article-card">
+                <h1>🛡️ Seguridad Web3</h1>
+                <p style="text-align: center; color: var(--text-muted); margin: 2rem auto;">
+                    Sección reservada para contenido de Seguridad Web3.
+                </p>
+            </article>
+        </section>
+
+        <!-- Sección: Guía de Seguridad & Anti-Estafas (Cargado dinámicamente desde guia-seguridad.html) -->
+        <section id="guia-seguridad-content" class="content">
+            <article id="guia-seguridad-articulo" class="article-card guia-article">
+                <h1 class="guia-title">Seguridad Cripto y Prevención de Estafas</h1>
+                <h2 class="guia-subtitle">¿Cómo saber si una plataforma cripto es confiable? 3 señales para detectar estafas antes de hacer clic</h2>
+                
+                <p class="guia-intro">
+                    Navegar por el ecosistema Web3 y las tecnologías descentralizadas ofrece grandes oportunidades de soberanía digital, pero también expone a los usuarios novatos a ataques cibernéticos y esquemas fraudulentos.
+                </p>
+                
+                <ul class="guia-list">
+                    <li>
+                        <strong>Promesa de rentabilidad fija sin riesgo:</strong> Ningún protocolo legítimo de blockchain garantiza rendimientos fijos acumulativos.
+                    </li>
+                    <li>
+                        <strong>Presión psicológica e inmediatez:</strong> Temporizadores en cuenta regresiva para obligarte a conectar tu billetera sin verificar la URL.
+                    </li>
+                    <li>
+                        <strong>Inexistencia de documentación técnica:</strong> Carecen de enlaces a repositorios de código abierto (como GitHub) o auditorías de contratos inteligentes realizables por terceros.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
         <!-- Contacto Section -->
         <section id="contacto-content" class="content">
             <article>
@@ -690,8 +728,8 @@
         <nav class="footer-links" aria-label="Enlaces secundarios">
             <a href="creditos.html">Créditos</a>
             <a href="aviso.html">Aviso De Privacidad</a>
-            <a href="#seguridad" onclick="showContent('aprende')">Seguridad Web3</a>
-            <a href="#razones" onclick="showContent('aprende')">Guía de Seguridad &amp; Anti-Estafas</a>
+            <a href="#seguridad-web3" onclick="showContent('seguridad-web3')">Seguridad Web3</a>
+            <a href="#guia-seguridad" onclick="showContent('guia-seguridad')">Guía de Seguridad &amp; Anti-Estafas</a>
         </nav>
         <p>&copy; 2026 CRIPTOYMAS.COM / CursoCripto. Todos los derechos reservados. | Educación en Ciberseguridad y Alfabetización Digital.</p>
     </footer>

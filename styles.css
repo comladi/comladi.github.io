@@ -629,7 +629,7 @@ img, svg {
     margin: 1.5rem auto;
     filter: drop-shadow(0 4px 15px rgba(0, 204, 255, 0.4));
     animation: floatAnim 4s ease-in-out infinite alternate;
-    opacity: 1 !important; /* CRITICAL FIX: Ensures 100% visibility in carousel */
+    opacity: 1 !important;
     display: block !important;
 }
 
@@ -802,7 +802,6 @@ img, svg {
     display: block;
 }
 
-/* FIX: Expands and becomes visible when toggled via script */
 .qr-telefono.active,
 .qr-telefono[style*="display: block"] {
     max-height: 280px !important;
@@ -831,18 +830,28 @@ img, svg {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.modal.open {
+    display: flex;
 }
 
 .modal-content {
     background: var(--gradient-accent);
     color: var(--text-light);
-    padding: 3.5rem 2.5rem;
+    padding: 2.5rem 2rem;
     border-radius: 20px;
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 650px;
     text-align: center;
     border: 2px solid var(--color-primary);
     position: relative;
+    box-shadow: 0 0 35px rgba(0, 255, 204, 0.4);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-modal {
@@ -854,6 +863,106 @@ img, svg {
     color: var(--text-light);
     background: none;
     border: none;
+    line-height: 1;
+    transition: var(--transition-smooth);
+}
+
+.close-modal:hover {
+    color: var(--color-primary);
+    transform: scale(1.15);
+}
+
+.modal-badge {
+    display: inline-block;
+    background: rgba(0, 255, 204, 0.15);
+    color: var(--color-primary);
+    border: 1px solid rgba(0, 255, 204, 0.4);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.modal-heading {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.modal-body-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.modal-offer-box {
+    background: rgba(17, 30, 56, 0.85);
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem auto;
+    text-align: left;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.modal-offer-box h3 {
+    color: var(--color-primary);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.offer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.offer-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.modal-quote-box {
+    margin: 1.5rem auto;
+}
+
+.modal-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.modal-subtext {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.modal-instruction {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
 }
 
 /* --- Footer --- */
@@ -1491,3 +1600,78 @@ img, svg {
     background: rgba(0, 204, 255, 0.12);
 }
 
+/* ==========================================================================
+   Guía de Seguridad & Anti-Estafas Styles
+   ========================================================================== */
+.guia-article {
+    background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98));
+    border: 1px solid rgba(0, 255, 204, 0.25);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.guia-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--color-primary, #00ffcc);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.guia-subtitle {
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    color: var(--color-secondary, #00ccff);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.guia-intro {
+    font-size: 1.08rem;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.guia-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.guia-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #ffffff;
+    text-align: left;
+}
+
+.guia-list li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.1rem;
+}
+
+.guia-list strong {
+    color: #ff9f1c;
+}
+
+.back-nav-container {
+    text-align: center;
+    margin-top: 2.5rem;
+}
