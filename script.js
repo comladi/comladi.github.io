@@ -633,6 +633,31 @@ async function loadGuiaSeguridad() {
     }
 }
 
+/* --- Dynamic Seguridad Web3 Fetch Loader --- */
+async function loadSeguridadWeb3() {
+    const web3Section = document.getElementById('seguridad-web3-content');
+    if (!web3Section) return;
+
+    try {
+        const response = await fetch('seguridad-web3.html');
+        if (response.ok) {
+            const htmlText = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+            const article = doc.querySelector('#seguridad-web3-articulo');
+            if (article) {
+                const backBtn = article.querySelector('.back-nav-container');
+                if (backBtn) backBtn.remove();
+                web3Section.innerHTML = '';
+                web3Section.appendChild(article);
+            }
+        }
+    } catch (err) {
+        console.warn('Error al cargar seguridad-web3.html:', err);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadGuiaSeguridad();
+    loadSeguridadWeb3();
 });
