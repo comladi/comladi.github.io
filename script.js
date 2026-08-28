@@ -97,6 +97,14 @@ function showContent(sectionId) {
     const targetSection = document.getElementById(`${sectionId}-content`);
     if (targetSection) {
         targetSection.classList.add('active');
+        // Si la sección no tiene contenido cargado aún, cargarla dinámicamente
+        if (!targetSection.innerHTML || targetSection.innerHTML.trim() === '') {
+            if (sectionId === 'seguridad-web3') loadSeguridadWeb3();
+            else if (sectionId === 'guia-seguridad') loadGuiaSeguridad();
+            else if (sectionId === 'descargo-responsabilidad') loadDescargoResponsabilidad();
+            else if (sectionId === 'aviso-privacidad') loadAvisoPrivacidad();
+            else if (sectionId === 'creditos') loadCreditos();
+        }
     }
 
     // Activate target navbar link (if exists in primary navbar)
@@ -614,23 +622,18 @@ async function loadSectionPartial(url, sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
 
-    // Si se ejecuta mediante el protocolo file:// (abrir el HTML directamente en la laptop con doble clic),
-    // los navegadores bloquean fetch() por políticas CORS de origen 'null'.
-    // En ese caso, se mantiene el contenido base precargado en el HTML.
-    if (window.location.protocol === 'file:') {
-        return;
-    }
-
     try {
         const response = await fetch(url);
         if (response.ok) {
             const html = await response.text();
             if (html && html.trim().length > 0) {
                 section.innerHTML = html;
+                return;
             }
         }
+        throw new Error(`Respuesta no válida (${response.status}) para ${url}`);
     } catch (err) {
-        console.warn(`[Carga parcial] No se pudo obtener ${url} vía fetch (se conserva el contenido por defecto):`, err);
+        console.warn(`[Carga parcial] Error al cargar ${url} vía fetch:`, err);
     }
 }
 
