@@ -59,6 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeTimer = setTimeout(() => {
         skipWelcome();
     }, 11500);
+
+    // 5. Pre-load partial sections
+    loadGuiaSeguridad();
+    loadSeguridadWeb3();
+    loadDescargoResponsabilidad();
+    loadAvisoPrivacidad();
+    loadCreditos();
 });
 
 /* --- Welcome Skip Functionality --- */
@@ -657,10 +664,21 @@ async function loadCreditos() {
     return loadSectionPartial('creditos.html', 'creditos-content');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadGuiaSeguridad();
-    loadSeguridadWeb3();
-    loadDescargoResponsabilidad();
-    loadAvisoPrivacidad();
-    loadCreditos();
-});
+// Export for window
+window.skipWelcome = skipWelcome;
+window.showContent = showContent;
+window.toggleMenu = toggleMenu;
+window.moveSlideCurso = moveSlideCurso;
+window.goToSlideCurso = goToSlideCurso;
+window.moveSlideSobre = moveSlideSobre;
+window.goToSlideSobre = goToSlideSobre;
+window.moveSlideRazones = moveSlideRazones;
+window.goToSlideRazones = goToSlideRazones;
+window.moveSlidePresentacion = moveSlidePresentacion;
+window.goToSlidePresentacion = goToSlidePresentacion;
+window.showNext = showNext;
+window.showDescription = showDescription;
+window.showFinalWindow = showFinalWindow;
+window.showContactOptions = showContactOptions;
+window.showPage = showPage;
+window.closeModal = closeModal;
