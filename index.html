@@ -700,93 +700,26 @@
 
     </main>
 
-    <!-- Footer Semántico y Responsivo -->
+    <!-- Footer Area -->
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
-            <!-- Sección Superior: Grid de Columnas Técnicas -->
-            <div class="footer-grid">
-                <!-- Columna 1: Identidad y Misión -->
-                <div class="footer-column footer-brand-col">
-                    <div class="footer-brand">
-                        <a href="#inicio" onclick="showContent('inicio')" class="footer-logo">CursoCripto</a>
-                        <span class="footer-badge">Web3 Segura</span>
-                    </div>
-                    <p class="footer-desc">
-                        Educación en ciberseguridad, tecnología blockchain y alfabetización digital con enfoque preventivo y criterio propio.
-                    </p>
-                    <div class="footer-tagline">
-                        <span class="footer-dot">●</span> Divulgación tecnológica y soberanía financiera
-                    </div>
-                </div>
+            <!-- Sección de Seguridad (Antes de la parte final) -->
+            <nav class="footer-section footer-section-security" aria-label="Seguridad y Guías">
+                <a href="#seguridad-web3" onclick="showContent('seguridad-web3')">Seguridad Web3</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="#guia-seguridad" onclick="showContent('guia-seguridad')">Guía de Seguridad &amp; Anti-Estafas</a>
+            </nav>
 
-                <!-- Columna 2: Navegación del Sitio -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">Navegación</h3>
-                    <nav class="footer-nav" aria-label="Navegación del sitio">
-                        <ul class="footer-links-list">
-                            <li><a href="#inicio" onclick="showContent('inicio')">Inicio</a></li>
-                            <li><a href="#cursos" onclick="showContent('cursos')">Cursos</a></li>
-                            <li><a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')">Sobre Nosotros</a></li>
-                            <li><a href="#razones" onclick="showContent('razones')">Razones para Registrarse</a></li>
-                            <li><a href="#presentacion" onclick="showContent('presentacion')">¿Sabías que...?</a></li>
-                            <li><a href="#contacto" onclick="showContent('contacto')">Contacto</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <!-- Sección Legal y Créditos (Parte Final) -->
+            <nav class="footer-section footer-section-legal" aria-label="Legal y Créditos">
+                <a href="#descargo-responsabilidad" onclick="showContent('descargo-responsabilidad')">Descargo de Responsabilidad</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="#aviso-privacidad" onclick="showContent('aviso-privacidad')">Aviso de Privacidad</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="#creditos" onclick="showContent('creditos')">Créditos</a>
+            </nav>
 
-                <!-- Columna 3: Ciberseguridad & Web3 (Antes de la parte final) -->
-                <div class="footer-column footer-security-col">
-                    <h3 class="footer-heading">Ciberseguridad &amp; Prevención</h3>
-                    <nav class="footer-nav" aria-label="Seguridad y Protección Web3">
-                        <ul class="footer-links-list">
-                            <li>
-                                <a href="#seguridad-web3" onclick="showContent('seguridad-web3')" class="footer-highlight-link">
-                                    <span class="footer-link-icon">🛡️</span>
-                                    <span>Seguridad Web3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#guia-seguridad" onclick="showContent('guia-seguridad')" class="footer-highlight-link">
-                                    <span class="footer-link-icon">⚠️</span>
-                                    <span>Guía de Seguridad &amp; Anti-Estafas</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="footer-security-note">
-                        <small>Aprende a proteger tus llaves privadas y detectar fraudes antes de operar.</small>
-                    </div>
-                </div>
-
-                <!-- Columna 4: Marco Legal & Transparencia -->
-                <div class="footer-column footer-legal-col">
-                    <h3 class="footer-heading">Legal &amp; Transparencia</h3>
-                    <nav class="footer-nav" aria-label="Información legal">
-                        <ul class="footer-links-list">
-                            <li><a href="#descargo-responsabilidad" onclick="showContent('descargo-responsabilidad')">Descargo de Responsabilidad</a></li>
-                            <li><a href="#aviso-privacidad" onclick="showContent('aviso-privacidad')">Aviso de Privacidad</a></li>
-                            <li><a href="#creditos" onclick="showContent('creditos')">Créditos</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Divisor decorativo sutil -->
-            <div class="footer-divider" aria-hidden="true"></div>
-
-            <!-- Parte Final: Enlaces legales y de créditos + Copyright -->
-            <div class="footer-bottom">
-                <nav class="footer-bottom-links" aria-label="Enlaces finales y legales">
-                    <a href="#descargo-responsabilidad" onclick="showContent('descargo-responsabilidad')">Descargo de Responsabilidad</a>
-                    <span class="footer-sep" aria-hidden="true">•</span>
-                    <a href="#aviso-privacidad" onclick="showContent('aviso-privacidad')">Aviso de Privacidad</a>
-                    <span class="footer-sep" aria-hidden="true">•</span>
-                    <a href="#creditos" onclick="showContent('creditos')">Créditos</a>
-                </nav>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 CRIPTOYMAS.COM / CursoCripto. Todos los derechos reservados. | Educación en Ciberseguridad y Alfabetización Digital.</p>
-                </div>
-            </div>
+            <p class="footer-copyright">&copy; 2026 CRIPTOYMAS.COM / CursoCripto. Todos los derechos reservados. | Educación en Ciberseguridad y Alfabetización Digital.</p>
         </div>
     </footer>
 
