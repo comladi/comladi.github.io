@@ -374,7 +374,7 @@ img, svg {
     background-color: var(--bg-dark-secondary);
     background-image: var(--gradient-card);
     border: var(--border-glow);
-    padding: 2.5rem 5.25rem;
+    padding: 2.5rem 5.5rem;
     border-radius: 16px;
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
@@ -552,7 +552,6 @@ img, svg {
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 16px;
-    padding-bottom: 0.5rem;
 }
 
 .carousel-inner {
@@ -567,39 +566,31 @@ img, svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    bottom: auto;
-    background-color: rgba(17, 30, 56, 0.95);
-    border: 1px solid rgba(0, 255, 204, 0.35);
+    background-color: rgba(11, 19, 43, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-light);
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: var(--transition-smooth);
     z-index: 10;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 .carousel-button:hover {
     background-color: var(--color-primary);
     color: var(--text-dark);
     border-color: var(--color-primary);
-    transform: translateY(-50%) scale(1.08);
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.55);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
 }
 
-.carousel-button.prev {
-    left: 1.25rem;
-}
-
-.carousel-button.next, 
-.carousel-button.back {
-    right: 1.25rem;
-}
+.carousel-button.prev { left: 1rem; }
+.carousel-button.next, .carousel-button.back { right: 1rem; }
 
 .carousel-button.hidden {
     opacity: 0;
@@ -611,9 +602,7 @@ img, svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
-    min-height: 44px;
+    margin-top: 1.5rem;
     gap: 0.6rem;
 }
 
@@ -1413,12 +1402,12 @@ img, svg {
 
     .content-container { padding: 2.5rem 1rem; margin-top: 65px; }
 
-    .module { padding: 2rem 3.5rem; }
+    .module { padding: 2rem 3.75rem; }
 
     .carousel-button {
         width: 38px;
         height: 38px;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 
     .carousel-button.prev {
