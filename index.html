@@ -207,11 +207,11 @@
                     <div class="info-card plan-card">
                         <div class="card-header-icon">⏳</div>
                         <h3>¿Cuál es el plan y en cuánto tiempo lo lograrás?</h3>
-                        <p>El curso dura <strong>5 horas</strong>, dividido en <strong>3 módulos:</strong> puedes tomarlos en un día o en días distintos, según tu ritmo.</p>
+                        <p>El curso dura <strong>5 horas</strong>, dividido en <strong>3 módulos</strong> flexibles: puedes tomarlos en un día o en días distintos, según tu ritmo.</p>
                         <ul class="plan-bullets">
-                            <li><span class="bullet-icon">📅</span> <span>Inscripciones abiertas</span></li>
-                            <li><span class="bullet-icon">🚀</span> <span>Es directo, sin complicaciones y perfecto para que entiendas las criptos sin estrés.</span></li>
-                            <li><span class="bullet-icon">💡</span> <span> ¡Apúntate y prepárate para despegar!</span></li>
+                            <li><span class="bullet-icon">📅</span> <span>Inscripciones desde el 20 de marzo.</span></li>
+                            <li><span class="bullet-icon">🚀</span> <span>Arrancamos el 1 de abril de 2025.</span></li>
+                            <li><span class="bullet-icon">💡</span> <span>Es directo, sin complicaciones y perfecto para que entiendas las criptos sin estrés. ¡Apúntate y prepárate para despegar!</span></li>
                         </ul>
                     </div>
 
@@ -319,7 +319,7 @@
                     
                     <button class="carousel-button prev" id="prev-button-razones" onclick="moveSlideRazones(-1)" aria-label="Razón anterior">&lt;</button>
                     <button class="carousel-button next" id="next-button-razones" onclick="moveSlideRazones(1)" aria-label="Razón siguiente">&gt;</button>
-                    <a href="#presentacion" class="carousel-button back hidden" id="back-button-razones" onclick="showContent('presentacion')" aria-label="Ir a ¿Sabías que...?">&gt;</a>
+                    <a href="#tablero-indicadores" class="carousel-button back hidden" id="back-button-razones" onclick="document.getElementById('tablero-indicadores')?.scrollIntoView({ behavior: 'smooth' });" aria-label="Ir al tablero de indicadores financieros">⬇️</a>
                     
                     <div class="carousel-dots" id="carousel-dots-razones">
                         <button class="carousel-dot active" onclick="goToSlideRazones(0)" aria-label="Razón 1"></button>
@@ -331,7 +331,7 @@
                 </div>
 
                 <!-- Tablero de Demostración de Indicadores Financieros -->
-                <div class="market-dashboard-container">
+                <div class="market-dashboard-container" id="tablero-indicadores">
                     <div class="market-dashboard-header">
                         <h2>📊 Tablero de Indicadores Financieros <span class="badge-live">🟢 En Vivo</span></h2>
                         <p class="market-legend">Aprenderás a entender estos indicadores, cómo se interrelacionan y de qué depende el comportamiento de sus precios.</p>
@@ -452,7 +452,7 @@
                 <div class="sidebar-widget" style="background: rgba(17, 30, 56, 0.95); border-color: rgba(0, 255, 204, 0.3); max-width: 550px; margin: 2.5rem auto 0 auto; text-align: center;">
                     <h3 class="widget-title" style="color: var(--color-primary); border-color: var(--color-primary); display: inline-block;">Garantía Anti-Humo</h3>
                     <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5;">Nuestra única meta es la educación en ciberseguridad y la soberanía de tus datos.</p>
-                    <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1rem; font-size: 0.9rem; width: 100%; display: block; text-align: center;">Ir al Curso</a>
+                    <a href="#presentacion" onclick="showContent('presentacion')" class="cta-button" style="padding: 0.65rem 1rem; font-size: 0.9rem; width: 100%; display: block; text-align: center;">Ir a ¿Sabías que...?</a>
                 </div>
             </article>
         </section>
@@ -588,13 +588,21 @@
                         <button class="close-modal" onclick="closeModal()" aria-label="Cerrar ventana emergente">&times;</button>
                         
                         <span class="modal-badge">🎉 ¡Felicidades por dar el primer paso!</span>
-                        <h1 id="modal-title" class="modal-heading">¡Inscríbete hoy y toma el control!</h1>
+                        <h1 id="modal-title" class="modal-heading">¡El dinero digital ya está aquí!</h1>
                         
                         <div class="modal-body-text">
                             <p>Conviértete en un experto en Bitcoin, blockchain y el nuevo ecosistema financiero con nuestro curso.</p>
                         </div>
                         
-                        <div class="qr-container">
+                        <div class="modal-offer-box">
+                            <h3>💥 Oferta exclusiva por tiempo limitado:</h3>
+                            <ul class="offer-list">
+                                <li><strong>25% de descuento</strong> en tu inscripción.</li>
+                                <li><strong>1 consulta gratuita personalizada</strong> para resolver todas tus dudas.</li>
+                            </ul>
+                        </div>
+
+                 <div class="qr-container">
                             <div class="qr-telefono" id="modal-qr-whatsapp" style="display: none;">
                                 <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
                             </div>
@@ -633,17 +641,8 @@
             <article>
                 <h1>¡El futuro del dinero es ahora!</h1>
                 <p>Por solo <strong>3,500 MXN</strong>, domina las criptomonedas en 5 horas con nuestro curso práctico. Aprende rápido, evita riesgos y lidera el cambio financiero.</p>
-
-
-<div class="modal-offer-box">
-                            <h3>💥 Oferta exclusiva por tiempo limitado:</h3>
-                            <ul class="offer-list">
-                                <li><strong>25% de descuento</strong> en tu inscripción.</li>
-                                <li><strong>1 consulta gratuita personalizada</strong> para resolver todas tus dudas.</li>
-                            </ul>
-                        </div>
+                <p><strong>¡Cupo limitado!</strong> Aprovecha un <strong>25% de descuento</strong> y una consulta gratuita. ¡Inscríbete hoy y toma el control!</p>
                 
-
                 <div class="contact-options-container">
                     <h2>Contáctanos hoy</h2>
                     <p>Habla con nosotros y comienza tu viaje cripto:</p>
@@ -710,3 +709,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
