@@ -42,6 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -118,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="cursos-content" class="content">
             <article>
                 <h1>🎓 Nuestros Cursos</h1>
-                <p>Aprende de forma clara y práctica a dominar las tecnologías que están redefiniendo la economía global.</p>
+                <p>Aprende de forma clara y practical a dominar las tecnologías que están redefiniendo la economía global.</p>
                 <p>No necesitas ser experto en finanzas o tecnología. Está diseñado especialmente para quien quiere estar un paso adelante.</p>
 
                 <!-- Bloque Anti-Miedo (Propuesta de Valor) -->
@@ -260,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     <button class="carousel-button prev" id="prev-button-sobre" onclick="moveSlideSobre(-1)" aria-label="Tarjeta anterior">&lt;</button>
                     <button class="carousel-button next" id="next-button-sobre" onclick="moveSlideSobre(1)" aria-label="Tarjeta siguiente">&gt;</button>
-                    <a href="#razones" class="carousel-button back hidden" id="back-button-sobre" onclick="showContent('razones')" aria-label="Ir a razones">&gt;</a>
+                    <a href="#autor-seccion" class="carousel-button back hidden" id="back-button-sobre" onclick="document.getElementById('autor-seccion')?.scrollIntoView({ behavior: 'smooth' });" aria-label="Ir a Escrito y verificado por Fundador de Curso Cripto">⬇️</a>
                     
                     <div class="carousel-dots" id="carousel-dots-sobre">
                         <button class="carousel-dot active" onclick="goToSlideSobre(0)" aria-label="Diapositiva 1"></button>
@@ -270,13 +271,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <!-- Ficha de Autor EEAT Integrada -->
-                <section class="author-widget" style="margin-top: 2.5rem;">
+                <section class="author-widget" id="autor-seccion" style="margin-top: 2.5rem;">
                     <div class="author-avatar">E</div>
                     <div class="author-details">
                         <h4>Escrito y verificado por Fundador de Curso Cripto</h4>
                         <div class="author-role">Mentor en Tecnología Blockchain y Criptomonedas</div>
                         <p class="author-bio">"Especialista en divulgación tecnológica y el futuro del dinero con más de 5 años traduciendo conceptos complejos a un lenguaje simple. Apasionado por la educación digital sin humo, ayuda a principiantes a navegar la Web3 con seguridad, confianza y cero miedos."</p>
-                        <a href="#contacto" onclick="showContent('contacto')" class="author-link">🔗 Consulta directa o informes sobre el curso</a>
+                        <a href="#razones" onclick="showContent('razones')" class="author-link">🔗 Razones para Registrarse</a>
                     </div>
                 </section>
             </article>
@@ -727,5 +728,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Punto verde en línea -->
     <span style="position: absolute !important; top: 2px !important; right: 2px !important; width: 13px !important; height: 13px !important; background-color: #00ffcc !important; border: 2.5px solid #0b132b !important; border-radius: 50% !important;"></span>
 </a>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
