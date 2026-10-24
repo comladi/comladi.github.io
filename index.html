@@ -242,13 +242,106 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="curso-nft-content" class="content">
             <article>
                 <h1>Creación de NFT</h1>
+                <h2>Descripción de los módulos</h2>		
+                
+                <div class="carousel">
+                    <div class="carousel-inner" id="carousel-inner-nft">
+                        <!-- Módulo 1 -->
+                        <div class="module module-left-align">
+                            <h3>Módulo 1: Fundamentos</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">💎</span> <span>¿Qué es un NFT?</span></li>
+                                <li><span class="emoji">⛓️</span> <span>La tecnología que lo hace posible</span></li>
+                            </ul>
+                        </div>
+                        <!-- Módulo 2 -->
+                        <div class="module module-left-align">
+                            <h3>Módulo 2: Billeteras Digitales y Mercado</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">⚙️</span> <span>Configuración de Wallets</span></li>
+                                <li><span class="emoji">🟣</span> <span>Billetera para Solana</span></li>
+                                <li><span class="emoji">✕</span> <span>Billetera para XRPL</span></li>
+                                <li><span class="emoji">🏪</span> <span>Marketplaces principales</span></li>
+                            </ul>
+                        </div>
+                        <!-- Módulo 3 -->
+                        <div class="module module-left-align">
+                            <h3>Módulo 3: Creación y Práctica(Minting)</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">📁</span> <span>Preparación del archivo</span></li>
+                                <li><span class="emoji">🚀</span> <span>Crear tu primer NFT</span></li>
+                            </ul>
+                            <div style="margin-top: 1.5rem; width: 100%; text-align: center;">
+                                <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1.5rem; font-size: 0.95rem; margin: 0 auto;">↩️ Volver a Cursos</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles del carrusel -->
+                    <button class="carousel-button prev" id="prev-button-nft" onclick="moveSlideNFT(-1)" aria-label="Módulo anterior">&lt;</button>
+                    <button class="carousel-button next" id="next-button-nft" onclick="moveSlideNFT(1)" aria-label="Módulo siguiente">&gt;</button>
+                    <a href="#cursos" class="carousel-button back hidden" id="back-button-nft" onclick="showContent('cursos')" aria-label="Volver a Cursos">↩️</a>
+                    
+                    <div class="carousel-dots" id="carousel-dots-nft">
+                        <button class="carousel-dot active" onclick="goToSlideNFT(0)" aria-label="Módulo 1"></button>
+                        <button class="carousel-dot" onclick="goToSlideNFT(1)" aria-label="Módulo 2"></button>
+                        <button class="carousel-dot" onclick="goToSlideNFT(2)" aria-label="Módulo 3"></button>
+                    </div>
+                </div>
             </article>
         </section>
 
-        <!-- Sección: Enendiendo la WEB3 -->
+        <!-- Sección: Entiende la WEB3 -->
         <section id="curso-web3-content" class="content">
             <article>
-                <h1>Enendiendo la WEB3</h1>
+                <h1>Entiende la WEB3</h1>
+                <h2>Descripción de los módulos</h2>		
+                
+                <div class="carousel">
+                    <div class="carousel-inner" id="carousel-inner-web3">
+                        <!-- Módulo 1 -->
+                        <div class="module module-left-align">
+                            <h3>La Evolución de Internet</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">🌐</span> <span>Qué es la Propiedad</span></li>
+                                <li><span class="emoji">🧱</span> <span>Los Cimientos Técnicos</span></li>
+                                <li><span class="emoji">⛓️</span> <span>¿Qué es una Blockchain</span></li>
+                            </ul>
+                        </div>
+                        <!-- Módulo 2 -->
+                        <div class="module module-left-align">
+                            <h3>Criptomonedas, Tokens y Activos Digitales</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">🪙</span> <span>Moneda nativa (ej. ETH, BTC)</span></li>
+                                <li><span class="emoji">🎟️</span> <span>Tokens de utilidad o gobernanza.</span></li>
+                                <li><span class="emoji">💼</span> <span>Las Billeteras Digitales</span></li>
+                            </ul>
+                        </div>
+                        <!-- Módulo 3 -->
+                        <div class="module module-left-align">
+                            <h3>Aplicaciones del Mundo Real</h3>
+                            <ul class="course-topics-list">
+                                <li><span class="emoji">📜</span> <span>Contratos Inteligentes (<em>Smart Contracts</em>)</span></li>
+                                <li><span class="emoji">📱</span> <span>Aplicaciones Descentralizadas (dApps)</span></li>
+                                <li><span class="emoji">🏦</span> <span>Finanzas Descentralizadas (DeFi)</span></li>
+                            </ul>
+                            <div style="margin-top: 1.5rem; width: 100%; text-align: center;">
+                                <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1.5rem; font-size: 0.95rem; margin: 0 auto;">↩️ Volver a Cursos</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles del carrusel -->
+                    <button class="carousel-button prev" id="prev-button-web3" onclick="moveSlideWeb3(-1)" aria-label="Módulo anterior">&lt;</button>
+                    <button class="carousel-button next" id="next-button-web3" onclick="moveSlideWeb3(1)" aria-label="Módulo siguiente">&gt;</button>
+                    <a href="#cursos" class="carousel-button back hidden" id="back-button-web3" onclick="showContent('cursos')" aria-label="Volver a Cursos">↩️</a>
+                    
+                    <div class="carousel-dots" id="carousel-dots-web3">
+                        <button class="carousel-dot active" onclick="goToSlideWeb3(0)" aria-label="Módulo 1"></button>
+                        <button class="carousel-dot" onclick="goToSlideWeb3(1)" aria-label="Módulo 2"></button>
+                        <button class="carousel-dot" onclick="goToSlideWeb3(2)" aria-label="Módulo 3"></button>
+                    </div>
+                </div>
             </article>
         </section>
 
@@ -745,6 +838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Punto verde en línea -->
     <span style="position: absolute !important; top: 2px !important; right: 2px !important; width: 13px !important; height: 13px !important; background-color: #00ffcc !important; border: 2.5px solid #0b132b !important; border-radius: 50% !important;"></span>
 </a>
-<script type="module" src="/index.tsx"></script>
+<div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

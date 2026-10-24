@@ -296,6 +296,82 @@ function goToSlidePresentacion(index) {
     updateCarouselPresentacion();
 }
 
+/* --- Carousel 5: Creación de NFT --- */
+let currentSlideNFT = 0;
+const totalSlidesNFT = 3;
+
+function updateCarouselNFT() {
+    const inner = document.getElementById('carousel-inner-nft');
+    if (inner) {
+        inner.style.transform = `translateX(-${currentSlideNFT * 100}%)`;
+    }
+    const dots = document.querySelectorAll('#carousel-dots-nft .carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlideNFT);
+    });
+
+    const nextBtn = document.getElementById('next-button-nft');
+    const backBtn = document.getElementById('back-button-nft');
+    if (nextBtn && backBtn) {
+        if (currentSlideNFT === totalSlidesNFT - 1) {
+            nextBtn.classList.add('hidden');
+            backBtn.classList.remove('hidden');
+        } else {
+            nextBtn.classList.remove('hidden');
+            backBtn.classList.add('hidden');
+        }
+    }
+}
+
+function moveSlideNFT(step) {
+    currentSlideNFT = (currentSlideNFT + step + totalSlidesNFT) % totalSlidesNFT;
+    updateCarouselNFT();
+}
+
+function goToSlideNFT(index) {
+    currentSlideNFT = index;
+    updateCarouselNFT();
+}
+
+/* --- Carousel 6: Entiende la WEB3 --- */
+let currentSlideWeb3 = 0;
+const totalSlidesWeb3 = 3;
+
+function updateCarouselWeb3() {
+    const inner = document.getElementById('carousel-inner-web3');
+    if (inner) {
+        inner.style.transform = `translateX(-${currentSlideWeb3 * 100}%)`;
+    }
+    const dots = document.querySelectorAll('#carousel-dots-web3 .carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlideWeb3);
+    });
+
+    const nextBtn = document.getElementById('next-button-web3');
+    const backBtn = document.getElementById('back-button-web3');
+    if (nextBtn && backBtn) {
+        if (currentSlideWeb3 === totalSlidesWeb3 - 1) {
+            nextBtn.classList.add('hidden');
+            backBtn.classList.remove('hidden');
+        } else {
+            nextBtn.classList.remove('hidden');
+            backBtn.classList.add('hidden');
+        }
+    }
+}
+
+function moveSlideWeb3(step) {
+    currentSlideWeb3 = (currentSlideWeb3 + step + totalSlidesWeb3) % totalSlidesWeb3;
+    updateCarouselWeb3();
+}
+
+function goToSlideWeb3(index) {
+    currentSlideWeb3 = index;
+    updateCarouselWeb3();
+}
+
+
+
 /* ==========================================================================
    QUESTIONNAIRE & PROGRESS LOGIC
    ========================================================================== */
@@ -676,6 +752,10 @@ window.moveSlideRazones = moveSlideRazones;
 window.goToSlideRazones = goToSlideRazones;
 window.moveSlidePresentacion = moveSlidePresentacion;
 window.goToSlidePresentacion = goToSlidePresentacion;
+window.moveSlideNFT = moveSlideNFT;
+window.goToSlideNFT = goToSlideNFT;
+window.moveSlideWeb3 = moveSlideWeb3;
+window.goToSlideWeb3 = goToSlideWeb3;
 window.showNext = showNext;
 window.showDescription = showDescription;
 window.showFinalWindow = showFinalWindow;
