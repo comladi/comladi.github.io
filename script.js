@@ -115,9 +115,25 @@ function showContent(sectionId) {
     }
 
     // Activate target navbar link (if exists in primary navbar)
-    const targetLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+    let navKey = sectionId;
+    if (sectionId === 'curso-101' || sectionId === 'curso-nft' || sectionId === 'curso-web3') {
+        navKey = 'cursos';
+    }
+    const targetLink = document.querySelector(`.nav-links a[href="#${navKey}"]`);
     if (targetLink) {
         targetLink.classList.add('active');
+    }
+
+    // Reset slide position for smooth course progression
+    if (sectionId === 'curso-101') {
+        currentSlideCurso = 0;
+        updateCarouselCurso();
+    } else if (sectionId === 'curso-nft') {
+        currentSlideNFT = 0;
+        updateCarouselNFT();
+    } else if (sectionId === 'curso-web3') {
+        currentSlideWeb3 = 0;
+        updateCarouselWeb3();
     }
 
     // Close hamburger menu if open
@@ -162,21 +178,43 @@ function updateCarouselCurso() {
         dot.classList.toggle('active', index === currentSlideCurso);
     });
 
-    const nextBtn = document.getElementById('next-button-curso');
-    const backBtn = document.getElementById('back-button-curso');
-    if (nextBtn && backBtn) {
-        if (currentSlideCurso === totalSlidesCurso - 1) {
-            nextBtn.classList.add('hidden');
-            backBtn.classList.remove('hidden');
+    const prevBtn = document.getElementById('prev-button-curso');
+    if (prevBtn) {
+        if (currentSlideCurso === 0) {
+            prevBtn.style.opacity = '0.35';
+            prevBtn.style.cursor = 'default';
         } else {
-            nextBtn.classList.remove('hidden');
-            backBtn.classList.add('hidden');
+            prevBtn.style.opacity = '1';
+            prevBtn.style.cursor = 'pointer';
+        }
+    }
+
+    const nextBtn = document.getElementById('next-button-curso');
+    if (nextBtn) {
+        nextBtn.classList.remove('hidden');
+        if (currentSlideCurso === totalSlidesCurso - 1) {
+            nextBtn.innerHTML = '&#x2193;';
+            nextBtn.classList.add('nav-to-actions');
+            nextBtn.setAttribute('title', 'Ver opciones: Volver o Siguiente Curso');
+            nextBtn.setAttribute('aria-label', 'Ver opciones: Volver o Siguiente Curso');
+        } else {
+            nextBtn.innerHTML = '&gt;';
+            nextBtn.classList.remove('nav-to-actions');
+            nextBtn.setAttribute('title', 'Módulo siguiente');
+            nextBtn.setAttribute('aria-label', 'Módulo siguiente');
         }
     }
 }
 
 function moveSlideCurso(step) {
-    currentSlideCurso = (currentSlideCurso + step + totalSlidesCurso) % totalSlidesCurso;
+    if (step > 0 && currentSlideCurso === totalSlidesCurso - 1) {
+        highlightActions('curso-101-actions');
+        return;
+    }
+    if (step < 0 && currentSlideCurso === 0) {
+        return;
+    }
+    currentSlideCurso = currentSlideCurso + step;
     updateCarouselCurso();
 }
 
@@ -296,6 +334,17 @@ function goToSlidePresentacion(index) {
     updateCarouselPresentacion();
 }
 
+/* --- Action Buttons Highlighting & Smooth Navigation --- */
+function highlightActions(containerId) {
+    const target = document.getElementById(containerId);
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.remove('course-actions-highlight');
+        void target.offsetWidth;
+        target.classList.add('course-actions-highlight');
+    }
+}
+
 /* --- Carousel 5: Creación de NFT --- */
 let currentSlideNFT = 0;
 const totalSlidesNFT = 3;
@@ -310,21 +359,43 @@ function updateCarouselNFT() {
         dot.classList.toggle('active', index === currentSlideNFT);
     });
 
-    const nextBtn = document.getElementById('next-button-nft');
-    const backBtn = document.getElementById('back-button-nft');
-    if (nextBtn && backBtn) {
-        if (currentSlideNFT === totalSlidesNFT - 1) {
-            nextBtn.classList.add('hidden');
-            backBtn.classList.remove('hidden');
+    const prevBtn = document.getElementById('prev-button-nft');
+    if (prevBtn) {
+        if (currentSlideNFT === 0) {
+            prevBtn.style.opacity = '0.35';
+            prevBtn.style.cursor = 'default';
         } else {
-            nextBtn.classList.remove('hidden');
-            backBtn.classList.add('hidden');
+            prevBtn.style.opacity = '1';
+            prevBtn.style.cursor = 'pointer';
+        }
+    }
+
+    const nextBtn = document.getElementById('next-button-nft');
+    if (nextBtn) {
+        nextBtn.classList.remove('hidden');
+        if (currentSlideNFT === totalSlidesNFT - 1) {
+            nextBtn.innerHTML = '&#x2193;';
+            nextBtn.classList.add('nav-to-actions');
+            nextBtn.setAttribute('title', 'Ver opciones: Volver o Siguiente Curso');
+            nextBtn.setAttribute('aria-label', 'Ver opciones: Volver o Siguiente Curso');
+        } else {
+            nextBtn.innerHTML = '&gt;';
+            nextBtn.classList.remove('nav-to-actions');
+            nextBtn.setAttribute('title', 'Módulo siguiente');
+            nextBtn.setAttribute('aria-label', 'Módulo siguiente');
         }
     }
 }
 
 function moveSlideNFT(step) {
-    currentSlideNFT = (currentSlideNFT + step + totalSlidesNFT) % totalSlidesNFT;
+    if (step > 0 && currentSlideNFT === totalSlidesNFT - 1) {
+        highlightActions('curso-nft-actions');
+        return;
+    }
+    if (step < 0 && currentSlideNFT === 0) {
+        return;
+    }
+    currentSlideNFT = currentSlideNFT + step;
     updateCarouselNFT();
 }
 
@@ -347,21 +418,43 @@ function updateCarouselWeb3() {
         dot.classList.toggle('active', index === currentSlideWeb3);
     });
 
-    const nextBtn = document.getElementById('next-button-web3');
-    const backBtn = document.getElementById('back-button-web3');
-    if (nextBtn && backBtn) {
-        if (currentSlideWeb3 === totalSlidesWeb3 - 1) {
-            nextBtn.classList.add('hidden');
-            backBtn.classList.remove('hidden');
+    const prevBtn = document.getElementById('prev-button-web3');
+    if (prevBtn) {
+        if (currentSlideWeb3 === 0) {
+            prevBtn.style.opacity = '0.35';
+            prevBtn.style.cursor = 'default';
         } else {
-            nextBtn.classList.remove('hidden');
-            backBtn.classList.add('hidden');
+            prevBtn.style.opacity = '1';
+            prevBtn.style.cursor = 'pointer';
+        }
+    }
+
+    const nextBtn = document.getElementById('next-button-web3');
+    if (nextBtn) {
+        nextBtn.classList.remove('hidden');
+        if (currentSlideWeb3 === totalSlidesWeb3 - 1) {
+            nextBtn.innerHTML = '&#x2193;';
+            nextBtn.classList.add('nav-to-actions');
+            nextBtn.setAttribute('title', 'Ver opciones: Volver a Cursos');
+            nextBtn.setAttribute('aria-label', 'Ver opciones: Volver a Cursos');
+        } else {
+            nextBtn.innerHTML = '&gt;';
+            nextBtn.classList.remove('nav-to-actions');
+            nextBtn.setAttribute('title', 'Módulo siguiente');
+            nextBtn.setAttribute('aria-label', 'Módulo siguiente');
         }
     }
 }
 
 function moveSlideWeb3(step) {
-    currentSlideWeb3 = (currentSlideWeb3 + step + totalSlidesWeb3) % totalSlidesWeb3;
+    if (step > 0 && currentSlideWeb3 === totalSlidesWeb3 - 1) {
+        highlightActions('curso-web3-actions');
+        return;
+    }
+    if (step < 0 && currentSlideWeb3 === 0) {
+        return;
+    }
+    currentSlideWeb3 = currentSlideWeb3 + step;
     updateCarouselWeb3();
 }
 

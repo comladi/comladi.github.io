@@ -146,6 +146,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
                     </div>
                 </div>
+                <div class="learn-more-action" style="text-align: center; margin-top: 2rem;">
+                    <a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a>
+                </div>
             </article>
         </section>
 
@@ -198,7 +201,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Controles del carrusel -->
                     <button class="carousel-button prev" id="prev-button-curso" onclick="moveSlideCurso(-1)" aria-label="Módulo anterior">&lt;</button>
                     <button class="carousel-button next" id="next-button-curso" onclick="moveSlideCurso(1)" aria-label="Módulo siguiente">&gt;</button>
-                    <a href="#plan-seccion" class="carousel-button back hidden" id="back-button-curso" aria-label="Ir a ¿Cuál es el plan?">⬇️</a>
                     
                     <div class="carousel-dots" id="carousel-dots-curso">
                         <button class="carousel-dot active" onclick="goToSlideCurso(0)" aria-label="Módulo 1"></button>
@@ -231,8 +233,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li><span class="bullet-icon">🛡️</span> <span>Nos apasiona enseñar y te brindamos la seguridad para evitar malas jugadas.</span></li>
                         </ul>
                     </div>
-                    <div class="learn-more-action">
-                            <a href="#sobre-nosotros" onclick="showContent('sobre-nosotros')" class="sobre-nosotros-link">🔍 ¡Conoce Sobre Nosotros!</a>
+                    <div id="curso-101-actions" class="course-actions-container" style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; width: 100%; margin-top: 2rem;">
+                        <a href="#cursos" onclick="showContent('cursos')" class="cta-button">Volver a Cursos</a>
+                        <a href="#curso-nft" onclick="showContent('curso-nft')" class="cta-button" style="background: linear-gradient(90deg, #00ccff, #0066cc); color: #fff;">Siguiente Curso: Creación de NFT</a>
                     </div>
                 </div>
             </article>
@@ -271,22 +274,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <li><span class="emoji">📁</span> <span>Preparación del archivo</span></li>
                                 <li><span class="emoji">🚀</span> <span>Crear tu primer NFT</span></li>
                             </ul>
-                            <div style="margin-top: 1.5rem; width: 100%; text-align: center;">
-                                <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1.5rem; font-size: 0.95rem; margin: 0 auto;">↩️ Volver a Cursos</a>
-                            </div>
                         </div>
                     </div>
                     
                     <!-- Controles del carrusel -->
                     <button class="carousel-button prev" id="prev-button-nft" onclick="moveSlideNFT(-1)" aria-label="Módulo anterior">&lt;</button>
                     <button class="carousel-button next" id="next-button-nft" onclick="moveSlideNFT(1)" aria-label="Módulo siguiente">&gt;</button>
-                    <a href="#cursos" class="carousel-button back hidden" id="back-button-nft" onclick="showContent('cursos')" aria-label="Volver a Cursos">↩️</a>
                     
                     <div class="carousel-dots" id="carousel-dots-nft">
                         <button class="carousel-dot active" onclick="goToSlideNFT(0)" aria-label="Módulo 1"></button>
                         <button class="carousel-dot" onclick="goToSlideNFT(1)" aria-label="Módulo 2"></button>
                         <button class="carousel-dot" onclick="goToSlideNFT(2)" aria-label="Módulo 3"></button>
                     </div>
+                </div>
+                <div id="curso-nft-actions" class="course-actions-container" style="margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; width: 100%;">
+                    <a href="#cursos" onclick="showContent('cursos')" class="cta-button">Volver a Cursos</a>
+                    <a href="#curso-web3" onclick="showContent('curso-web3')" class="cta-button" style="background: linear-gradient(90deg, #00ccff, #0066cc); color: #fff;">Siguiente Curso: Entiende la WEB3</a>
                 </div>
             </article>
         </section>
@@ -325,22 +328,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <li><span class="emoji">📱</span> <span>Aplicaciones Descentralizadas (dApps)</span></li>
                                 <li><span class="emoji">🏦</span> <span>Finanzas Descentralizadas (DeFi)</span></li>
                             </ul>
-                            <div style="margin-top: 1.5rem; width: 100%; text-align: center;">
-                                <a href="#cursos" onclick="showContent('cursos')" class="cta-button" style="padding: 0.65rem 1.5rem; font-size: 0.95rem; margin: 0 auto;">↩️ Volver a Cursos</a>
-                            </div>
                         </div>
                     </div>
                     
                     <!-- Controles del carrusel -->
                     <button class="carousel-button prev" id="prev-button-web3" onclick="moveSlideWeb3(-1)" aria-label="Módulo anterior">&lt;</button>
                     <button class="carousel-button next" id="next-button-web3" onclick="moveSlideWeb3(1)" aria-label="Módulo siguiente">&gt;</button>
-                    <a href="#cursos" class="carousel-button back hidden" id="back-button-web3" onclick="showContent('cursos')" aria-label="Volver a Cursos">↩️</a>
                     
                     <div class="carousel-dots" id="carousel-dots-web3">
                         <button class="carousel-dot active" onclick="goToSlideWeb3(0)" aria-label="Módulo 1"></button>
                         <button class="carousel-dot" onclick="goToSlideWeb3(1)" aria-label="Módulo 2"></button>
                         <button class="carousel-dot" onclick="goToSlideWeb3(2)" aria-label="Módulo 3"></button>
                     </div>
+                </div>
+                <div id="curso-web3-actions" class="course-actions-container" style="margin-top: 2rem; display: flex; justify-content: center; width: 100%;">
+                    <a href="#cursos" onclick="showContent('cursos')" class="cta-button">Volver a Cursos</a>
                 </div>
             </article>
         </section>
