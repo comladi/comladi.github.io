@@ -1374,6 +1374,7 @@ img, svg {
     width: 100%;
     max-width: 900px;
     margin: 3.5rem auto 2rem;
+    scroll-margin-top: 90px;
 }
 
 @media (min-width: 768px) {

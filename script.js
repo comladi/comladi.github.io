@@ -195,8 +195,8 @@ function updateCarouselCurso() {
         if (currentSlideCurso === totalSlidesCurso - 1) {
             nextBtn.innerHTML = '&#x2193;';
             nextBtn.classList.add('nav-to-actions');
-            nextBtn.setAttribute('title', 'Ver opciones: Volver o Siguiente Curso');
-            nextBtn.setAttribute('aria-label', 'Ver opciones: Volver o Siguiente Curso');
+            nextBtn.setAttribute('title', 'Ir a la siguiente sección');
+            nextBtn.setAttribute('aria-label', 'Ir a la siguiente sección');
         } else {
             nextBtn.innerHTML = '&gt;';
             nextBtn.classList.remove('nav-to-actions');
@@ -208,7 +208,10 @@ function updateCarouselCurso() {
 
 function moveSlideCurso(step) {
     if (step > 0 && currentSlideCurso === totalSlidesCurso - 1) {
-        highlightActions('curso-101-actions');
+        const nextDiv = document.getElementById('plan-seccion');
+        if (nextDiv) {
+            nextDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
         return;
     }
     if (step < 0 && currentSlideCurso === 0) {
