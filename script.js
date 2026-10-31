@@ -528,6 +528,11 @@ function showPage() {
     if (modal) {
         modal.style.display = 'flex';
         modal.classList.add('open');
+        modal.scrollTop = 0;
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
 }
 
@@ -536,6 +541,11 @@ function closeModal() {
     if (modal) {
         modal.style.display = 'none';
         modal.classList.remove('open');
+        modal.scrollTop = 0;
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
     if (typeof showContent === 'function') {
         showContent('contacto');
