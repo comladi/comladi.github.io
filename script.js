@@ -341,7 +341,7 @@ function goToSlidePresentacion(index) {
 function highlightActions(containerId) {
     const target = document.getElementById(containerId);
     if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         target.classList.remove('course-actions-highlight');
         void target.offsetWidth;
         target.classList.add('course-actions-highlight');
@@ -501,6 +501,12 @@ function showNext(nextStepId) {
             setTimeout(() => nextStep.classList.remove('slide-in-fade'), 450);
 
             updateProgressBar(nextStepId);
+
+            // Asegurar que se visualice el inicio del contenedor del cuestionario
+            const questionnaire = document.getElementById('questionnaire');
+            if (questionnaire) {
+                questionnaire.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }, 300);
     }
 }

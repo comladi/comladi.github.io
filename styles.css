@@ -447,6 +447,32 @@ img, svg {
     font-weight: bold;
 }
 
+/* Eliminar la flecha verde si la viñeta ya incluye un emoticon */
+.module ul li:has(.emoji)::before,
+.course-topics-list li::before,
+#carousel-inner-razones .module ul li::before {
+    content: none !important;
+    display: none !important;
+}
+
+.course-topics-list li,
+#carousel-inner-razones .module ul li {
+    padding-left: 0 !important;
+}
+
+#carousel-inner-razones .module ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+#carousel-inner-razones .module ul li .emoji {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
 /* Specific alignments */
 .module-left-align {
     align-items: flex-start;
@@ -685,6 +711,7 @@ img, svg {
     width: 100%;
     max-width: 700px;
     margin: 2rem auto;
+    scroll-margin-top: 90px;
     background: var(--bg-dark-secondary);
     background-image: var(--gradient-card);
     border: var(--border-glow);
@@ -1166,6 +1193,7 @@ img, svg {
     gap: 1.5rem;
     margin: 2rem 0;
     width: 100%;
+    scroll-margin-top: 90px;
 }
 
 .anti-fear-box {
@@ -1221,6 +1249,7 @@ img, svg {
     margin-top: 2.5rem;
     text-align: left;
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    scroll-margin-top: 90px;
 }
 
 .author-avatar {
@@ -1607,6 +1636,7 @@ img, svg {
     padding: 2rem;
     margin-top: 2.5rem;
     box-shadow: var(--shadow-card);
+    scroll-margin-top: 90px;
 }
 
 .market-dashboard-header {
