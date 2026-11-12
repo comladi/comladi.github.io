@@ -687,35 +687,6 @@
                         <label for="q8-talvez" onclick="showPage()"><input type="radio" id="q8-talvez" name="q8" value="tal vez" onchange="showPage()"> 📖 Me gustaría ver más detalles primero</label>
                     </div>
                 </form>
-                
-                <!-- Modal de mensaje final -->
-                <div id="finalMessageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-                    <div class="modal-content">
-                        <button class="close-modal" onclick="closeModal()" aria-label="Cerrar ventana emergente">&times;</button>
-                        
-                        <span class="modal-badge">🎉 ¡Felicidades por dar el primer paso!</span>
-                        <h2 id="modal-title" class="modal-heading">¡Inscríbete hoy y toma el control!</h2>
-                        
-                        <div class="modal-body-text">
-                            <p>Conviértete en un experto en Bitcoin, blockchain y el nuevo ecosistema financiero con nuestro curso.</p>
-                        </div>
-                        
-                        <div class="qr-container">
-                            <div class="qr-telefono" id="modal-qr-whatsapp" style="display: none;">
-                                <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
-                            </div>
-                            <div class="qr-telefono" id="modal-qr-telefono" style="display: none;">
-                                <img src="images/contacto.png" alt="Código QR de contacto telefónico">
-                            </div>
-                        </div>
-
-                        <div style="margin-top: 1.75rem;">
-                            <a href="https://wa.me/+525531095907?text=¡Hola!%20Deseo%20informes%20del%20curso." target="_blank" rel="noreferrer" class="cta-button" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.05rem;">
-                                🚀 ¡Inscríbete Ahora por WhatsApp!
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </article>
         </section>
 
@@ -805,6 +776,35 @@
             <p class="footer-copyright">&copy; 2026 CursoCripto. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Modal de mensaje final (Centrado a nivel raíz de la página) -->
+    <div id="finalMessageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target === this) closeModal()">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()" aria-label="Cerrar ventana emergente">&times;</button>
+            
+            <span class="modal-badge">🎉 ¡Felicidades por dar el primer paso!</span>
+            <h2 id="modal-title" class="modal-heading">¡Inscríbete hoy y toma el control!</h2>
+            
+            <div class="modal-body-text">
+                <p>Conviértete en un experto en Bitcoin, blockchain y el nuevo ecosistema financiero con nuestro curso.</p>
+            </div>
+            
+            <div class="qr-container">
+                <div class="qr-telefono" id="modal-qr-whatsapp" style="display: none;">
+                    <img src="images/whatsapp-qr.png" alt="Código QR de WhatsApp" onerror="this.src='images/contacto.png'">
+                </div>
+                <div class="qr-telefono" id="modal-qr-telefono" style="display: none;">
+                    <img src="images/contacto.png" alt="Código QR de contacto telefónico">
+                </div>
+            </div>
+
+            <div style="margin-top: 1.75rem;">
+                <a href="https://wa.me/+525531095907?text=¡Hola!%20Deseo%20informes%20del%20curso." target="_blank" rel="noreferrer" class="cta-button" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.05rem;">
+                    🚀 ¡Inscríbete Ahora por WhatsApp!
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>

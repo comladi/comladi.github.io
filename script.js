@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDescargoResponsabilidad();
     loadAvisoPrivacidad();
     loadCreditos();
+
+    // 6. Sincronizar tarjetas de carrusel al tamaño mayor de su propia sección
+    setTimeout(syncAllVisibleCarousels, 150);
+    window.addEventListener('resize', () => {
+        syncAllVisibleCarousels();
+    });
 });
 
 /* --- Welcome Skip Functionality --- */
@@ -112,6 +118,11 @@ function showContent(sectionId) {
             else if (sectionId === 'aviso-privacidad') loadAvisoPrivacidad();
             else if (sectionId === 'creditos') loadCreditos();
         }
+
+        // Sincronizar carrusel al tamaño mayor del contenedor de esta sección específica
+        setTimeout(() => {
+            syncSectionCarouselHeight(targetSection);
+        }, 50);
     }
 
     // Activate target navbar link (if exists in primary navbar)
@@ -157,6 +168,55 @@ function toggleMenu() {
         navMenu.classList.toggle('active');
         const isExpanded = hamburger.classList.contains('active');
         hamburger.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+}
+
+/* ==========================================================================
+   CAROUSEL HEIGHT HARMONIZER (POR SECCIÓN: TAMAÑO MAYOR DE CADA CONTENEDOR)
+   ========================================================================== */
+function syncSectionCarouselHeight(sectionElement) {
+    if (!sectionElement) return;
+    const carousels = sectionElement.querySelectorAll ? sectionElement.querySelectorAll('.carousel') : [];
+    carousels.forEach(carousel => {
+        const modules = carousel.querySelectorAll('.module');
+        if (!modules || modules.length === 0) return;
+
+        // Limpiar estilos inline para calcular la altura natural del contenido
+        modules.forEach(m => {
+            m.style.minHeight = '';
+            m.style.height = '';
+        });
+        carousel.style.minHeight = '';
+
+        // Calcular la altura mayor entre las tarjetas de ESTA sección específica
+        let maxHeight = 0;
+        modules.forEach(m => {
+            const h = m.offsetHeight;
+            if (h > maxHeight) {
+                maxHeight = h;
+            }
+        });
+
+        // Aplicar la altura mayor de esta sección a todas las tarjetas de este carrusel
+        if (maxHeight > 0) {
+            modules.forEach(m => {
+                m.style.minHeight = `${maxHeight}px`;
+            });
+            carousel.style.minHeight = `${maxHeight}px`;
+        }
+    });
+}
+
+function syncAllVisibleCarousels() {
+    const visibleSections = document.querySelectorAll('.content.active, #welcome-section:not(.hidden)');
+    if (visibleSections.length > 0) {
+        visibleSections.forEach(sec => syncSectionCarouselHeight(sec));
+    } else {
+        document.querySelectorAll('.content').forEach(sec => {
+            if (window.getComputedStyle(sec).display !== 'none') {
+                syncSectionCarouselHeight(sec);
+            }
+        });
     }
 }
 
@@ -524,9 +584,13 @@ function showContactOptions() {
 function showPage() {
     const modal = document.getElementById('finalMessageModal');
     if (modal) {
-        modal.style.display = 'flex';
+        if (modal.parentElement !== document.body) {
+            document.body.appendChild(modal);
+        }
         modal.classList.add('open');
+        modal.style.display = 'flex';
         modal.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
         const modalContent = modal.querySelector('.modal-content');
         if (modalContent) {
             modalContent.scrollTop = 0;
@@ -540,6 +604,7 @@ function closeModal() {
         modal.style.display = 'none';
         modal.classList.remove('open');
         modal.scrollTop = 0;
+        document.body.style.overflow = '';
         const modalContent = modal.querySelector('.modal-content');
         if (modalContent) {
             modalContent.scrollTop = 0;
@@ -549,6 +614,16 @@ function closeModal() {
         showContent('contacto');
     }
 }
+
+// Close modal on Escape key press
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+        const modal = document.getElementById('finalMessageModal');
+        if (modal && (modal.classList.contains('open') || modal.style.display === 'flex')) {
+            closeModal();
+        }
+    }
+});
 
 /* ==========================================================================
    DESKTOP QR CODE INTERACTION TOGGLER
@@ -872,3 +947,5 @@ window.showFinalWindow = showFinalWindow;
 window.showContactOptions = showContactOptions;
 window.showPage = showPage;
 window.closeModal = closeModal;
+window.syncSectionCarouselHeight = syncSectionCarouselHeight;
+window.syncAllVisibleCarousels = syncAllVisibleCarousels;
