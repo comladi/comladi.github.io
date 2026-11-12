@@ -27,6 +27,7 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --border-glow: 1px solid rgba(0, 255, 204, 0.2);
+    --carousel-height: 335px;
 }
 
 /* --- Base & Reset Rules --- */
@@ -400,7 +401,7 @@ img, svg {
     background-color: var(--bg-dark-secondary);
     background-image: var(--gradient-card);
     border: var(--border-glow);
-    padding: 2.5rem 5.5rem;
+    padding: 2.25rem 4.75rem;
     border-radius: 16px;
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
@@ -410,7 +411,8 @@ img, svg {
     align-items: center;
     text-align: center;
     height: 100%;
-    min-height: 280px;
+    min-height: var(--carousel-height);
+    max-height: var(--carousel-height);
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
@@ -508,11 +510,40 @@ img, svg {
 /* Specific alignments */
 .module-left-align {
     align-items: flex-start;
+    justify-content: flex-start;
     text-align: left;
+    padding-top: 2.25rem;
 }
+
 .module-left-align h3 {
     text-align: left;
     width: 100%;
+    margin-bottom: 1.1rem;
+}
+
+#carousel-inner-sobre .module {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 2.25rem;
+}
+
+#carousel-inner-sobre .module h3 {
+    margin-bottom: 1.1rem;
+}
+
+#carousel-inner-razones .module {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 4.75rem;
+}
+
+#carousel-inner-razones .module p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.6;
 }
 
 /* Custom left-aligned topics list */
@@ -610,11 +641,26 @@ img, svg {
     border-bottom-color: var(--color-primary);
 }
 
+.sobre-nosotros-btn {
+    background: linear-gradient(90deg, #00ccff, #0066cc) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.35) !important;
+}
+
+.sobre-nosotros-btn:hover {
+    background: linear-gradient(90deg, #1eaafc, #0033cc) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0, 204, 255, 0.55) !important;
+}
+
 /* --- Carousel Architecture --- */
 .carousel {
     position: relative;
     width: 100%;
     max-width: 750px;
+    height: var(--carousel-height);
+    min-height: var(--carousel-height);
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 16px;
@@ -624,6 +670,7 @@ img, svg {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
     align-items: stretch;
+    height: 100%;
     will-change: transform;
 }
 
@@ -724,14 +771,28 @@ img, svg {
 
 /* --- BTC, ETH, XRP IMAGES IN CAROUSEL FIX --- */
 .carousel .crypto-icon {
-    height: 120px;
-    width: 120px;
+    height: 85px;
+    width: 85px;
     object-fit: contain;
-    margin: 1.5rem auto;
+    margin: 1rem auto 0;
     filter: drop-shadow(0 4px 15px rgba(0, 204, 255, 0.4));
     animation: floatAnim 4s ease-in-out infinite alternate;
     opacity: 1 !important;
     display: block !important;
+}
+
+#carousel-inner-presentacion .module {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 4.5rem;
+}
+
+#carousel-inner-presentacion .module h2 {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 @keyframes floatAnim {
@@ -1529,9 +1590,22 @@ img, svg {
 
     .nav-links.active { transform: translateX(-100%); }
 
+    :root {
+        --carousel-height: 385px;
+    }
+
     .content-container { padding: 2.5rem 1rem; margin-top: 65px; }
 
-    .module { padding: 2rem 3.75rem; }
+    .carousel {
+        height: var(--carousel-height);
+        min-height: var(--carousel-height);
+    }
+
+    .module {
+        padding: 1.75rem 3.5rem;
+        min-height: var(--carousel-height);
+        max-height: var(--carousel-height);
+    }
 
     .carousel-button {
         width: 38px;
@@ -1546,6 +1620,46 @@ img, svg {
     .carousel-button.next,
     .carousel-button.back {
         right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --carousel-height: 425px;
+    }
+
+    .carousel {
+        height: var(--carousel-height);
+        min-height: var(--carousel-height);
+    }
+
+    .module {
+        padding: 1.5rem 2.6rem;
+        min-height: var(--carousel-height);
+        max-height: var(--carousel-height);
+    }
+
+    .module h3 {
+        font-size: 1.25rem;
+    }
+
+    #carousel-inner-presentacion .module h2 {
+        font-size: 1.15rem;
+    }
+
+    .carousel-button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+
+    .carousel-button.prev {
+        left: 0.35rem;
+    }
+
+    .carousel-button.next,
+    .carousel-button.back {
+        right: 0.35rem;
     }
 }
 
