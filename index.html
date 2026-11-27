@@ -126,8 +126,14 @@
 
         <!-- Cursos Exploration Section (Distribución Áurea φ=1.618 + Marco GTK3 + Animaciones Flash MX) -->
         <section id="cursos-content" class="content courses-wide-section">
-            <article>
-                <h2 class="section-title">🎓 Cursos 101</h2>
+            <article class="courses-stage">
+                <svg class="svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+                    <symbol id="ic-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M9.4 7.6h3.3a2.2 2.2 0 0 1 0 4.4H9.4m0 0h3.9a2.2 2.2 0 0 1 0 4.4H9.4M9.4 7.6v8.8M11 6v1.6m2-1.6v1.6M11 16.4V18m2-1.6V18"></path></symbol>
+                    <symbol id="ic-nft" viewBox="0 0 24 24"><path d="M12 2.5l8.2 4.7v9.6L12 21.5l-8.2-4.7V7.2L12 2.5z"></path><path d="M3.8 7.2L12 12l8.2-4.8M12 12v9.5"></path></symbol>
+                    <symbol id="ic-web3" viewBox="0 0 24 24"><circle cx="12" cy="4.8" r="2.3"></circle><circle cx="4.8" cy="18" r="2.3"></circle><circle cx="19.2" cy="18" r="2.3"></circle><circle cx="12" cy="13" r="1.4"></circle><path d="M12 7.1v4.5M10.7 14l-4.4 2.5M13.3 14l4.4 2.5M7.1 18h9.8"></path></symbol>
+                    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+                </svg>
+                <h2 class="section-title"><span class="title-emoji">🎓</span> Cursos 101</h2>
                 <p>Aprende los fundamentos tecnológicos, aprende a identificar estafas y toma el control de tu seguridad digital.</p>
 
                 <div class="courses-gtk-shell">
@@ -139,6 +145,7 @@
                             <div class="golden-fibonacci-canvas">
                                 <!-- Bloque áureo superior (61.8%): Curso 101 -->
                                 <a href="#curso-101" onclick="showContent('curso-101'); return false;" class="golden-course-tile is-primary-phi flash-sheen-card tile-stagger-1">
+                                    <span class="tile-num" aria-hidden="true"></span>
                                     <div class="golden-primary-inner">
                                         <span class="curso">¿Qué son las criptomonedas?</span>
                                         <div class="golden-primary-vector" aria-hidden="true">
@@ -170,9 +177,11 @@
                                 <!-- Sub-fila áurea inferior (38.2% dividida en 61.8% : 38.2%) -->
                                 <div class="golden-subrow">
                                     <a href="#curso-nft" onclick="showContent('curso-nft'); return false;" class="golden-course-tile flash-sheen-card tile-stagger-2" style="justify-content: center; align-items: center;">
+                                        <span class="tile-num" aria-hidden="true"></span><svg class="curso-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-nft"></use></svg>
                                         <span class="curso" style="width: 100%;">Creación de NFT</span>
                                     </a>
                                     <a href="#curso-web3" onclick="showContent('curso-web3'); return false;" class="golden-course-tile flash-sheen-card tile-stagger-3" title="Entendiendo la WEB3" style="justify-content: center; align-items: center;">
+                                        <span class="tile-num" aria-hidden="true"></span><svg class="curso-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-web3"></use></svg>
                                         <span class="curso" style="width: 100%;">Entiende la WEB3</span>
                                     </a>
                                 </div>
@@ -181,6 +190,30 @@
 
                         <!-- Zona menor áurea (38.2%): Dos botones mutuamente excluyentes + secciones ocultas + Conoce Sobre Nosotros -->
                         <aside class="gtk-pane-minor is-compact" id="cursos-minor-pane">
+                            <div class="cube-stage" aria-hidden="true">
+                            <div class="cube-floor"></div>
+                            <div class="cube-rig">
+                            <div class="cube-spin">
+                            <div class="cube cube-outer">
+                            <div class="cube-face f-front"><svg viewBox="0 0 24 24"><use href="#ic-coin"></use></svg></div>
+                            <div class="cube-face f-right"><svg viewBox="0 0 24 24"><use href="#ic-nft"></use></svg></div>
+                            <div class="cube-face f-back"><svg viewBox="0 0 24 24"><use href="#ic-web3"></use></svg></div>
+                            <div class="cube-face f-left"><svg viewBox="0 0 24 24"><use href="#ic-coin"></use></svg></div>
+                            <div class="cube-face f-top"><svg viewBox="0 0 24 24"><use href="#ic-nft"></use></svg></div>
+                            <div class="cube-face f-bottom"><svg viewBox="0 0 24 24"><use href="#ic-web3"></use></svg></div>
+                            </div>
+                            <div class="cube cube-core">
+                            <div class="cube-face f-front"></div>
+                            <div class="cube-face f-right"></div>
+                            <div class="cube-face f-back"></div>
+                            <div class="cube-face f-left"></div>
+                            <div class="cube-face f-top"></div>
+                            <div class="cube-face f-bottom"></div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
                             <div class="gtk-minor-toggle-bar" role="toolbar" aria-label="Información del curso">
                                 <button type="button" class="gtk-btn" id="btn-anti-fear-no" onclick="toggleAntiFear('no')" aria-expanded="false" aria-pressed="false">
                                     Lo que no encontrarás
